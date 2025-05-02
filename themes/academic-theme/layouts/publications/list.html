@@ -1,0 +1,139 @@
+{{ define "main" }}
+<section class="page-header">
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}
+        <div class="description">{{ . | markdownify }}</div>
+        {{ end }}
+    </div>
+</section>
+
+<section class="publications-archive">
+    <div class="container">
+        <div class="publications-filters">
+            <div class="filter-group year-filter">
+                <label>Filter by Year:</label>
+                <select id="yearFilter">
+                    <option value="all">All Years</option>
+                    {{ range .Pages.GroupByDate "2006" }}
+                    <option value="{{ .Key }}">{{ .Key }}</option>
+                    {{ end }}
+                </select>
+            </div>
+            <div class="filter-group category-filter">
+                <label>Filter by Category:</label>
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    {{ range $category := $.Site.Taxonomies.categories }}
+                    <option value="{{ $category.Page.Title | urlize }}">{{ $category.Page.Title }}</option>
+                    {{ end }}
+                </select>
+            </div>
+        </div>
+        
+        <div class="publications-list">
+            {{ range .Pages.GroupByDate "2006" }}
+            <div class="year-group" data-year="{{ .Key }}">
+                <h2 class="year-heading">{{ .Key }}</h2>
+                {{ range .Pages }}
+                <div class="publication-item" data-categories="{{ range .Params.categories }}{{ . | urlize }} {{ end }}">
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    <p class="publication-meta">{{ .Params.authors }}</p>
+                    <p class="publication-journal">
+                        <em>{{ .Params.journal }}</em>{{ with .Params.volume }}, {{ . }}{{ end }}{{ with .Params.issue }}({{ . }}){{ end }}{{ with .Params.pages }}, {{ . }}{{ end }}
+                    </p>
+                    <div class="publication-links">
+                        {{ with .Params.doi }}
+                        <a href="https://doi.org/{{ . }}" class="pub-link" target="_blank" rel="noopener">
+                            <i class="fas fa-link"></i> DOI
+                        </a>
+                        {{ end }}
+                        {{ with .Params.pdf }}
+                        <a href="{{ . | absURL }}" class="pub-link" target="_blank" rel="noopener">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </a>
+                        {{ end }}
+                        {{ with .Params.code }}
+                        <a href="{{ . | absURL }}" class="pub-link" target="_blank" rel="noopener">
+                            <i class="fas fa-code"></i> Code
+                        </a>
+                        {{ end }}
+                        {{ with .Params.slides }}
+                        <a href="{{ . | absURL }}" class="pub-link" target="_blank" rel="noopener">
+                            <i class="fas fa-file-powerpoint"></i> Slides
+                        </a>
+                        {{ end }}
+                        {{ with .Params.poster }}
+                        <a href="{{ . | absURL }}" class="pub-link" target="_blank" rel="noopener">
+                            <i class="fas fa-image"></i> Poster
+                        </a>
+                        {{ end }}
+                    </div>
+                    <div class="publication-abstract-preview">
+                        {{ .Params.abstract | truncate 200 }}
+                        <a href="{{ .Permalink }}" class="read-more">Read more</a>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Year filter functionality
+    const yearFilter = document.getElementById('yearFilter');
+    if (yearFilter) {
+        yearFilter.addEventListener('change', function() {
+            filterPublications();
+        });
+    }
+    
+    // Category filter functionality
+    const categoryFilter = document.getElementById('categoryFilter');
+    if (categoryFilter) {
+        categoryFilter.addEventListener('change', function() {
+            filterPublications();
+        });
+    }
+    
+    function filterPublications() {
+        const selectedYear = yearFilter.value;
+        const selectedCategory = categoryFilter.value;
+        
+        const yearGroups = document.querySelectorAll('.year-group');
+        const publicationItems = document.querySelectorAll('.publication-item');
+        
+        // First, hide/show year groups
+        yearGroups.forEach(function(group) {
+            if (selectedYear === 'all' || group.dataset.year === selectedYear) {
+                group.style.display = 'block';
+            } else {
+                group.style.display = 'none';
+            }
+        });
+        
+        // Then, filter by category
+        publicationItems.forEach(function(item) {
+            if (selectedCategory === 'all' || item.dataset.categories.includes(selectedCategory)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        
+        // Hide year headings if no publications are shown in that year
+        yearGroups.forEach(function(group) {
+            const visiblePublications = group.querySelectorAll('.publication-item[style="display: block;"]');
+            if (visiblePublications.length === 0 && group.style.display === 'block') {
+                group.style.display = 'none';
+            }
+        });
+    }
+});
+</script>
+{{ end }}

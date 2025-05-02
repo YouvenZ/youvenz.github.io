@@ -1,0 +1,66 @@
+{{ define "main" }}
+<div class="research-container">
+    <div class="page-header">
+        <h1>{{ .Title }}</h1>
+        <div class="page-description">{{ .Content }}</div>
+    </div>
+    
+    <div class="research-categories">
+        <h2>Current Research</h2>
+        <div class="research-grid">
+            {{ range (where .Pages "Params.categories" "intersect" (slice "current")) }}
+                <div class="research-card">
+                    <div class="research-card-content">
+                        {{ if .Params.image }}
+                        <div class="research-image">
+                            <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                        </div>
+                        {{ end }}
+                        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                        <div class="research-meta">
+                            {{ if .Date }}
+                            <span class="date">{{ .Date.Format "January 2006" }}</span>
+                            {{ end }}
+                        </div>
+                        <div class="research-summary">{{ .Params.summary }}</div>
+                        <div class="research-tags">
+                            {{ range .Params.tags }}
+                            <span class="tag">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                        <a href="{{ .RelPermalink }}" class="read-more">Read more</a>
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+        
+        <h2>Past Research</h2>
+        <div class="research-grid">
+            {{ range (where .Pages "Params.categories" "intersect" (slice "past")) }}
+                <div class="research-card">
+                    <div class="research-card-content">
+                        {{ if .Params.image }}
+                        <div class="research-image">
+                            <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                        </div>
+                        {{ end }}
+                        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                        <div class="research-meta">
+                            {{ if .Date }}
+                            <span class="date">{{ .Date.Format "January 2006" }}</span>
+                            {{ end }}
+                        </div>
+                        <div class="research-summary">{{ .Params.summary }}</div>
+                        <div class="research-tags">
+                            {{ range .Params.tags }}
+                            <span class="tag">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                        <a href="{{ .RelPermalink }}" class="read-more">Read more</a>
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

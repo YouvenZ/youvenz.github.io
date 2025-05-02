@@ -1,0 +1,67 @@
+{{ define "main" }}
+<div class="research-single">
+    <div class="research-header">
+        <h1>{{ .Title }}</h1>
+        
+        <div class="research-meta">
+            {{ if .Date }}
+            <div class="meta-item">
+                <span class="meta-label">Date:</span>
+                <span class="meta-value">{{ .Date.Format "January 2, 2006" }}</span>
+            </div>
+            {{ end }}
+            
+            {{ if .Params.authors }}
+            <div class="meta-item">
+                <span class="meta-label">Authors:</span>
+                <span class="meta-value">{{ delimit .Params.authors ", " " and " }}</span>
+            </div>
+            {{ end }}
+            
+            {{ if .Params.funding }}
+            <div class="meta-item">
+                <span class="meta-label">Funding:</span>
+                <span class="meta-value">{{ .Params.funding }}</span>
+            </div>
+            {{ end }}
+            
+            {{ if .Params.tags }}
+            <div class="meta-item tags">
+                <span class="meta-label">Tags:</span>
+                <div class="meta-tags">
+                    {{ range .Params.tags }}
+                    <span class="tag">{{ . }}</span>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+    
+    {{ if .Params.image }}
+    <div class="featured-image">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+    </div>
+    {{ end }}
+    
+    <div class="research-content">
+        {{ .Content }}
+    </div>
+    
+    <div class="research-navigation">
+        {{ with .PrevInSection }}
+        <a class="prev-link" href="{{ .RelPermalink }}">
+            <span class="nav-label">Previous Research</span>
+            <span class="nav-title">{{ .Title }}</span>
+        </a>
+        {{ end }}
+        
+        {{ with .NextInSection }}
+        <a class="next-link" href="{{ .RelPermalink }}">
+            <span class="nav-label">Next Research</span>
+            <span class="nav-title">{{ .Title }}</span>
+        </a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

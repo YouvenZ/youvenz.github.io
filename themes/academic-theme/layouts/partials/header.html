@@ -1,0 +1,25 @@
+<header class="site-header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <a href="{{ .Site.BaseURL }}">
+                    {{ if .Site.Params.logo }}
+                    <img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}">
+                    {{ else }}
+                    <h1 class="site-title">{{ .Site.Title }}</h1>
+                    {{ end }}
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                {{ partial "menu.html" . }}
+            </nav>
+            
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,19 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>© {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.</p>
+            </div>
+            
+            {{ if .Site.Params.social }}
+            <div class="social-links">
+                {{ range .Site.Params.social }}
+                <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}">
+                    <i class="fab fa-{{ .icon }}"></i>
+                </a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</footer>

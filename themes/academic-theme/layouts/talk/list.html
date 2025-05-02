@@ -1,0 +1,44 @@
+{{/* list.html - For displaying multiple talks */}}
+{{ define "main" }}
+<section class="talks-list">
+  <div class="container">
+    <header class="section-header">
+      <h1>Talks</h1>
+    </header>
+    
+    {{ if .Pages }}
+    <div class="card-grid">
+      {{ range .Pages.ByDate.Reverse }}
+      <article class="card talk-card">
+        <a href="{{ .Permalink }}" class="card-link">
+          {{ with .Params.thumbnail }}
+          <div class="card-image">
+            <img class="card-thumb" src="{{ . }}" alt="{{ $.Title }} thumbnail">
+          </div>
+          {{ end }}
+          <div class="card-content">
+            <h2 class="card-title">{{ .Title }}</h2>
+            <div class="card-meta">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+              {{ with .Params.speaker }}
+              <span class="speaker">{{ . }}</span>
+              {{ end }}
+            </div>
+            {{ with .Params.summary }}
+            <p class="card-summary">{{ . }}</p>
+            {{ else }}
+            <p class="card-summary">{{ .Summary }}</p>
+            {{ end }}
+          </div>
+        </a>
+      </article>
+      {{ end }}
+    </div>
+    {{ else }}
+    <div class="no-content">
+      <p>No talks available at this time.</p>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,395 @@
+{{ define "main" }}
+
+
+
+
+
+<!-- Bio Section with improved layout and error handling -->
+{{ if .Site.Params.showBio }}
+<section class="bio-section" aria-labelledby="bio-heading">
+    <div class="container">
+        <div class="bio-content">
+            <div class="bio-image">
+                {{ if .Site.Params.profile.image }}
+                <img src="{{ .Site.Params.profile.image | absURL }}" alt="{{ .Site.Params.profile.name | default "Profile" }}">
+                {{ else }}
+                <div class="placeholder-image" aria-label="No profile image available">
+                    <i class="fa fa-user-circle"></i>
+                </div>
+                {{ end }}
+            </div>
+            <div class="bio-text">
+                <h2 id="bio-heading">{{ .Site.Params.profile.name | default "About Me" }}</h2>
+                {{ with .Site.Params.profile.position }}<p class="position">{{ . }}</p>{{ end }}
+                <div class="bio-description">
+                    {{ .Site.Params.profile.bio | default "No bio available." | markdownify }}
+                </div>
+                
+                <!-- Academic metrics counter section -->
+                {{ if .Site.Params.showStats }}
+                <div class="academic-metrics">
+                    {{ with .Site.Params.metrics.papers }}
+                    <div class="metric">
+                        <span class="metric-count">{{ . }}</span>
+                        <span class="metric-label">Publications</span>
+                    </div>
+                    {{ end }}
+                    {{ with .Site.Params.metrics.citations }}
+                    <div class="metric">
+                        <span class="metric-count">{{ . }}</span>
+                        <span class="metric-label">Citations</span>
+                    </div>
+                    {{ end }}
+                    {{ with .Site.Params.metrics.hIndex }}
+                    <div class="metric">
+                        <span class="metric-count">{{ . }}</span>
+                        <span class="metric-label">h-Index</span>
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+                
+                <!-- Social links section -->
+                {{ if .Site.Params.socialLinks }}
+                <div class="social-links">
+                    {{ range .Site.Params.socialLinks }}
+                    <a href="{{ .url }}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="{{ .name }}">
+                        <i class="fa {{ .icon }}"></i>
+                    </a>
+                    {{ end }}
+                </div>
+                {{ end }}
+                
+                <!-- Contact info section -->
+                {{ if .Site.Params.contactInfo }}
+                <div class="contact-info">
+                    {{ with .Site.Params.contactInfo.email }}
+                    <p><i class="fa fa-envelope"></i> <a href="mailto:{{ . }}">{{ . }}</a></p>
+                    {{ end }}
+                    {{ with .Site.Params.contactInfo.phone }}
+                    <p><i class="fa fa-phone"></i> {{ . }}</p>
+                    {{ end }}
+                    {{ with .Site.Params.contactInfo.address }}
+                    <p><i class="fa fa-map-marker"></i> {{ . }}</p>
+                    {{ end }}
+                    {{ with .Site.Params.contactInfo.office_hours }}
+                    <p><i class="fa fa-clock-o"></i> Office Hours: {{ . }}</p>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- News Section -->
+<section class="news-section" aria-labelledby="news-heading">
+    <div class="container">
+      <h2 id="news-heading" class="section-title">Latest News</h2>
+      <ul class="news-list">
+        {{ range sort (site.Data.news) "date" "desc" }}
+        <li class="news-item">
+          <span class="news-date">{{ .date | time.Format "Jan 02, 2006" }}</span>
+          <span class="news-title">{{ .title }}</span>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+  
+{{ end }}
+
+
+
+
+
+  
+
+
+<!-- Research Section with filtering -->
+{{ if .Site.Params.showResearch }}
+<section class="research-highlights" aria-labelledby="research-heading">
+    <div class="container">
+        <div class="section-header">
+            <h2 id="research-heading" class="section-title">Research Highlights</h2>
+            {{ if .Site.Params.research.subtitle }}
+                <p class="section-subtitle">{{ .Site.Params.research.subtitle }}</p>
+            {{ end }}
+        </div>
+        
+        <!-- Filtering options -->
+        {{ if .Site.Params.enableFiltering }}
+        <div class="filter-options">
+            <div class="filter-wrapper">
+                <label for="research-filter">Filter by area:</label>
+                <select id="research-filter" class="filter-select" aria-label="Filter research by category">
+                    <option value="">All Research Areas</option>
+                    {{ range $name, $taxonomy := .Site.Taxonomies.research_areas }}
+                    <option value="{{ $name | urlize }}">{{ $name | humanize }}</option>
+                    {{ end }}
+                </select>
+            </div>
+        </div>
+        {{ end }}
+        
+        <div class="research-grid" id="research-grid">
+            {{ $researchPages := where .Site.RegularPages "Type" "research" }}
+            {{ $featuredCount := default 3 .Site.Params.research.featured }}
+            
+            {{ if gt (len $researchPages) 0 }}
+                {{ range first $featuredCount $researchPages }}
+                <div class="research-item" data-categories="{{ with .Params.research_areas }}{{ delimit . " " }}{{ end }}">
+                    <div class="research-content">
+                        {{ with .Params.thumbnail }}
+                        <div class="research-thumbnail">
+                            <img src="{{ . | absURL }}" alt="Thumbnail for {{ $.Title }}">
+                        </div>
+                        {{ end }}
+                        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                        
+                        {{ with .Params.research_areas }}
+                        <div class="research-areas">
+                            {{ range . }}
+                            <span class="research-area">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                        
+                        <p class="research-summary">{{ .Summary }}</p>
+                        <a href="{{ .Permalink }}" class="read-more" aria-label="Read more about {{ .Title }}">Read more</a>
+                    </div>
+                </div>
+                {{ end }}
+            {{ else }}
+                <p class="no-content">No research articles available.</p>
+            {{ end }}
+        </div>
+        
+        {{ if gt (len $researchPages) $featuredCount }}
+        <div class="section-footer">
+            <a href="{{ "research" | absURL }}" class="btn btn-outline">View All Research</a>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+
+<!-- Publications Section with search -->
+{{ if .Site.Params.showPublications }}
+<section class="recent-publications" aria-labelledby="publications-heading">
+    <div class="container">
+        <div class="section-header">
+            <h2 id="publications-heading" class="section-title">Recent Publications</h2>
+            {{ if .Site.Params.publications.subtitle }}
+                <p class="section-subtitle">{{ .Site.Params.publications.subtitle }}</p>
+            {{ end }}
+        </div>
+        
+        <!-- Search bar for publications -->
+        {{ if .Site.Params.enableSearch }}
+        <div class="search-container">
+            <div class="search-bar">
+                <i class="fa fa-search search-icon"></i>
+                <input type="text" id="publication-search" placeholder="Search publications..." aria-label="Search publications">
+                <button id="clear-search" class="clear-search" aria-label="Clear search"><i class="fa fa-times"></i></button>
+            </div>
+        </div>
+        {{ end }}
+        
+        <div class="publications-list" id="publications-list">
+            {{ $publicationPages := where .Site.RegularPages "Type" "publications" }}
+            {{ $displayCount := default 5 .Site.Params.publications.perPage }}
+            
+            {{ if gt (len $publicationPages) 0 }}
+                {{ range first $displayCount (sort $publicationPages "Date" "desc") }}
+                <div class="publication-item">
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    <p class="publication-meta">
+                        {{ with .Params.authors }}{{ . }}{{ else }}Unknown Authors{{ end }} 
+                        ({{ .Date.Format "2006" }})
+                    </p>
+                    {{ with .Params.journal }}<p class="publication-journal">{{ . }}</p>{{ end }}
+                    {{ with .Params.doi }}<p class="publication-doi">DOI: <a href="https://doi.org/{{ . }}" target="_blank">{{ . }}</a></p>{{ end }}
+                    
+                    <div class="publication-actions">
+                        {{ with .Params.pdf }}
+                        <a href="{{ . | absURL }}" class="btn btn-sm" target="_blank" rel="noopener">
+                            <i class="fa fa-file-pdf-o"></i> PDF
+                        </a>
+                        {{ end }}
+                        {{ with .Params.code }}
+                        <a href="{{ . }}" class="btn btn-sm" target="_blank" rel="noopener">
+                            <i class="fa fa-code"></i> Code
+                        </a>
+                        {{ end }}
+                        {{ with .Params.slides }}
+                        <a href="{{ . | absURL }}" class="btn btn-sm" target="_blank" rel="noopener">
+                            <i class="fa fa-desktop"></i> Slides
+                        </a>
+                        {{ end }}
+                    </div>
+                    
+                    <!-- Tags/categories -->
+                    {{ with .Params.tags }}
+                    <div class="tags">
+                        {{ range . }}
+                        <span class="tag">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+            {{ else }}
+                <p class="no-content">No publications available.</p>
+            {{ end }}
+        </div>
+        
+        {{ if gt (len $publicationPages) $displayCount }}
+        <div class="section-footer">
+            <a href="{{ "publications" | absURL }}" class="btn btn-outline">View All Publications</a>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+
+<!-- Upcoming events/announcements section -->
+{{ if .Site.Params.showAnnouncements }}
+<section class="announcements" aria-labelledby="announcements-heading">
+    <div class="container">
+        <h2 id="announcements-heading" class="section-title">Announcements & Events</h2>
+        
+        <div class="announcements-list">
+            {{ $announcementPages := where .Site.RegularPages "Type" "announcements" }}
+            {{ if gt (len $announcementPages) 0 }}
+                {{ range first 3 (where $announcementPages "Date" "ge" now) }}
+                <div class="announcement-item">
+                    <div class="announcement-date">
+                        <span class="day">{{ .Date.Format "02" }}</span>
+                        <span class="month">{{ .Date.Format "Jan" }}</span>
+                    </div>
+                    <div class="announcement-content">
+                        <h3>{{ .Title }}</h3>
+                        <p>{{ .Summary }}</p>
+                        {{ if .Params.location }}
+                        <p class="announcement-location"><i class="fa fa-map-marker"></i> {{ .Params.location }}</p>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            {{ else }}
+                <p class="no-content">No upcoming events.</p>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+
+<!-- JavaScript for interactive features -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Publication search functionality
+    const searchInput = document.getElementById('publication-search');
+    const clearSearch = document.getElementById('clear-search');
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const publications = document.querySelectorAll('.publication-item');
+            let resultsFound = false;
+            
+            publications.forEach(function(pub) {
+                const title = pub.querySelector('h3').textContent.toLowerCase();
+                const meta = pub.querySelector('.publication-meta').textContent.toLowerCase();
+                const journal = pub.querySelector('.publication-journal') ? 
+                                pub.querySelector('.publication-journal').textContent.toLowerCase() : '';
+                const tags = pub.querySelectorAll('.tag');
+                
+                let tagMatch = false;
+                tags.forEach(function(tag) {
+                    if (tag.textContent.toLowerCase().includes(searchTerm)) {
+                        tagMatch = true;
+                    }
+                });
+                
+                if (title.includes(searchTerm) || meta.includes(searchTerm) || 
+                    journal.includes(searchTerm) || tagMatch) {
+                    pub.style.display = '';
+                    resultsFound = true;
+                } else {
+                    pub.style.display = 'none';
+                }
+            });
+            
+            // Show no results message
+            const noResults = document.getElementById('no-results');
+            if (!resultsFound && searchTerm !== '') {
+                if (!noResults) {
+                    const message = document.createElement('p');
+                    message.id = 'no-results';
+                    message.className = 'no-results';
+                    message.textContent = 'No publications match your search.';
+                    document.getElementById('publications-list').appendChild(message);
+                }
+            } else if (noResults) {
+                noResults.remove();
+            }
+            
+            // Show/hide clear button
+            if (searchTerm !== '') {
+                clearSearch.style.display = 'block';
+            } else {
+                clearSearch.style.display = 'none';
+            }
+        });
+        
+        // Clear search button
+        if (clearSearch) {
+            clearSearch.addEventListener('click', function() {
+                searchInput.value = '';
+                searchInput.dispatchEvent(new Event('input'));
+                this.style.display = 'none';
+            });
+        }
+    }
+    
+    // Research filtering functionality
+    const filterSelect = document.getElementById('research-filter');
+    if (filterSelect) {
+        filterSelect.addEventListener('change', function() {
+            const category = this.value.toLowerCase();
+            const researchItems = document.querySelectorAll('.research-item');
+            let itemsVisible = false;
+            
+            researchItems.forEach(function(item) {
+                const itemCategories = item.dataset.categories ? item.dataset.categories.toLowerCase() : '';
+                
+                if (category === '' || itemCategories.includes(category)) {
+                    item.style.display = '';
+                    itemsVisible = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Show no results message
+            const noResultsEl = document.getElementById('no-filter-results');
+            if (!itemsVisible && category !== '') {
+                if (!noResultsEl) {
+                    const message = document.createElement('p');
+                    message.id = 'no-filter-results';
+                    message.className = 'no-results';
+                    message.textContent = 'No research projects match this filter.';
+                    document.getElementById('research-grid').appendChild(message);
+                }
+            } else if (noResultsEl) {
+                noResultsEl.remove();
+            }
+        });
+    }
+});
+</script>
+{{ end }}

@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="single-article">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.thumbnail }}
+    <img class="article-thumbnail" src="{{ . }}" alt="{{ $.Title }}">
+    {{ end }}
+    <p class="meta">🗓️ {{ .Date.Format "January 2, 2006" }}</p>
+    {{ with .Params.author }}<p class="meta">✍️ {{ . }}</p>{{ end }}
+    <div class="content-body">{{ .Content }}</div>
+  </div>
+</article>
+{{ end }}

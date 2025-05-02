@@ -1,0 +1,61 @@
+{{ define "main" }}
+<div class="course-single">
+    <div class="course-header">
+        <h1>{{ .Title }}</h1>
+        
+        <div class="course-meta">
+            {{ if .Params.course_code }}
+            <div class="meta-item">
+                <span class="meta-label">Course Code:</span>
+                <span class="meta-value">{{ .Params.course_code }}</span>
+            </div>
+            {{ end }}
+            
+            {{ if and .Params.semester .Params.year }}
+            <div class="meta-item">
+                <span class="meta-label">Term:</span>
+                <span class="meta-value">{{ .Params.semester }} {{ .Params.year }}</span>
+            </div>
+            {{ end }}
+            
+            {{ if .Params.level }}
+            <div class="meta-item">
+                <span class="meta-label">Level:</span>
+                <span class="meta-value">{{ .Params.level }}</span>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+    
+    {{ if .Params.image }}
+    <div class="featured-image">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+    </div>
+    {{ end }}
+    
+    <div class="summary-box">
+        <h3>Course Summary</h3>
+        <p>{{ .Params.summary }}</p>
+    </div>
+    
+    <div class="course-content">
+        {{ .Content }}
+    </div>
+    
+    <div class="course-navigation">
+        {{ with .PrevInSection }}
+        <a class="prev-link" href="{{ .RelPermalink }}">
+            <span class="nav-label">Previous Course</span>
+            <span class="nav-title">{{ .Title }}</span>
+        </a>
+        {{ end }}
+        
+        {{ with .NextInSection }}
+        <a class="next-link" href="{{ .RelPermalink }}">
+            <span class="nav-label">Next Course</span>
+            <span class="nav-title">{{ .Title }}</span>
+        </a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

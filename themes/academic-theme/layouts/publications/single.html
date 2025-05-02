@@ -1,0 +1,254 @@
+{{ define "main" }}
+<article class="publication-single">
+    <div class="container">
+        <header class="publication-header">
+            <h1>{{ .Title }}</h1>
+            <div class="publication-meta">
+                <p class="authors">{{ .Params.authors }}</p>
+                <p class="journal">
+                    <em>{{ .Params.journal }}</em>, {{ .Date.Format "2006" }}
+                    {{ with .Params.volume }}, {{ . }}{{ end }}
+                    {{ with .Params.issue }}({{ . }}){{ end }}
+                    {{ with .Params.pages }}: {{ . }}{{ end }}
+                </p>
+                <div class="publication-links">
+                    {{ with .Params.doi }}
+                    <a href="https://doi.org/{{ . }}" class="btn btn-sm" target="_blank" rel="noopener">
+                        <i class="fas fa-link"></i> DOI
+                    </a>
+                    {{ end }}
+                    {{ with .Params.pdf }}
+                    <a href="{{ . | absURL }}" class="btn btn-sm" target="_blank" rel="noopener">
+                        <i class="fas fa-file-pdf"></i> PDF
+                    </a>
+                    {{ end }}
+                    {{ with .Params.code }}
+                    <a href="{{ . | absURL }}" class="btn btn-sm" target="_blank" rel="noopener">
+                        <i class="fas fa-code"></i> Code
+                    </a>
+                    {{ end }}
+                    {{ with .Params.slides }}
+                    <a href="{{ . | absURL }}" class="btn btn-sm" target="_blank" rel="noopener">
+                        <i class="fas fa-file-powerpoint"></i> Slides
+                    </a>
+                    {{ end }}
+                    {{ with .Params.poster }}
+                    <a href="{{ . | absURL }}" class="btn btn-sm" target="_blank" rel="noopener">
+                        <i class="fas fa-image"></i> Poster
+                    </a>
+                    {{ end }}
+
+                </div>
+            </div>
+        </header>
+        
+        <section class="publication-abstract">
+            <h2>Abstract</h2>
+            <div class="content">
+                {{ .Params.abstract | markdownify }}
+            </div>
+        </section>
+        
+        <section class="publication-content">
+            {{ .Content }}
+        </section>
+        
+        {{ if or .Params.citation .Params.bibtex }}
+        <section class="publication-citation">
+            <h2>Citation</h2>
+            <div class="citation-box">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="plain">Plain Text</button>
+                    <button class="tab-btn" data-tab="bibtex">BibTeX</button>
+                </div>
+                <div class="tab-content">
+                <div class="tab-pane active" id="plain">
+                        <div class="citation-content">
+                            <pre>{{ .Params.citation }}</pre>
+                            <button class="copy-btn" data-clipboard-text="{{ .Params.citation }}">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="bibtex">
+                        <div class="citation-content">
+                            <pre>{{ .Params.bibtex }}</pre>
+                            <button class="copy-btn" data-clipboard-text="{{ .Params.bibtex }}">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{ end }}
+        
+        {{ if .Params.references }}
+        <section class="publication-references">
+            <h2>References</h2>
+            <div class="references-list">
+                {{ .Params.references | markdownify }}
+            </div>
+        </section>
+        {{ end }}
+        
+        <div class="publication-footer">
+            <a href="{{ "publications" | absURL }}" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> Back to Publications
+            </a>
+        </div>
+    </div>
+</article>
+
+<!-- Citation Modal -->
+<div class="modal fade" id="citeModal" tabindex="-1" role="dialog" aria-labelledby="citeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="citeModalLabel">Citation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="modal-plain">Plain Text</button>
+                    <button class="tab-btn" data-tab="modal-bibtex">BibTeX</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="modal-plain">
+                        <div class="citation-content">
+                            <pre>{{ .Params.citation }}</pre>
+                            <button class="copy-btn" data-clipboard-text="{{ .Params.citation }}">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="modal-bibtex">
+                        <div class="citation-content">
+                            <pre>{{ .Params.bibtex }}</pre>
+                            <button class="copy-btn" data-clipboard-text="{{ .Params.bibtex }}">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize clipboard functionality
+    initializeClipboard();
+    
+    // Tab functionality
+    initializeTabs();
+    
+    // Initialize modal
+    initializeModal();
+});
+
+function initializeClipboard() {
+    const clipboard = new ClipboardJS('.copy-btn');
+    
+    clipboard.on('success', function(e) {
+        const button = e.trigger;
+        const originalHTML = button.innerHTML;
+        
+        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        
+        setTimeout(function() {
+            button.innerHTML = originalHTML;
+        }, 2000);
+        
+        e.clearSelection();
+    });
+    
+    clipboard.on('error', function(e) {
+        const button = e.trigger;
+        button.innerHTML = '<i class="fas fa-times"></i> Failed!';
+        
+        setTimeout(function() {
+            button.innerHTML = '<i class="fas fa-copy"></i> Copy';
+        }, 2000);
+    });
+}
+
+function initializeTabs() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            // Get the parent tabs container
+            const tabsContainer = this.closest('.tabs').parentElement;
+            
+            // Remove active class from all buttons in this container
+            tabsContainer.querySelectorAll('.tab-btn').forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Get the tab to show
+            const tabToShow = this.getAttribute('data-tab');
+            
+            // Hide all tab panes in this container
+            tabsContainer.querySelectorAll('.tab-pane').forEach(function(pane) {
+                pane.classList.remove('active');
+            });
+            
+            // Show the selected tab pane
+            tabsContainer.querySelector('#' + tabToShow).classList.add('active');
+        });
+    });
+}
+
+function initializeModal() {
+    // Open modal
+    const citeBtns = document.querySelectorAll('.cite-btn');
+    const modal = document.getElementById('citeModal');
+    
+    citeBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    // Close modal on clicking close button or outside
+    const closeButtons = document.querySelectorAll('[data-dismiss="modal"]');
+    closeButtons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Prevent propagation from modal content
+    const modalContent = modal.querySelector('.modal-content');
+    if (modalContent) {
+        modalContent.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    }
+}
+</script>
+{{ end }}

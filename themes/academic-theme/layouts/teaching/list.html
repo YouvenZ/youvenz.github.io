@@ -1,0 +1,108 @@
+{{ define "main" }}
+<div class="teaching-container">
+    <div class="page-header">
+        <h1>{{ .Title }}</h1>
+        <div class="page-description">{{ .Content }}</div>
+    </div>
+    
+    {{ $currentYear := now.Format "2006" | int }}
+    {{ $years := slice }}
+    {{ range .Pages }}
+        {{ $years = $years | append (int .Params.year) }}
+    {{ end }}
+    {{ $years = uniq $years }}
+    {{ $years = sort $years "value" "desc" }}
+    
+    <div class="teaching-timeline">
+        {{ range $years }}
+            {{ $year := . }}
+            <div class="year-section">
+                <h2>{{ $year }}</h2>
+                
+                <div class="semester-container">
+                    <!-- Fall Semester -->
+                    {{ $fallCourses := where $.Pages ".Params.year" (string $year) }}
+                    {{ $fallCourses = where $fallCourses ".Params.semester" "Fall" }}
+                    {{ if $fallCourses }}
+                    <div class="semester-section">
+                        <h3>Fall {{ $year }}</h3>
+                        <div class="courses-grid">
+                            {{ range $fallCourses }}
+                                <div class="course-card">
+                                    {{ if .Params.image }}
+                                    <div class="course-image">
+                                        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                                    </div>
+                                    {{ end }}
+                                    <div class="course-content">
+                                        <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+                                        <div class="course-code">{{ .Params.course_code }}</div>
+                                        <div class="course-level">{{ .Params.level }}</div>
+                                        <div class="course-summary">{{ .Params.summary }}</div>
+                                        <a href="{{ .RelPermalink }}" class="read-more">Course details</a>
+                                    </div>
+                                </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                    
+                    <!-- Spring Semester -->
+                    {{ $springCourses := where $.Pages ".Params.year" (string $year) }}
+                    {{ $springCourses = where $springCourses ".Params.semester" "Spring" }}
+                    {{ if $springCourses }}
+                    <div class="semester-section">
+                        <h3>Spring {{ $year }}</h3>
+                        <div class="courses-grid">
+                            {{ range $springCourses }}
+                                <div class="course-card">
+                                    {{ if .Params.image }}
+                                    <div class="course-image">
+                                        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                                    </div>
+                                    {{ end }}
+                                    <div class="course-content">
+                                        <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+                                        <div class="course-code">{{ .Params.course_code }}</div>
+                                        <div class="course-level">{{ .Params.level }}</div>
+                                        <div class="course-summary">{{ .Params.summary }}</div>
+                                        <a href="{{ .RelPermalink }}" class="read-more">Course details</a>
+                                    </div>
+                                </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                    
+                    <!-- Summer Semester -->
+                    {{ $summerCourses := where $.Pages ".Params.year" (string $year) }}
+                    {{ $summerCourses = where $summerCourses ".Params.semester" "Summer" }}
+                    {{ if $summerCourses }}
+                    <div class="semester-section">
+                        <h3>Summer {{ $year }}</h3>
+                        <div class="courses-grid">
+                            {{ range $summerCourses }}
+                                <div class="course-card">
+                                    {{ if .Params.image }}
+                                    <div class="course-image">
+                                        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                                    </div>
+                                    {{ end }}
+                                    <div class="course-content">
+                                        <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+                                        <div class="course-code">{{ .Params.course_code }}</div>
+                                        <div class="course-level">{{ .Params.level }}</div>
+                                        <div class="course-summary">{{ .Params.summary }}</div>
+                                        <a href="{{ .RelPermalink }}" class="read-more">Course details</a>
+                                    </div>
+                                </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

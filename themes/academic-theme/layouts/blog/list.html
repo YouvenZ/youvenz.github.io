@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section class="list-section">
+  <div class="container">
+    <h1>Blog Posts</h1>
+    <div class="card-grid">
+      {{ range .Pages.ByDate.Reverse }}
+      <article class="card">
+        {{ with .Params.thumbnail }}
+        <img class="card-thumb" src="{{ . }}" alt="{{ $.Title }}">
+        {{ end }}
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <p class="meta">{{ .Date.Format "Jan 2, 2006" }} · {{ .Params.author }}</p>
+        <p>{{ .Params.summary }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

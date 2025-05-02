@@ -1,0 +1,113 @@
+baseURL: "https://YouvenZ.github.io/"
+languageCode: "en-us"
+title: "Rachid. Zeghlache"
+theme: "academic-theme"
+
+enableEmoji: true
+
+pygmentsCodeFences: true
+pygmentsStyle: "monokai"
+
+params:
+  description: "Academic website of Dr. Jane Smith, Associate Professor of Computer Science"
+  
+  profile:
+    name: "Dr. Jane Smith"
+    position: "Associate Professor of Computer Science"
+    image: "images/image.jpg"
+    bio: "I am an Associate Professor of Computer Science with research interests in machine learning, artificial intelligence, and computational biology."
+  
+  hero:
+    title: "Dr. Jane Smith"
+    text: "Associate Professor of Computer Science\n\nResearching the intersections of machine learning and computational biology."
+    buttons:
+      - text: "Research"
+        url: "/research/"
+        class: "btn"
+      - text: "Publications"
+        url: "/publications/"
+        class: "btn btn-outline"
+
+  social:
+    - name: "Twitter"
+      icon: "twitter"
+      url: "https://twitter.com/"
+    - name: "LinkedIn"
+      icon: "linkedin"
+      url: "https://linkedin.com/in/"
+    - name: "GitHub"
+      icon: "github"
+      url: "https://github.com/"
+    - name: "Google Scholar"
+      icon: "google"
+      url: "https://scholar.google.com/"
+
+  showBio: true
+  showResearch: true
+  showPublications: true
+  showNews: true
+  enableSearch: true
+  enableFiltering: true
+  showStats: true
+  
+  # Academic metrics
+  metrics:
+    hIndex: 24
+    citations: 1850
+    papers: 42
+
+  googleAnalytics: "UA-XXXXXXXXX-X"
+  math: true
+  copyright: "© 2024 Dr. Jane Smith. All rights reserved."
+  customCSS: []
+  customJS: []
+
+  footer:
+    text: "Built with [Hugo](https://gohugo.io/) and the Academic Theme."
+
+  # defaults:
+  #   image: "images/image.jpg"
+
+  publications:
+    title: "My Publications"
+    subtitle: "Published research works and academic papers"
+
+  research:
+    title: "Research Projects"
+    subtitle: "Current and past research initiatives"
+
+  teaching:
+    title: "Teaching"
+    subtitle: "Courses and educational materials"
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "Research"
+      url: "/research/"
+      weight: 2
+    - name: "Publications"
+      url: "/publications/"
+      weight: 3
+    - name: "Teaching"
+      url: "/teaching/"
+      weight: 4
+    - name: "CV"
+      url: "/cv/"
+      weight: 5
+    # - name: "Blog"
+    #   url: "/blog/"
+    #   weight: 6
+    - name: "Talk"
+      url: "/talk/"
+      weight: 7
+    - name: "Contact"
+      url: "/contact/"
+      weight: 8
+
+taxonomies:
+  tag: "tags"
+  category: "categories"
+  author: "authors"
