@@ -1,76 +1,142 @@
 ---
 title: "Curriculum Vitae"
-description: "My academic and professional background"
-layout: "cv"  # Uses the custom cv.html layout
-cv_pdf: "files/jane-smith-cv.pdf"  # Link to downloadable PDF
+description: "Academic and professional background of Rachid Youven Zeghlache"
+layout: "cv"
+cv_pdf: "files/Academic_CV_updated.pdf"
 
 education:
-  - degree: "Ph.D. in Computer Science"
-    institution: "Stanford University"
-    years: "2012-2016"
-    description: "Thesis: Advanced Machine Learning Techniques for Biological Data Analysis"
-  
-  - degree: "M.S. in Computer Science"
-    institution: "Massachusetts Institute of Technology"
-    years: "2010-2012"
-    
-  - degree: "B.S. in Computer Science"
-    institution: "University of California, Berkeley"
-    years: "2006-2010"
+  - degree: "Ph.D. in Medical Image Analysis"
+    institution: "University of Western Brittany"
+    years: "2021–2024"
+
+  - degree: "M.Sc. in Images and Signals for Medicine"
+    institution: "UPEC (Université Paris-Est Créteil)"
+    years: "2020–2021"
+
+  - degree: "Engineering Degree in Computer Science for Health"
+    institution: "EPISEN"
+    years: "2017–2020"
 
 experience:
-  - position: "Associate Professor"
-    institution: "University of Example"
-    years: "2020-Present"
-    description: "Teaching graduate and undergraduate courses in machine learning and computational biology. Leading a research group focused on AI applications in biology."
-    
-  - position: "Assistant Professor"
-    institution: "University of Example"
-    years: "2016-2020"
-    description: "Established a new research lab focused on computational biology. Secured over $1.5M in research funding."
-    
+  - position: "Research Engineer"
+    institution: "IMTA, France"
+    years: "2025–Present"
+    description: "Image falsification detection and classification using explainable AI."
+
+  - position: "Ph.D. Researcher"
+    institution: "LATIM, France"
+    years: "2021–2024"
+    description: "Thesis: Longitudinal follow-up and multi-modal analysis for prediction of diabetic retinopathy progression using deep learning."
+
   - position: "Research Intern"
-    institution: "Google Research"
-    years: "2015"
-    description: "Worked on deep learning algorithms for large-scale genomic data analysis."
+    institution: "Lissi-UPEC, France"
+    years: "2020-10 – 2021-02"
+    description: "Driver attention level classification using multimodality and deep learning."
+
+  - position: "Research Intern"
+    institution: "CHU-Henri Mondor, France"
+    years: "2020-03 – 2020-09"
+    description: "Cancerous anomaly segmentation and detection on FDG-PET scans using a Bayesian framework."
+
+  - position: "Research Intern"
+    institution: "DKFZ, Germany"
+    years: "2019-04 – 2019-09"
+    description: "Deep learning in computer vision for head and neck bone segmentation in CT scans."
+
+teaching:
+  - position: "Lecturer"
+    institution: "OPEN campus"
+    years: "2024–2025"
+    description: "Courses on AI, machine learning, and predictive maintenance."
+
+  - position: "Lecture Assistant"
+    institution: "University of Western Brittany"
+    years: "2023–2024"
+    description: "Intro to programming and computer science."
+
+  - position: "Lecture Assistant"
+    institution: "IMT Atlantique"
+    years: "2023–2024"
+    description: "Virtual patient deep learning and computer vision courses."
+
+  - position: "Lecturer"
+    institution: "EPISEN"
+    years: "2020–2021"
+    description: "Introduction to machine learning and computer science for health."
 
 selected_publications:
-  - "Smith, J., Johnson, R., & Williams, T. (2024). A Machine Learning Approach to Computational Biology Problems. Journal of Computational Biology, 31(2), 157-172."
-  - "Smith, J., & Davis, K. (2023). Transfer Learning for Protein Structure Prediction. Nature Machine Intelligence, 5(3), 145-152."
-  - "Garcia, A., Smith, J., & Li, W. (2022). Deep Neural Networks for Genomic Data Analysis. Bioinformatics, 38(4), 1089-1097."
+  - "Zeghlache, R., et al. (2025). L-MAE: Longitudinal masked auto-encoder for diabetic retinopathy progression prediction. *Computers in Biology and Medicine*, 185, 109508."
+  - "Zeghlache, R., et al. (2024). LATIM: Longitudinal representation learning for disease progression. *MICCAI*."
+  - "Zeghlache, R., et al. (2023). Longitudinal self-supervised learning using neural ODEs. *PRedictive Intelligence In MEdicine*."
+  - "Zeghlache, R., et al. (2023). LMT: Longitudinal mixing training from a single image. *Machine Learning in Medical Imaging*."
+  - "Zeghlache, R., et al. (2022). Detection of diabetic retinopathy using longitudinal SSL. *Ophthalmic Medical Image Analysis*."
 
-awards:
-  - title: "Outstanding Young Researcher Award"
-    organization: "International Society for Computational Biology"
-    year: "2022"
-    
-  - title: "Best Paper Award"
-    organization: "International Conference on Machine Learning"
-    year: "2021"
-    
-  - title: "Faculty Early Career Development (CAREER) Award"
-    organization: "National Science Foundation"
-    year: "2018"
-    description: "$500,000 grant for research on machine learning methods for biological discovery."
+
+
+# conferences:
+#   - "Zeghlache, R., et al. (2024). LATIM: Longitudinal representation learning for disease progression. *MICCAI*."
+#   - "Zeghlache, R., et al. (2023). Longitudinal self-supervised learning using neural ODEs. *PRedictive Intelligence In MEdicine*."
+#   - "Zeghlache, R., et al. (2023). LMT: Longitudinal mixing training from a single image. *Machine Learning in Medical Imaging*."
+#   - "Zeghlache, R., et al. (2022). Detection of diabetic retinopathy using longitudinal SSL. *Ophthalmic Medical Image Analysis*."
+
+# patents:
+#   - "Zeghlache, R., et al. (2023). Method and apparatus for predicting progression of a pathology. Patent No: EP23306730.5."
 
 skills:
-  - category: "Programming Languages"
-    items: ["Python", "R", "Java", "C++", "JavaScript"]
+  - category: "Languages"
+    items: ["French (native)", "English (advanced)"]
+
+  - category: "Technical"
+    items: ["Signal Processing", "Medical Imaging", "Image Processing", "Machine Learning", "Computer Vision"]
+
+  - category: "Programming"
+    items: ["Python (proficient)", "R", "Java", "C/C++", "C#", "Matlab", "LaTeX"]
+
+  - category: "Tools"
+    items: ["LaTeX", "Markdown", "Pandoc", "GitHub"]
+
+awards:
+  - title: "Best thesis (second price $500)"
+    organization: "UBO"
+    year: "2025"
     
-  - category: "Machine Learning"
-    items: ["Deep Learning", "Reinforcement Learning", "Natural Language Processing", "Computer Vision"]
+
     
-  - category: "Computational Biology"
-    items: ["Sequence Analysis", "Protein Structure Prediction", "Genomics", "Phylogenetics"]
+  - title: "Award for conference participation"
+    organization: "UBO"
+    year: "2024"
+    description: "$500 grant for research on machine learning methods discovery."
+
+
+  - title: "Award for conference participation"
+    organization: "IBSAM"
+    year: "2024"
+    description: "$500 grant for research on machine learning methods for biological discovery."
+
+
+  - title: "Best poster presentation Award"
+    organization: "OMIA-MICCAI"
+    year: "2021"
+
+skills:
+  - category: "Languages"
+    items: ["French (native)", "English (advanced)", "German (basics)"]
+
+  - category: "Technical"
+    items: ["Signal Processing", "Medical Imaging", "Image Processing", "Machine Learning", "Computer Vision"]
+
+  - category: "Programming"
+    items: ["Python (proficient)", "R", "Java", "C/C++", "C#", "Matlab", "LaTeX"]
+
+  - category: "Tools"
+    items: ["LaTeX", "Markdown", "Pandoc", "GitHub"]
 ---
 
-## Professional Memberships
-
-- Association for Computing Machinery (ACM)
-- Institute of Electrical and Electronics Engineers (IEEE)
-- International Society for Computational Biology (ISCB)
 
 ## Editorial Boards
 
-- Associate Editor, Journal of Machine Learning Research (2022-Present)
-- Editorial Board Member, Bioinformatics (2021-Present)
+  - Reviewer, IEEE Transactions on Medical Imaging
+-  Reviewer, Scientific Reports
+  - Reviewer, Computers in Biology and Medicine
+  - MICCAI, CLINICAI, MICCAI Challenge
+  - ISBI

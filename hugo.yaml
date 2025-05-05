@@ -9,17 +9,17 @@ pygmentsCodeFences: true
 pygmentsStyle: "monokai"
 
 params:
-  description: "Academic website of Dr. Jane Smith, Associate Professor of Computer Science"
+  description: "Academic website of Rachid (Youven) Zeghlache, Post-doc at IMT Atlantique, France. Researching in the field of machine learning and its applications."
   
   profile:
-    name: "Dr. Jane Smith"
-    position: "Associate Professor of Computer Science"
-    image: "images/image.jpg"
-    bio: "I am an Associate Professor of Computer Science with research interests in machine learning, artificial intelligence, and computational biology."
+    name: " Rachid (Youven) Zeghlache"
+    position: " Post-doc at IMT Atlantique"
+    image: "images/pp_circle.png"
+    bio: " Post-doc at IMT Atlantique, France. Researching in the field of machine learning and its applications."
   
   hero:
-    title: "Dr. Jane Smith"
-    text: "Associate Professor of Computer Science\n\nResearching the intersections of machine learning and computational biology."
+    title: "Welcome to My Academic Website"
+    text: " I am Rachid (Youven) Zeghlache, a researcher in machine learning and its applications to disease progression in medecine."
     buttons:
       - text: "Research"
         url: "/research/"
@@ -52,18 +52,18 @@ params:
   
   # Academic metrics
   metrics:
-    hIndex: 24
-    citations: 1850
-    papers: 42
+    hIndex: 5
+    citations: 120
+    papers: 11
 
   googleAnalytics: "UA-XXXXXXXXX-X"
   math: true
-  copyright: "© 2024 Dr. Jane Smith. All rights reserved."
+  copyright: ""
   customCSS: []
   customJS: []
 
   footer:
-    text: "Built with [Hugo](https://gohugo.io/) and the Academic Theme."
+    text: ""
 
   # defaults:
   #   image: "images/image.jpg"
