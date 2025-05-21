@@ -1,4 +1,101 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Publications on Rachid. Zeghlache</title><link>https://youvenz.github.io/publications/</link><description>Recent content in Publications on Rachid. Zeghlache</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 15 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://youvenz.github.io/publications/index.xml" rel="self" type="application/rss+xml"/><item><title>A Machine Learning Approach to Computational Biology Problems</title><link>https://youvenz.github.io/publications/publication/</link><pubDate>Thu, 15 Feb 2024 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/publication/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>Recent advances in deep learning have transformed many fields, including computational biology. In particular, protein structure prediction has been a long-standing challenge that has seen remarkable progress through the application of machine learning techniques.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Publications on Rachid. Zeghlache</title><link>https://youvenz.github.io/publications/</link><description>Recent content in Publications on Rachid. Zeghlache</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://youvenz.github.io/publications/index.xml" rel="self" type="application/rss+xml"/><item><title>Automated classification of tertiary lymphoid structures in colorectal cancer using TLS-PAT artificial intelligence tool</title><link>https://youvenz.github.io/publications/le2025automated/</link><pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/le2025automated/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;h2 id="methods">Methods&lt;/h2>
-&lt;p>In our study, we developed a novel neural network architecture that combines convolutional layers with attention mechanisms to better capture the spatial relationships between amino acids. The model was trained on a dataset of 50,000 known protein structures from the Protein Data Bank.&lt;/p></description></item></channel></rss>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>Automated Multimodal Severity Assessment of Diabetic Retinopathy Using Ultra-Widefield Color Fundus Photography and Clinical Tabular Data</title><link>https://youvenz.github.io/publications/rezaei5143621automated/</link><pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/rezaei5143621automated/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>L-MAE: Longitudinal masked auto-encoder with time and severity-aware encoding for diabetic retinopathy progression prediction</title><link>https://youvenz.github.io/publications/zeghlache2025mae/</link><pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/zeghlache2025mae/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>A review of deep learning-based information fusion techniques for multimodal medical image classification</title><link>https://youvenz.github.io/publications/li2024review/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/li2024review/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>AB0800 DIAGNOSING SJOGREN’S SYNDROME: A MULTI-MODAL DEEP LEARNING APPROACH WITH HISTOPATHOLOGIC IMAGES AND CLINICAL DATA</title><link>https://youvenz.github.io/publications/brahim2024ab0800/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/brahim2024ab0800/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>Cross-Device AI Fusion: Enhancing Diabetic Retinopathy Diagnosis with Combined Clarus and Optos Images</title><link>https://youvenz.github.io/publications/daho2024cross/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/daho2024cross/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>DISCOVER: 2-D multiview summarization of Optical Coherence Tomography Angiography for automatic diabetic retinopathy diagnosis</title><link>https://youvenz.github.io/publications/daho2024discover/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/daho2024discover/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>LaTiM: Longitudinal representation learning in continuous-time models to predict disease progression</title><link>https://youvenz.github.io/publications/zeghlache2024latim/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/zeghlache2024latim/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>Longitudinal and multi-modal monitoring for the detection of diabetic retinopathy using deep learning</title><link>https://youvenz.github.io/publications/zeghlache2024longitudinal/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/zeghlache2024longitudinal/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>Sjögren's Syndrome Diagnosis Using Dry Eye Clinical Data using Deep Learning</title><link>https://youvenz.github.io/publications/lamard2024sjogren/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/lamard2024sjogren/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>3-D analysis of multiple OCTA acquisitions for the automatic diagnosis of diabetic retinopathy</title><link>https://youvenz.github.io/publications/li20233/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/li20233/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>Hybrid fusion of high-resolution and ultra-widefield OCTA acquisitions for the automatic diagnosis of diabetic retinopathy</title><link>https://youvenz.github.io/publications/li2023hybrid/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/li2023hybrid/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>Improved automatic diabetic retinopathy severity classification using deep multimodal fusion of UWF-CFP and OCTA images</title><link>https://youvenz.github.io/publications/el2023improved/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/el2023improved/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>Lmt: Longitudinal mixing training, a framework to predict disease progression from a single image</title><link>https://youvenz.github.io/publications/zeghlache2023lmt/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/zeghlache2023lmt/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>Longitudinal self-supervised learning using neural ordinary differential equation</title><link>https://youvenz.github.io/publications/zeghlache2023longitudinal/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/zeghlache2023longitudinal/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>Performance of two ultra-widefield retinal imaging systems for the automatic diagnosis of diabetic retinopathy</title><link>https://youvenz.github.io/publications/daho2023performance/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/daho2023performance/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>Time-aware deep models for predicting diabetic retinopathy progression</title><link>https://youvenz.github.io/publications/zeghlache2023time/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/zeghlache2023time/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>Detection of diabetic retinopathy using longitudinal self-supervised learning</title><link>https://youvenz.github.io/publications/zeghlache2022detection/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/zeghlache2022detection/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>Driver vigilance estimation with Bayesian LSTM Auto-encoder and XGBoost using EEG/EOG data</title><link>https://youvenz.github.io/publications/zeghlache2022driver/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/zeghlache2022driver/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item><item><title>Segmentation, classification, and quality assessment of UW-octa images for the diagnosis of diabetic retinopathy</title><link>https://youvenz.github.io/publications/li2022segmentation/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://youvenz.github.io/publications/li2022segmentation/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="methods">Methods&lt;/h2>
+&lt;h2 id="results">Results&lt;/h2>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;h2 id="acknowledgments">Acknowledgments&lt;/h2></description></item></channel></rss>
