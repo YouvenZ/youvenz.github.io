@@ -1,13 +1,13 @@
 ---
-title: "Introduction to computer science."
-date: 2023-09-01
+title: "Introduction to AI"
+date: 2025-04-04
 draft: false
 course_code: "CS 4501"
 semester: "Fall"
-year: "2023"
+year: "2025"
 level: "Undergraduate"
 image: "images/teaching/comp-bio.jpg"
-summary: "An introduction to computer science, algorithms, networks."
+summary: "An introduction deep learning and machine learning methods."
 ---
 
 <!-- ## Course Description

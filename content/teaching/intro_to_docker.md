@@ -1,13 +1,13 @@
 ---
-title: "Introduction to computer science."
-date: 2023-09-01
+title: "Introduction to Docker"
+date: 2025-04-01
 draft: false
 course_code: "CS 4501"
-semester: "Fall"
-year: "2023"
+semester: "Spring"
+year: "2025"
 level: "Undergraduate"
 image: "images/teaching/comp-bio.jpg"
-summary: "An introduction to computer science, algorithms, networks."
+summary: "An introduction to docker container. This courses present the what is docker and how to use it."
 ---
 
 <!-- ## Course Description

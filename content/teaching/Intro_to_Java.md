@@ -1,5 +1,5 @@
 ---
-title: "Introduction to computer science."
+title: "Introduction to Java"
 date: 2023-09-01
 draft: false
 course_code: "CS 4501"
@@ -7,7 +7,7 @@ semester: "Fall"
 year: "2023"
 level: "Undergraduate"
 image: "images/teaching/comp-bio.jpg"
-summary: "An introduction to computer science, algorithms, networks."
+summary: "An introduction to the programming language Java."
 ---
 
 <!-- ## Course Description
