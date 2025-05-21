@@ -79,8 +79,7 @@ selected_publications:
 #   - "Zeghlache, R., et al. (2023). LMT: Longitudinal mixing training from a single image. *Machine Learning in Medical Imaging*."
 #   - "Zeghlache, R., et al. (2022). Detection of diabetic retinopathy using longitudinal SSL. *Ophthalmic Medical Image Analysis*."
 
-# patents:
-#   - "Zeghlache, R., et al. (2023). Method and apparatus for predicting progression of a pathology. Patent No: EP23306730.5."
+
 
 skills:
   - category: "Languages"
@@ -133,10 +132,19 @@ skills:
 ---
 
 
-## Editorial Boards
+
+## Patents:
+  - Zeghlache, R., et al. (2023). Method and apparatus for predicting progression of a pathology. Patent No: EP23306730.5.
+
+
+## Reviewing Services
 
   - Reviewer, IEEE Transactions on Medical Imaging
 -  Reviewer, Scientific Reports
   - Reviewer, Computers in Biology and Medicine
   - MICCAI, CLINICAI, MICCAI Challenge
   - ISBI
+
+
+
+
