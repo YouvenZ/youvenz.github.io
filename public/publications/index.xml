@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on Rachid. Zeghlache</title>
+    <link>http://localhost:1313/publications/</link>
+    <description>Recent content in Publications on Rachid. Zeghlache</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/publications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automated classification of tertiary lymphoid structures in colorectal cancer using TLS-PAT artificial intelligence tool</title>
+      <link>http://localhost:1313/publications/le2025automated/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/le2025automated/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Automated Multimodal Severity Assessment of Diabetic Retinopathy Using Ultra-Widefield Color Fundus Photography and Clinical Tabular Data</title>
+      <link>http://localhost:1313/publications/rezaei5143621automated/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/rezaei5143621automated/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>L-MAE: Longitudinal masked auto-encoder with time and severity-aware encoding for diabetic retinopathy progression prediction</title>
+      <link>http://localhost:1313/publications/zeghlache2025mae/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/zeghlache2025mae/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>A review of deep learning-based information fusion techniques for multimodal medical image classification</title>
+      <link>http://localhost:1313/publications/li2024review/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/li2024review/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>AB0800 DIAGNOSING SJOGREN’S SYNDROME: A MULTI-MODAL DEEP LEARNING APPROACH WITH HISTOPATHOLOGIC IMAGES AND CLINICAL DATA</title>
+      <link>http://localhost:1313/publications/brahim2024ab0800/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/brahim2024ab0800/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Cross-Device AI Fusion: Enhancing Diabetic Retinopathy Diagnosis with Combined Clarus and Optos Images</title>
+      <link>http://localhost:1313/publications/daho2024cross/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/daho2024cross/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>DISCOVER: 2-D multiview summarization of Optical Coherence Tomography Angiography for automatic diabetic retinopathy diagnosis</title>
+      <link>http://localhost:1313/publications/daho2024discover/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/daho2024discover/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>LaTiM: Longitudinal representation learning in continuous-time models to predict disease progression</title>
+      <link>http://localhost:1313/publications/zeghlache2024latim/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/zeghlache2024latim/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Longitudinal and multi-modal monitoring for the detection of diabetic retinopathy using deep learning</title>
+      <link>http://localhost:1313/publications/zeghlache2024longitudinal/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/zeghlache2024longitudinal/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Sjögren&#39;s Syndrome Diagnosis Using Dry Eye Clinical Data using Deep Learning</title>
+      <link>http://localhost:1313/publications/lamard2024sjogren/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/lamard2024sjogren/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>3-D analysis of multiple OCTA acquisitions for the automatic diagnosis of diabetic retinopathy</title>
+      <link>http://localhost:1313/publications/li20233/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/li20233/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Hybrid fusion of high-resolution and ultra-widefield OCTA acquisitions for the automatic diagnosis of diabetic retinopathy</title>
+      <link>http://localhost:1313/publications/li2023hybrid/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/li2023hybrid/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Improved automatic diabetic retinopathy severity classification using deep multimodal fusion of UWF-CFP and OCTA images</title>
+      <link>http://localhost:1313/publications/el2023improved/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/el2023improved/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Lmt: Longitudinal mixing training, a framework to predict disease progression from a single image</title>
+      <link>http://localhost:1313/publications/zeghlache2023lmt/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/zeghlache2023lmt/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Longitudinal self-supervised learning using neural ordinary differential equation</title>
+      <link>http://localhost:1313/publications/zeghlache2023longitudinal/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/zeghlache2023longitudinal/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Performance of two ultra-widefield retinal imaging systems for the automatic diagnosis of diabetic retinopathy</title>
+      <link>http://localhost:1313/publications/daho2023performance/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/daho2023performance/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Time-aware deep models for predicting diabetic retinopathy progression</title>
+      <link>http://localhost:1313/publications/zeghlache2023time/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/zeghlache2023time/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Detection of diabetic retinopathy using longitudinal self-supervised learning</title>
+      <link>http://localhost:1313/publications/zeghlache2022detection/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/zeghlache2022detection/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Driver vigilance estimation with Bayesian LSTM Auto-encoder and XGBoost using EEG/EOG data</title>
+      <link>http://localhost:1313/publications/zeghlache2022driver/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/zeghlache2022driver/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Segmentation, classification, and quality assessment of UW-octa images for the diagnosis of diabetic retinopathy</title>
+      <link>http://localhost:1313/publications/li2022segmentation/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/li2022segmentation/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

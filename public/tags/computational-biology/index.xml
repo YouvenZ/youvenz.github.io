@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computational Biology on Rachid. Zeghlache</title>
+    <link>http://localhost:1313/tags/computational-biology/</link>
+    <description>Recent content in Computational Biology on Rachid. Zeghlache</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/computational-biology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Machine Learning for Computational Biology</title>
+      <link>http://localhost:1313/research/mario/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/mario/</guid>
+      <description>Developing novel machine learning approaches to solve challenging problems in computational biology.</description>
+    </item>
+    <item>
+      <title>Machine Learning for Computational Biology</title>
+      <link>http://localhost:1313/research/research-bio/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/research-bio/</guid>
+      <description>Developing novel machine learning approaches to solve challenging problems in computational biology.</description>
+    </item>
+  </channel>
+</rss>

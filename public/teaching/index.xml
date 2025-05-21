@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teaching on Rachid. Zeghlache</title>
+    <link>http://localhost:1313/teaching/</link>
+    <description>Recent content in Teaching on Rachid. Zeghlache</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/teaching/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to AI</title>
+      <link>http://localhost:1313/teaching/intro_to_deep_learning/</link>
+      <pubDate>Fri, 04 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/teaching/intro_to_deep_learning/</guid>
+      <description>An introduction deep learning and machine learning methods.</description>
+    </item>
+    <item>
+      <title>Introduction to Docker</title>
+      <link>http://localhost:1313/teaching/intro_to_docker/</link>
+      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/teaching/intro_to_docker/</guid>
+      <description>An introduction to docker container. This courses present the what is docker and how to use it.</description>
+    </item>
+    <item>
+      <title>Introduction to predictive AI for maintenance</title>
+      <link>http://localhost:1313/teaching/intro_predictive_maintenance/</link>
+      <pubDate>Thu, 06 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/teaching/intro_predictive_maintenance/</guid>
+      <description>Introduction to predictive AI for maintenance.</description>
+    </item>
+    <item>
+      <title>Implement a reseach project in computer vision for medical segmentation</title>
+      <link>http://localhost:1313/teaching/computer_vision/</link>
+      <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/teaching/computer_vision/</guid>
+      <description>In this project courses students will learn to apply deep learning based method to medical imaging dataset.</description>
+    </item>
+    <item>
+      <title>Introduction to computer science.</title>
+      <link>http://localhost:1313/teaching/intro-cs/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/teaching/intro-cs/</guid>
+      <description>An introduction to computer science, algorithms, networks.</description>
+    </item>
+    <item>
+      <title>Introduction to Java</title>
+      <link>http://localhost:1313/teaching/intro_to_java/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/teaching/intro_to_java/</guid>
+      <description>An introduction to the programming language Java.</description>
+    </item>
+  </channel>
+</rss>
