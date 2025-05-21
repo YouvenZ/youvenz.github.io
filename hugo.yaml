@@ -31,16 +31,16 @@ params:
   social:
     - name: "Twitter"
       icon: "twitter"
-      url: "https://twitter.com/"
+      url: "https://x.com/ZYouven"
     - name: "LinkedIn"
       icon: "linkedin"
-      url: "https://linkedin.com/in/"
+      url: "https://www.linkedin.com/in/rachid-youven-zeghlache-795816183/"
     - name: "GitHub"
       icon: "github"
-      url: "https://github.com/"
+      url: "https://github.com/YouvenZ/"
     - name: "Google Scholar"
       icon: "google"
-      url: "https://scholar.google.com/"
+      url: "https://scholar.google.com/citations?user=iWgYuY0AAAAJ&hl=en"
 
   showBio: true
   showResearch: true
