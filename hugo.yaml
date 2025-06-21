@@ -52,8 +52,8 @@ params:
   
   # Academic metrics
   metrics:
-    hIndex: 5
-    citations: 129
+    hIndex: 6
+    citations: 145
     papers: 11
 
   googleAnalytics: "UA-XXXXXXXXX-X"
