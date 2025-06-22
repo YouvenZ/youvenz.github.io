@@ -5,7 +5,7 @@ draft: false
 summary: "A comprehensive analysis of the MARIO challenge held at MICCAI 2024, evaluating AI algorithms for detecting and monitoring age-related macular degeneration progression using OCT imaging."
 tags: ["deep learning", "medical imaging", "AMD", "OCT", "retinal imaging", "computer vision", "MICCAI challenge"]
 categories: ["current"]
-image: "/images/thumbnails/mario_challenge.jpg"
+image: "/images/thumbnails/square_image_mario.png"
 authors: ["Rachid Zeghlache and al."]
 funding: "French National Research Agency (ANR) - Evired project RHU program - ANR-18-RHUS-0008"
 ---

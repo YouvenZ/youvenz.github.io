@@ -1,7 +1,7 @@
 ---
 title: "Agentic AI Systems for Healthcare: Multi-Agent LLM Framework"
 date: 2024-12-15
-draft: false
+draft: true
 summary: "Developing autonomous AI agent systems using open-source LLMs and CrewAI framework to revolutionize healthcare decision-making and patient care."
 tags: ["agentic ai", "healthcare", "llm", "vllm", "crewai", "open source"]
 categories: ["current"]

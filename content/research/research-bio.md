@@ -1,7 +1,7 @@
 ---
 title: "Machine Learning for Computational Biology"
 date: 2023-11-15
-draft: false
+draft: true
 summary: "Developing novel machine learning approaches to solve challenging problems in computational biology."
 tags: ["machine learning", "computational biology", "deep learning"]
 categories: ["current"]

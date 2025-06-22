@@ -2,11 +2,11 @@
 title: "Introduction to computer science."
 date: 2023-09-01
 draft: false
-course_code: "CS 4501"
+course_code: ""
 semester: "Fall"
 year: "2023"
 level: "Undergraduate"
-image: "images/teaching/comp-bio.jpg"
+image: "images/courses/introduction_to_CS.png"
 summary: "An introduction to computer science, algorithms, networks."
 ---
 

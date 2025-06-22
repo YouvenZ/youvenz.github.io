@@ -2,11 +2,11 @@
 title: "Introduction to Docker"
 date: 2025-04-01
 draft: false
-course_code: "CS 4501"
+course_code: ""
 semester: "Spring"
 year: "2025"
 level: "Undergraduate"
-image: "images/teaching/comp-bio.jpg"
+image: "images/courses/intro_to_docker.png"
 summary: "An introduction to docker container. This courses present the what is docker and how to use it."
 ---
 

@@ -2,11 +2,11 @@
 title: "Introduction to Java"
 date: 2023-09-01
 draft: false
-course_code: "CS 4501"
+course_code: ""
 semester: "Fall"
 year: "2023"
 level: "Undergraduate"
-image: "images/teaching/comp-bio.jpg"
+image: "images/courses/Intro_Java.png"
 summary: "An introduction to the programming language Java."
 ---
 
