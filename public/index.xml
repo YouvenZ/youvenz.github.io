@@ -58,6 +58,20 @@
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
     </item>
     <item>
+      <title>Agentic AI Systems for Healthcare: Multi-Agent LLM Framework</title>
+      <link>http://localhost:1313/research/scientific_plot/</link>
+      <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/scientific_plot/</guid>
+      <description>Developing autonomous AI agent systems using open-source LLMs and CrewAI framework to revolutionize healthcare decision-making and patient care.</description>
+    </item>
+    <item>
+      <title>Deep Learning for Retinal Degeneration Assessment: The MARIO AMD Progression Challenge</title>
+      <link>http://localhost:1313/research/mario/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/mario/</guid>
+      <description>A comprehensive analysis of the MARIO challenge held at MICCAI 2024, evaluating AI algorithms for detecting and monitoring age-related macular degeneration progression using OCT imaging.</description>
+    </item>
+    <item>
       <title>Introduction to predictive AI for maintenance</title>
       <link>http://localhost:1313/teaching/intro_predictive_maintenance/</link>
       <pubDate>Thu, 06 Jun 2024 00:00:00 +0000</pubDate>
@@ -122,17 +136,17 @@
     </item>
     <item>
       <title>Machine Learning for Computational Biology</title>
-      <link>http://localhost:1313/research/mario/</link>
-      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/research/mario/</guid>
-      <description>Developing novel machine learning approaches to solve challenging problems in computational biology.</description>
-    </item>
-    <item>
-      <title>Machine Learning for Computational Biology</title>
       <link>http://localhost:1313/research/research-bio/</link>
       <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/research/research-bio/</guid>
       <description>Developing novel machine learning approaches to solve challenging problems in computational biology.</description>
+    </item>
+    <item>
+      <title>Neural ODEs for Disease Progression Modeling</title>
+      <link>http://localhost:1313/research/neural_ode_disease_progression/</link>
+      <pubDate>Wed, 15 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/research/neural_ode_disease_progression/</guid>
+      <description>Developing Neural Ordinary Differential Equations to model and predict diabetic retinopathy progression.</description>
     </item>
     <item>
       <title>Introduction to computer science.</title>
@@ -238,13 +252,6 @@
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/publications/li2022segmentation/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;methods&#34;&gt;Methods&lt;/h2&gt;&#xA;&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;&#xA;&lt;h2 id=&#34;discussion&#34;&gt;Discussion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;&#xA;&lt;h2 id=&#34;acknowledgments&#34;&gt;Acknowledgments&lt;/h2&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/research/scientific_plot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/research/scientific_plot/</guid>
-      <description></description>
     </item>
   </channel>
 </rss>

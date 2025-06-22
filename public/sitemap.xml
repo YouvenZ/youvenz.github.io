@@ -65,6 +65,66 @@
     <loc>http://localhost:1313/authors/zeghlache-r.-conze-p.-daho-m.-li-y.-rezaei-a.-le-boit%C3%A9-h.-tadayoni-r.-massin-p.-cochener-b.-brahim-i.--others/</loc>
     <lastmod>2025-01-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/agentic-ai/</loc>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/research/scientific_plot/</loc>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/crewai/</loc>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/current/</loc>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/healthcare/</loc>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/llm/</loc>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/open-source/</loc>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/authors/rachid-zeghlache/</loc>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/research/</loc>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/vllm/</loc>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/amd/</loc>
+    <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/computer-vision/</loc>
+    <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/deep-learning/</loc>
+    <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/research/mario/</loc>
+    <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/medical-imaging/</loc>
+    <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/miccai-challenge/</loc>
+    <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/oct/</loc>
+    <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/authors/rachid-zeghlache-and-al./</loc>
+    <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/retinal-imaging/</loc>
+    <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/teaching/intro_predictive_maintenance/</loc>
     <lastmod>2024-06-06T00:00:00+00:00</lastmod>
   </url><url>
@@ -113,16 +173,13 @@
     <loc>http://localhost:1313/teaching/computer_vision/</loc>
     <lastmod>2023-12-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2023-11-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/computational-biology/</loc>
     <lastmod>2023-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/current/</loc>
+    <loc>http://localhost:1313/tags/diabetic-retinopathy/</loc>
     <lastmod>2023-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/deep-learning/</loc>
+    <loc>http://localhost:1313/tags/disease-progression/</loc>
     <lastmod>2023-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/authors/jane-smith/</loc>
@@ -131,13 +188,13 @@
     <loc>http://localhost:1313/tags/machine-learning/</loc>
     <lastmod>2023-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/research/mario/</loc>
-    <lastmod>2023-11-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/research/research-bio/</loc>
     <lastmod>2023-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/research/</loc>
+    <loc>http://localhost:1313/tags/neural-odes/</loc>
+    <lastmod>2023-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/research/neural_ode_disease_progression/</loc>
     <lastmod>2023-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/authors/robert-johnson/</loc>
@@ -229,8 +286,6 @@
   </url><url>
     <loc>http://localhost:1313/authors/zeghlache-r.-labiod-m.--mellouk-a./</loc>
     <lastmod>2022-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/research/scientific_plot/</loc>
   </url><url>
     <loc>http://localhost:1313/contact/</loc>
   </url><url>

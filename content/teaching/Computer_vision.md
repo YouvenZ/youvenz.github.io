@@ -6,7 +6,7 @@ course_code: ""
 semester: "Spring"
 year: "2024"
 level: "Undergraduate"
-image: "images/courses/deep_learning_project_medical_imaging.png"
+image: "images/pp.jpeg"
 summary: "In this project courses students will learn to apply deep learning based method to medical imaging dataset."
 ---
 
