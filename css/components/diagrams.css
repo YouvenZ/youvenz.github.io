@@ -1,0 +1,180 @@
+/* ================================
+   MERMAID DIAGRAMS - ENHANCED
+   ================================ */
+
+.mermaid {
+  text-align: center;
+  margin: 2rem 0;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  overflow: visible;
+  min-height: 100px;
+  border: 1px solid var(--border-color);
+  position: relative;
+  width: 100%;
+}
+
+/* Hide the original code block while processing */
+pre code.language-mermaid {
+  display: none;
+}
+
+.mermaid[data-processed="true"] {
+  display: block;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Force mermaid elements to be visible */
+.mermaid * {
+  visibility: visible !important;
+}
+
+/* Mermaid flowchart styling */
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon {
+  fill: #f8f9fa !important;
+  stroke: #2a5885 !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .node .label {
+  color: #2a5885 !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+.mermaid .edgePath .path {
+  stroke: #2a5885 !important;
+  stroke-width: 2px !important;
+  fill: none !important;
+}
+
+.mermaid .edgeLabel {
+  background-color: white !important;
+  color: #2a5885 !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 12px !important;
+}
+
+/* Loading state */
+.mermaid:not([data-processed]):not(:empty) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-style: italic;
+  min-height: 100px;
+}
+
+.mermaid:not([data-processed]):not(:empty)::before {
+  content: "Loading diagram...";
+}
+
+/* Error handling */
+.mermaid .error {
+  color: #dc2626;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* ================================
+   FIGURE CAPTIONS & ANNOTATIONS
+   ================================ */
+
+.figure, .mermaid-figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.figure-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.figure-caption, .mermaid-caption {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-light);
+  border-left: 4px solid var(--primary-color);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  text-align: left;
+}
+
+.figure-caption strong, .mermaid-caption strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Equation annotations */
+.equation-annotation {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--bg-light);
+  border-left: 4px solid var(--accent-color);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.equation-annotation ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.equation-annotation li {
+  margin-bottom: 0.25rem;
+}
+
+/* Enhanced mermaid styling */
+.mermaid-figure .mermaid {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .mermaid {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  
+  .figure-caption, .mermaid-caption {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+  
+  .mermaid-figure .mermaid {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .mermaid {
+    padding: 0.5rem;
+  }
+  
+  .mermaid svg {
+    min-width: 300px;
+  }
+}
