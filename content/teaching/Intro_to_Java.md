@@ -6,7 +6,7 @@ course_code: ""
 semester: "Fall"
 year: "2023"
 level: "Undergraduate"
-image: "images/courses/Intro_Java.png"
+image: "/images/courses/Intro_Java.png"
 summary: "An introduction to the programming language Java."
 ---
 

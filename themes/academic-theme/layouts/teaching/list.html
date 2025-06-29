@@ -1,45 +1,99 @@
 {{ define "main" }}
 <div class="teaching-container">
     <div class="page-header">
-        <h1>{{ .Title }}</h1>
-        <div class="page-description">{{ .Content }}</div>
+        <div class="header-content">
+            <h1>{{ .Title }}</h1>
+            <div class="page-description">{{ .Content }}</div>
+            <div class="teaching-stats">
+                <div class="stat-item">
+                    <span class="stat-number">{{ len .Pages }}</span>
+                    <span class="stat-label">Total Courses</span>
+                </div>
+                <div class="stat-item">
+                    {{ $years := slice }}
+                    {{ range .Pages }}
+                        {{ if .Params.year }}
+                            {{ $years = $years | append (int .Params.year) }}
+                        {{ end }}
+                    {{ end }}
+                    {{ $years = uniq $years }}
+                    <span class="stat-number">{{ len $years }}</span>
+                    <span class="stat-label">Academic Years</span>
+                </div>
+            </div>
+        </div>
     </div>
     
     {{ $currentYear := now.Format "2006" | int }}
     {{ $years := slice }}
     {{ range .Pages }}
-        {{ $years = $years | append (int .Params.year) }}
+        {{ if .Params.year }}
+            {{ $years = $years | append (int .Params.year) }}
+        {{ end }}
     {{ end }}
     {{ $years = uniq $years }}
     {{ $years = sort $years "value" "desc" }}
     
     <div class="teaching-timeline">
-        {{ range $years }}
-            {{ $year := . }}
-            <div class="year-section">
-                <h2>{{ $year }}</h2>
+        {{ range $yearIndex, $year := $years }}
+            <div class="year-section" data-year="{{ $year }}">
+                <div class="year-header">
+                    <h2>{{ $year }}</h2>
+                    <div class="year-indicator"></div>
+                </div>
                 
                 <div class="semester-container">
                     <!-- Fall Semester -->
                     {{ $fallCourses := where $.Pages ".Params.year" (string $year) }}
                     {{ $fallCourses = where $fallCourses ".Params.semester" "Fall" }}
                     {{ if $fallCourses }}
-                    <div class="semester-section">
-                        <h3>Fall {{ $year }}</h3>
+                    <div class="semester-section fall-semester">
+                        <div class="semester-header">
+                            <h3><i class="fas fa-leaf"></i>Fall {{ $year }}</h3>
+                            <span class="course-count">{{ len $fallCourses }} course{{ if ne (len $fallCourses) 1 }}s{{ end }}</span>
+                        </div>
                         <div class="courses-grid">
-                            {{ range $fallCourses }}
-                                <div class="course-card">
-                                    {{ if .Params.image }}
+                            {{ range $courseIndex, $course := $fallCourses }}
+                                <div class="course-card" data-aos="fade-up" data-aos-delay="{{ mul $courseIndex 100 }}">
                                     <div class="course-image">
-                                        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                                        {{ if .Params.image }}
+                                            <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                                            <div class="image-overlay">
+                                                <i class="fas fa-eye"></i>
+                                            </div>
+                                        {{ else }}
+                                            <div class="course-image-placeholder">
+                                                <i class="fas fa-graduation-cap"></i>
+                                                <div class="placeholder-pattern"></div>
+                                            </div>
+                                        {{ end }}
+                                        <div class="course-badge">{{ .Params.level | default "Course" }}</div>
                                     </div>
-                                    {{ end }}
                                     <div class="course-content">
-                                        <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
-                                        <div class="course-code">{{ .Params.course_code }}</div>
-                                        <div class="course-level">{{ .Params.level }}</div>
-                                        <div class="course-summary">{{ .Params.summary }}</div>
-                                        <a href="{{ .RelPermalink }}" class="read-more">Course details</a>
+                                        <div class="course-header">
+                                            <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+                                            {{ if .Params.course_code }}
+                                                <div class="course-code">{{ .Params.course_code }}</div>
+                                            {{ end }}
+                                        </div>
+                                        <div class="course-meta">
+                                            {{ if .Params.credits }}
+                                                <span class="meta-item"><i class="fas fa-clock"></i>{{ .Params.credits }} Credits</span>
+                                            {{ end }}
+                                            {{ if .Params.students }}
+                                                <span class="meta-item"><i class="fas fa-users"></i>{{ .Params.students }} Students</span>
+                                            {{ end }}
+                                            {{ if .Params.instructor }}
+                                                <span class="meta-item"><i class="fas fa-user-tie"></i>{{ .Params.instructor }}</span>
+                                            {{ end }}
+                                        </div>
+                                        <div class="course-summary">{{ .Params.summary | truncate 120 }}</div>
+                                        <div class="course-footer">
+                                            <a href="{{ .RelPermalink }}" class="btn-course-details">
+                                                <span>View Details</span>
+                                                <i class="fas fa-arrow-right"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             {{ end }}
@@ -51,22 +105,53 @@
                     {{ $springCourses := where $.Pages ".Params.year" (string $year) }}
                     {{ $springCourses = where $springCourses ".Params.semester" "Spring" }}
                     {{ if $springCourses }}
-                    <div class="semester-section">
-                        <h3>Spring {{ $year }}</h3>
+                    <div class="semester-section spring-semester">
+                        <div class="semester-header">
+                            <h3><i class="fas fa-seedling"></i>Spring {{ $year }}</h3>
+                            <span class="course-count">{{ len $springCourses }} course{{ if ne (len $springCourses) 1 }}s{{ end }}</span>
+                        </div>
                         <div class="courses-grid">
-                            {{ range $springCourses }}
-                                <div class="course-card">
-                                    {{ if .Params.image }}
+                            {{ range $courseIndex, $course := $springCourses }}
+                                <div class="course-card" data-aos="fade-up" data-aos-delay="{{ mul $courseIndex 100 }}">
                                     <div class="course-image">
-                                        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                                        {{ if .Params.image }}
+                                            <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                                            <div class="image-overlay">
+                                                <i class="fas fa-eye"></i>
+                                            </div>
+                                        {{ else }}
+                                            <div class="course-image-placeholder">
+                                                <i class="fas fa-graduation-cap"></i>
+                                                <div class="placeholder-pattern"></div>
+                                            </div>
+                                        {{ end }}
+                                        <div class="course-badge">{{ .Params.level | default "Course" }}</div>
                                     </div>
-                                    {{ end }}
                                     <div class="course-content">
-                                        <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
-                                        <div class="course-code">{{ .Params.course_code }}</div>
-                                        <div class="course-level">{{ .Params.level }}</div>
-                                        <div class="course-summary">{{ .Params.summary }}</div>
-                                        <a href="{{ .RelPermalink }}" class="read-more">Course details</a>
+                                        <div class="course-header">
+                                            <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+                                            {{ if .Params.course_code }}
+                                                <div class="course-code">{{ .Params.course_code }}</div>
+                                            {{ end }}
+                                        </div>
+                                        <div class="course-meta">
+                                            {{ if .Params.credits }}
+                                                <span class="meta-item"><i class="fas fa-clock"></i>{{ .Params.credits }} Credits</span>
+                                            {{ end }}
+                                            {{ if .Params.students }}
+                                                <span class="meta-item"><i class="fas fa-users"></i>{{ .Params.students }} Students</span>
+                                            {{ end }}
+                                            {{ if .Params.instructor }}
+                                                <span class="meta-item"><i class="fas fa-user-tie"></i>{{ .Params.instructor }}</span>
+                                            {{ end }}
+                                        </div>
+                                        <div class="course-summary">{{ .Params.summary | truncate 120 }}</div>
+                                        <div class="course-footer">
+                                            <a href="{{ .RelPermalink }}" class="btn-course-details">
+                                                <span>View Details</span>
+                                                <i class="fas fa-arrow-right"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             {{ end }}
@@ -78,22 +163,53 @@
                     {{ $summerCourses := where $.Pages ".Params.year" (string $year) }}
                     {{ $summerCourses = where $summerCourses ".Params.semester" "Summer" }}
                     {{ if $summerCourses }}
-                    <div class="semester-section">
-                        <h3>Summer {{ $year }}</h3>
+                    <div class="semester-section summer-semester">
+                        <div class="semester-header">
+                            <h3><i class="fas fa-sun"></i>Summer {{ $year }}</h3>
+                            <span class="course-count">{{ len $summerCourses }} course{{ if ne (len $summerCourses) 1 }}s{{ end }}</span>
+                        </div>
                         <div class="courses-grid">
-                            {{ range $summerCourses }}
-                                <div class="course-card">
-                                    {{ if .Params.image }}
+                            {{ range $courseIndex, $course := $summerCourses }}
+                                <div class="course-card" data-aos="fade-up" data-aos-delay="{{ mul $courseIndex 100 }}">
                                     <div class="course-image">
-                                        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                                        {{ if .Params.image }}
+                                            <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                                            <div class="image-overlay">
+                                                <i class="fas fa-eye"></i>
+                                            </div>
+                                        {{ else }}
+                                            <div class="course-image-placeholder">
+                                                <i class="fas fa-graduation-cap"></i>
+                                                <div class="placeholder-pattern"></div>
+                                            </div>
+                                        {{ end }}
+                                        <div class="course-badge">{{ .Params.level | default "Course" }}</div>
                                     </div>
-                                    {{ end }}
                                     <div class="course-content">
-                                        <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
-                                        <div class="course-code">{{ .Params.course_code }}</div>
-                                        <div class="course-level">{{ .Params.level }}</div>
-                                        <div class="course-summary">{{ .Params.summary }}</div>
-                                        <a href="{{ .RelPermalink }}" class="read-more">Course details</a>
+                                        <div class="course-header">
+                                            <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+                                            {{ if .Params.course_code }}
+                                                <div class="course-code">{{ .Params.course_code }}</div>
+                                            {{ end }}
+                                        </div>
+                                        <div class="course-meta">
+                                            {{ if .Params.credits }}
+                                                <span class="meta-item"><i class="fas fa-clock"></i>{{ .Params.credits }} Credits</span>
+                                            {{ end }}
+                                            {{ if .Params.students }}
+                                                <span class="meta-item"><i class="fas fa-users"></i>{{ .Params.students }} Students</span>
+                                            {{ end }}
+                                            {{ if .Params.instructor }}
+                                                <span class="meta-item"><i class="fas fa-user-tie"></i>{{ .Params.instructor }}</span>
+                                            {{ end }}
+                                        </div>
+                                        <div class="course-summary">{{ .Params.summary | truncate 120 }}</div>
+                                        <div class="course-footer">
+                                            <a href="{{ .RelPermalink }}" class="btn-course-details">
+                                                <span>View Details</span>
+                                                <i class="fas fa-arrow-right"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             {{ end }}

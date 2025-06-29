@@ -8,7 +8,125 @@ categories: ["current"]
 image: "/images/thumbnails/blog1.jpg"
 authors: ["Rachid Zeghlache"]
 funding: ""
+math: true
+MathJax: true
+mermaid: true
 ---
+
+
+
+## System Architecture
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant API
+    participant Database
+    
+    User->>Frontend: Submit Query
+    Frontend->>API: Process Request
+    API->>Database: Fetch Data
+    Database-->>API: Return Results
+    API-->>Frontend: Send Response
+    Frontend-->>User: Display Results
+```
+
+
+## Mathematical Foundation
+
+The Neural ODE equation: $\frac{d\mathbf{h}(t)}{dt} = f_{\theta}(\mathbf{h}(t), t)$
+
+```mermaid
+graph TD
+    A[Input] --> B[Neural Network]
+    B --> C[ODE Solver]
+    C --> D[Output]
+```
+
+
+
+The diabetic retinopathy progression model:
+$$
+\begin{align}
+\frac{d}{dt}\begin{bmatrix} 
+h_{\text{thickness}}(t) \\ 
+h_{\text{vascular}}(t) \\ 
+h_{\text{inflammation}}(t) 
+\end{bmatrix} &= \begin{bmatrix} 
+f_1(\mathbf{h}(t), \theta_1) \\ 
+f_2(\mathbf{h}(t), \theta_2) \\ 
+f_3(\mathbf{h}(t), \theta_3) 
+\end{bmatrix} \tag{3}
+\end{align}
+$$
+
+where each component models:
+- $h_{\text{thickness}}(t)$: retinal thickness progression
+- $h_{\text{vascular}}(t)$: vascular density changes  
+- $h_{\text{inflammation}}(t)$: inflammatory marker evolution
+
+
+The Neural ODE equation describes continuous dynamics:
+$$\frac{d\mathbf{h}(t)}{dt} = f_{\theta}(\mathbf{h}(t), t) \tag{1}$$
+
+where:
+- $\mathbf{h}(t)$ is the hidden state vector at time $t$
+- $f_{\theta}$ is a neural network parameterized by $\theta$
+- The tag (1) provides equation numbering
+
+
+## Mathematical Formulas
+
+Inline math: The famous equation is $E = mc^2$.
+
+Display math:
+$$
+\frac{\partial f}{\partial x} = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+$$
+
+Complex equations:
+$$
+\begin{align}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\
+\nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+\nabla \cdot \vec{\mathbf{B}} & = 0
+\end{align}
+$$
+
+
+
+{{< mermaid caption="System architecture showing the flow from user query to database response through the API layer." numbered="true" number="2" >}}
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant API
+    participant Database
+    
+    User->>Frontend: Submit Query
+    Frontend->>API: Process Request
+    API->>Database: Fetch Data
+    Database-->>API: Return Results
+    API-->>Frontend: Send Response
+    Frontend-->>User: Display Results
+{{< /mermaid >}}
+
+{{< mermaid caption="Neural ODE computational flow diagram showing the transformation from input through neural network and ODE solver to final output." numbered="true" number="8" >}}
+graph TD
+    A[Input Data] --> B[Neural Network f_θ]
+    B --> C[ODE Solver]
+    C --> D[Predicted Trajectory]
+    D --> E[Output]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+{{< /mermaid >}}
+
+
 
 ## Project Overview
 

@@ -1,73 +1,273 @@
-
 {{/* single.html - For displaying a single talk */}}
 {{ define "main" }}
 <article class="talk-single">
+  <!-- Hero Banner -->
+  {{ with .Params.banner }}
+  <div class="talk-banner" style="background-image: url('{{ . }}')">
+    <div class="banner-overlay">
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="/talk/" class="breadcrumb-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Talk
+          </a>
+        </nav>
+        <div class="banner-content">
+          <h1 class="talk-title">{{ .Title }}</h1>
+          <div class="talk-meta-banner">
+            <div class="meta-item">
+              <i class="fas fa-calendar-alt"></i>
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            </div>
+            {{ with .Params.event }}
+            <div class="meta-item">
+              <i class="fas fa-calendar-check"></i>
+              <span>{{ . }}</span>
+            </div>
+            {{ end }}
+            {{ if .Params.duration }}
+            <div class="meta-item">
+              <i class="fas fa-clock"></i>
+              <span>{{ .Params.duration }}</span>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ else }}
+  <div class="talk-banner talk-banner-default">
+    <div class="banner-overlay">
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="/talk/" class="breadcrumb-link">
+            <i class="fas fa-arrow-left"></i>
+            Back to Talk
+          </a>
+        </nav>
+        <div class="banner-content">
+          <h1 class="talk-title">{{ .Title }}</h1>
+          <div class="talk-meta-banner">
+            <div class="meta-item">
+              <i class="fas fa-calendar-alt"></i>
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            </div>
+            {{ with .Params.event }}
+            <div class="meta-item">
+              <i class="fas fa-calendar-check"></i>
+              <span>{{ . }}</span>
+            </div>
+            {{ end }}
+            {{ if .Params.duration }}
+            <div class="meta-item">
+              <i class="fas fa-clock"></i>
+              <span>{{ .Params.duration }}</span>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+
   <div class="container">
+    <!-- Talk Header -->
     <header class="talk-header">
-      <h1>{{ .Title }}</h1>
-      
-      <div class="talk-meta">
-        <div class="meta-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <div class="header-content">
+        <div class="talk-meta">
+          {{ with .Params.speaker }}
+          <div class="meta-item">
+            <i class="fas fa-user-tie"></i>
+            <span>{{ . }}</span>
+          </div>
+          {{ end }}
+          
+          {{ with .Params.location }}
+          <div class="meta-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>{{ . }}</span>
+          </div>
+          {{ end }}
+
+          {{ if .Params.audience }}
+          <div class="meta-item">
+            <i class="fas fa-users"></i>
+            <span>{{ .Params.audience }}</span>
+          </div>
+          {{ end }}
         </div>
-        
-        {{ with .Params.speaker }}
-        <div class="meta-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
-          <span class="speaker">{{ . }}</span>
+
+        <div class="talk-status-tags">
+          {{ if .Date.After now }}
+          <span class="status-badge upcoming">
+            <i class="fas fa-calendar-plus"></i>
+            Upcoming
+          </span>
+          {{ else }}
+          <span class="status-badge past">
+            <i class="fas fa-calendar-check"></i>
+            Past Event
+          </span>
+          {{ end }}
+
+          {{ with .Params.tags }}
+          <div class="talk-tags">
+            {{ range . }}
+            <span class="tag">{{ . }}</span>
+            {{ end }}
+          </div>
+          {{ end }}
         </div>
-        {{ end }}
-        
-        {{ with .Params.location }}
-        <div class="meta-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          <span class="location">{{ . }}</span>
-        </div>
-        {{ end }}
       </div>
     </header>
     
-    {{ with .Params.thumbnail }}
-    <div class="talk-thumbnail">
-      <img src="{{ . }}" alt="{{ $.Title }}">
-    </div>
-    {{ end }}
-    
-    <div class="talk-content">
-      {{ .Content }}
-    </div>
-    
-    {{ with .Params.video }}
-    <div class="talk-video">
-      <h2>Watch the Talk</h2>
-      <div class="video-container">
-        <iframe src="{{ . }}" frameborder="0" allowfullscreen></iframe>
+    <!-- Talk Content -->
+    <div class="talk-body">
+      <div class="talk-content">
+        {{ .Content }}
       </div>
+      
+      <!-- Resources Section -->
+      {{ if or .Params.video .Params.slides .Params.code .Params.demo }}
+      <div class="talk-resources">
+        <h2><i class="fas fa-tools"></i> Resources</h2>
+        <div class="resources-grid">
+          
+          <!-- Video Resource -->
+          {{ with .Params.video }}
+          <div class="resource-item">
+            <div class="resource-header">
+              <i class="fas fa-video"></i>
+              <h3>Watch Recording</h3>
+            </div>
+            {{ if or (strings.Contains . "youtube.com") (strings.Contains . "vimeo.com") }}
+            <!-- Embed for video platforms -->
+            <div class="video-container">
+              {{ if strings.Contains . "youtube.com" }}
+                {{ $videoId := replaceRE ".*(?:youtube\\.com\\/(?:[^\\/]+\\/.+\\/|(?:v|e(?:mbed)?)\\/|.*[?&]v=)|youtu\\.be\\/)([^\"&?\\/\\s]{11})" "$1" . }}
+                <iframe src="https://www.youtube.com/embed/{{ $videoId }}" frameborder="0" allowfullscreen></iframe>
+              {{ else if strings.Contains . "vimeo.com" }}
+                {{ $videoId := replaceRE ".*vimeo\\.com\\/(\\d+)" "$1" . }}
+                <iframe src="https://player.vimeo.com/video/{{ $videoId }}" frameborder="0" allowfullscreen></iframe>
+              {{ end }}
+            </div>
+            {{ else }}
+            <!-- Link for other video sources -->
+            <a href="{{ . }}" class="resource-link" target="_blank" rel="noopener">
+              <div class="resource-preview">
+                <i class="fas fa-play"></i>
+                <span>Watch Video</span>
+              </div>
+            </a>
+            {{ end }}
+            <!-- Always provide direct link -->
+            <div class="resource-footer">
+              <a href="{{ . }}" class="direct-link" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i>
+                Open in new tab
+              </a>
+            </div>
+          </div>
+          {{ end }}
+          
+          <!-- Slides Resource -->
+          {{ with .Params.slides }}
+          <div class="resource-item">
+            <div class="resource-header">
+              <i class="fas fa-file-powerpoint"></i>
+              <h3>Presentation Slides</h3>
+            </div>
+            <a href="{{ . }}" class="resource-link" target="_blank" rel="noopener">
+              <div class="resource-preview">
+                <i class="fas fa-external-link-alt"></i>
+                <span>View Slides</span>
+              </div>
+            </a>
+          </div>
+          {{ end }}
+
+          <!-- Code Resource -->
+          {{ with .Params.code }}
+          <div class="resource-item">
+            <div class="resource-header">
+              <i class="fas fa-code"></i>
+              <h3>Source Code</h3>
+            </div>
+            <a href="{{ . }}" class="resource-link" target="_blank" rel="noopener">
+              <div class="resource-preview code-preview">
+                <i class="fab fa-github"></i>
+                <span>View Code</span>
+              </div>
+            </a>
+          </div>
+          {{ end }}
+
+          <!-- Demo Resource -->
+          {{ with .Params.demo }}
+          <div class="resource-item">
+            <div class="resource-header">
+              <i class="fas fa-rocket"></i>
+              <h3>Live Demo</h3>
+            </div>
+            <a href="{{ . }}" class="resource-link" target="_blank" rel="noopener">
+              <div class="resource-preview demo-preview">
+                <i class="fas fa-play-circle"></i>
+                <span>Try Demo</span>
+              </div>
+            </a>
+          </div>
+          {{ end }}
+
+        </div>
+      </div>
+      {{ end }}
+
+      <!-- Abstract/Summary Section -->
+      {{ if .Params.abstract }}
+      <div class="talk-abstract">
+        <h2><i class="fas fa-file-alt"></i> Abstract</h2>
+        <div class="abstract-content">
+          {{ .Params.abstract | markdownify }}
+        </div>
+      </div>
+      {{ end }}
+
+      <!-- Key Takeaways -->
+      {{ if .Params.takeaways }}
+      <div class="talk-takeaways">
+        <h2><i class="fas fa-lightbulb"></i> Key Takeaways</h2>
+        <ul class="takeaways-list">
+          {{ range .Params.takeaways }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
     </div>
-    {{ end }}
-    
-    {{ with .Params.slides }}
-    <div class="talk-resources">
-      <a href="{{ . }}" class="resource-link" target="_blank" rel="noopener">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-        View Presentation Slides
-      </a>
-    </div>
-    {{ end }}
-    
+
+    <!-- Navigation -->
     <nav class="talk-navigation">
       {{ with .PrevInSection }}
-      <a href="{{ .Permalink }}" class="prev-talk">
-        <span class="nav-label">Previous Talk</span>
-        <span class="nav-title">{{ .Title }}</span>
+      <a href="{{ .Permalink }}" class="nav-item prev-talk">
+        <div class="nav-direction">
+          <i class="fas fa-chevron-left"></i>
+          Previous Talk
+        </div>
+        <div class="nav-title">{{ .Title }}</div>
+        <div class="nav-meta">{{ .Date.Format "January 2006" }}</div>
       </a>
       {{ end }}
       
       {{ with .NextInSection }}
-      <a href="{{ .Permalink }}" class="next-talk">
-        <span class="nav-label">Next Talk</span>
-        <span class="nav-title">{{ .Title }}</span>
+      <a href="{{ .Permalink }}" class="nav-item next-talk">
+        <div class="nav-direction">
+          Next Talk
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="nav-title">{{ .Title }}</div>
+        <div class="nav-meta">{{ .Date.Format "January 2006" }}</div>
       </a>
       {{ end }}
     </nav>

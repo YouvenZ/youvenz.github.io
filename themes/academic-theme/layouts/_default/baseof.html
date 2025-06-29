@@ -6,16 +6,83 @@
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{ "css/main.css" | absURL }}">
+    <!-- SEO Meta Tags -->
+    <meta name="author" content="{{ .Site.Params.author | default .Site.Title }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+    
+    <!-- Base CSS - Always loaded -->
+    <link rel="stylesheet" href="{{ "css/base.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/layout.css" | relURL }}">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="{{ "css/components/modals.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/components/academic.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/components/diagrams.css" | relURL }}">
+
+    <!-- Utility CSS -->
+    <link rel="stylesheet" href="{{ "css/utilities/helpers.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/utilities/print.css" | relURL }}">
+
+    <!-- Page-specific CSS -->
+    {{ if .IsHome }}
+    <link rel="stylesheet" href="{{ "css/pages/home.css" | relURL }}">
+    {{ end }}
+
+    {{ if eq .Section "publications" }}
+    <link rel="stylesheet" href="{{ "css/pages/publications.css" | relURL }}">
+    {{ end }}
+
+    {{ if eq .Section "research" }}
+    <link rel="stylesheet" href="{{ "css/pages/research.css" | relURL }}">
+    {{ end }}
+
+    {{ if eq .Section "teaching" }}
+    <link rel="stylesheet" href="{{ "css/pages/teaching.css" | relURL }}">
+    {{ end }}
+
+    {{ if eq .Section "talk" }}
+    <link rel="stylesheet" href="{{ "css/pages/talks.css" | relURL }}">
+    {{ end }}
+
     {{ if eq .Layout "cv" }}
-    <link rel="stylesheet" href="{{ "css/cv.css" | relURL }}">
-  {{ end }}
+    <link rel="stylesheet" href="{{ "css/pages/cv.css" | relURL }}">
+    {{ end }}
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <!-- Math Support -->
+    {{ partial "math.html" . }}
+    
+    <!-- Mermaid Support -->
+    {{ partial "mermaid.html" . }}
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
+    
+    <!-- RSS Feed -->
+    {{ with .OutputFormats.Get "rss" -}}
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}" title="{{ $.Site.Title }}">
+    {{ end -}}
+    
+    <!-- Google Analytics -->
+    {{ if .Site.Params.googleAnalytics }}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ .Site.Params.googleAnalytics }}');
+    </script>
+    {{ end }}
     
     {{ block "head" . }}{{ end }}
 </head>

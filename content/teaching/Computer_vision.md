@@ -6,7 +6,7 @@ course_code: ""
 semester: "Spring"
 year: "2024"
 level: "Undergraduate"
-image: "images/pp.jpeg"
+image: "/images/courses/Introduction_to_CS.png"
 summary: "In this project courses students will learn to apply deep learning based method to medical imaging dataset."
 ---
 
@@ -14,5 +14,9 @@ summary: "In this project courses students will learn to apply deep learning bas
 
 
 The purpose of this module what to re-implement a paper that describe a segmentation methods on a open source dataset.
+
+
+
+
 
 

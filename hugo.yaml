@@ -8,6 +8,15 @@ enableEmoji: true
 pygmentsCodeFences: true
 pygmentsStyle: "monokai"
 
+# Enable markup processing
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: 'monokai'
+    lineNos: true
+
 params:
   description: "Academic website of Rachid (Youven) Zeghlache, Post-doc at IMT Atlantique, France. Researching in the field of machine learning and its applications."
   
@@ -53,20 +62,19 @@ params:
   # Academic metrics
   metrics:
     hIndex: 6
-    citations: 145
+    citations: 147
     papers: 11
 
   googleAnalytics: "UA-XXXXXXXXX-X"
   math: true
+  mathjax: true  # Enable MathJax for LaTeX
+  mermaid: true  # Enable Mermaid support
   copyright: ""
   customCSS: []
   customJS: []
 
   footer:
     text: ""
-
-  # defaults:
-  #   image: "images/image.jpg"
 
   publications:
     title: "My Publications"
@@ -79,6 +87,10 @@ params:
   teaching:
     title: "Teaching"
     subtitle: "Courses and educational materials"
+
+  talks:
+    title: "Talks & Presentations"
+    subtitle: "Speaking engagements and presentations"
 
 menu:
   main:
@@ -97,15 +109,9 @@ menu:
     - name: "CV"
       url: "/cv/"
       weight: 5
-    # - name: "Blog"
-    #   url: "/blog/"
-    #   weight: 6
     - name: "Talk"
       url: "/talk/"
       weight: 7
-    - name: "Contact"
-      url: "/contact/"
-      weight: 8
 
 taxonomies:
   tag: "tags"

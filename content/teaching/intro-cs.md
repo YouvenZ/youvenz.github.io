@@ -6,7 +6,7 @@ course_code: ""
 semester: "Fall"
 year: "2023"
 level: "Undergraduate"
-image: "images/courses/introduction_to_CS.png"
+image: "/images/courses/introduction_to_CS.png"
 summary: "An introduction to computer science, algorithms, networks."
 ---
 

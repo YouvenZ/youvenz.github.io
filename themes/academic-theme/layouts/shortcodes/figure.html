@@ -1,0 +1,17 @@
+<figure class="figure{{ with .Get "class" }} {{ . }}{{ end }}">
+  {{ with .Get "src" }}
+  <img src="{{ . | relURL }}" 
+       alt="{{ $.Get "alt" }}" 
+       {{ with $.Get "width" }}width="{{ . }}"{{ end }}
+       {{ with $.Get "height" }}height="{{ . }}"{{ end }}
+       class="figure-img">
+  {{ end }}
+  {{ with .Get "caption" }}
+  <figcaption class="figure-caption">
+    {{ if $.Get "numbered" }}
+    <strong>Figure {{ $.Get "number" | default "1" }}:</strong> 
+    {{ end }}
+    {{ . | markdownify }}
+  </figcaption>
+  {{ end }}
+</figure>

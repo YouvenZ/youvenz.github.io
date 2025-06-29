@@ -6,7 +6,7 @@ course_code: ""
 semester: "Spring"
 year: "2025"
 level: "Undergraduate"
-image: "images/courses/intro_to_docker.png"
+image: "/images/courses/intro_to_docker.png"
 summary: "An introduction to docker container. This courses present the what is docker and how to use it."
 ---
 

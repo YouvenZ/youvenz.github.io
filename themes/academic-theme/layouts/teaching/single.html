@@ -1,61 +1,268 @@
 {{ define "main" }}
 <div class="course-single">
+    <!-- Course Header Section -->
     <div class="course-header">
-        <h1>{{ .Title }}</h1>
-        
-        <div class="course-meta">
+        <div class="course-title-section">
+            <h1>{{ .Title }}</h1>
             {{ if .Params.course_code }}
-            <div class="meta-item">
-                <span class="meta-label">Course Code:</span>
-                <span class="meta-value">{{ .Params.course_code }}</span>
-            </div>
+                <div class="course-code-badge">{{ .Params.course_code }}</div>
             {{ end }}
-            
+        </div>
+        
+        <!-- Course Meta Information Grid -->
+        <div class="course-meta-grid">
             {{ if and .Params.semester .Params.year }}
             <div class="meta-item">
-                <span class="meta-label">Term:</span>
-                <span class="meta-value">{{ .Params.semester }} {{ .Params.year }}</span>
+                <i class="fas fa-calendar-alt"></i>
+                <div class="meta-content">
+                    <span class="meta-label">Term</span>
+                    <span class="meta-value">{{ .Params.semester }} {{ .Params.year }}</span>
+                </div>
             </div>
             {{ end }}
             
             {{ if .Params.level }}
             <div class="meta-item">
-                <span class="meta-label">Level:</span>
-                <span class="meta-value">{{ .Params.level }}</span>
+                <i class="fas fa-graduation-cap"></i>
+                <div class="meta-content">
+                    <span class="meta-label">Level</span>
+                    <span class="meta-value">{{ .Params.level }}</span>
+                </div>
+            </div>
+            {{ end }}
+            
+            {{ if .Params.credits }}
+            <div class="meta-item">
+                <i class="fas fa-clock"></i>
+                <div class="meta-content">
+                    <span class="meta-label">Credits</span>
+                    <span class="meta-value">{{ .Params.credits }}</span>
+                </div>
+            </div>
+            {{ end }}
+            
+            {{ if .Params.students }}
+            <div class="meta-item">
+                <i class="fas fa-users"></i>
+                <div class="meta-content">
+                    <span class="meta-label">Students</span>
+                    <span class="meta-value">{{ .Params.students }}</span>
+                </div>
+            </div>
+            {{ end }}
+            
+            {{ if .Params.instructor }}
+            <div class="meta-item">
+                <i class="fas fa-user-tie"></i>
+                <div class="meta-content">
+                    <span class="meta-label">Instructor</span>
+                    <span class="meta-value">{{ .Params.instructor }}</span>
+                </div>
+            </div>
+            {{ end }}
+            
+            {{ if .Params.schedule }}
+            <div class="meta-item">
+                <i class="fas fa-clock"></i>
+                <div class="meta-content">
+                    <span class="meta-label">Schedule</span>
+                    <span class="meta-value">{{ .Params.schedule }}</span>
+                </div>
+            </div>
+            {{ end }}
+            
+            {{ if .Params.location }}
+            <div class="meta-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="meta-content">
+                    <span class="meta-label">Location</span>
+                    <span class="meta-value">{{ .Params.location }}</span>
+                </div>
             </div>
             {{ end }}
         </div>
     </div>
-    
+
+    <!-- Featured Image -->
     {{ if .Params.image }}
     <div class="featured-image">
-        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+        <div class="image-overlay">
+            <div class="course-badge">{{ .Params.level | default "Course" }}</div>
+        </div>
     </div>
     {{ end }}
-    
-    <div class="summary-box">
-        <h3>Course Summary</h3>
-        <p>{{ .Params.summary }}</p>
+
+    <!-- Course Summary -->
+    {{ if .Params.summary }}
+    <div class="course-summary-section">
+        <h2><i class="fas fa-info-circle"></i>Course Overview</h2>
+        <div class="summary-content">
+            <p>{{ .Params.summary }}</p>
+        </div>
     </div>
-    
-    <div class="course-content">
-        {{ .Content }}
+    {{ end }}
+
+    <!-- Quick Info Cards -->
+    <div class="quick-info-section">
+        {{ if .Params.prerequisites }}
+        <div class="info-card">
+            <h3><i class="fas fa-list-check"></i>Prerequisites</h3>
+            <ul class="prerequisites-list">
+                {{ range .Params.prerequisites }}
+                <li>{{ . }}</li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+
+        {{ if .Params.learning_objectives }}
+        <div class="info-card">
+            <h3><i class="fas fa-target"></i>Learning Objectives</h3>
+            <ul class="objectives-list">
+                {{ range .Params.learning_objectives }}
+                <li>{{ . }}</li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+
+        {{ if .Params.textbooks }}
+        <div class="info-card">
+            <h3><i class="fas fa-book"></i>Required Materials</h3>
+            <div class="textbooks-list">
+                {{ range .Params.textbooks }}
+                <div class="textbook-item">
+                    <strong>{{ .title }}</strong><br>
+                    <span class="authors">{{ .authors }}</span>
+                    {{ if .required }}
+                        <span class="required-badge">Required</span>
+                    {{ else }}
+                        <span class="optional-badge">Optional</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+
+        {{ if .Params.grading }}
+        <div class="info-card">
+            <h3><i class="fas fa-chart-pie"></i>Grading Breakdown</h3>
+            <div class="grading-breakdown">
+                {{ if .Params.grading.homework }}
+                <div class="grade-item">
+                    <span class="grade-category">Homework</span>
+                    <span class="grade-percentage">{{ .Params.grading.homework }}%</span>
+                </div>
+                {{ end }}
+                {{ if .Params.grading.midterm }}
+                <div class="grade-item">
+                    <span class="grade-category">Midterm</span>
+                    <span class="grade-percentage">{{ .Params.grading.midterm }}%</span>
+                </div>
+                {{ end }}
+                {{ if .Params.grading.final_project }}
+                <div class="grade-item">
+                    <span class="grade-category">Final Project</span>
+                    <span class="grade-percentage">{{ .Params.grading.final_project }}%</span>
+                </div>
+                {{ end }}
+                {{ if .Params.grading.participation }}
+                <div class="grade-item">
+                    <span class="grade-category">Participation</span>
+                    <span class="grade-percentage">{{ .Params.grading.participation }}%</span>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
     </div>
-    
-    <div class="course-navigation">
-        {{ with .PrevInSection }}
-        <a class="prev-link" href="{{ .RelPermalink }}">
-            <span class="nav-label">Previous Course</span>
-            <span class="nav-title">{{ .Title }}</span>
+
+    <!-- Course Actions -->
+    <div class="course-actions">
+        {{ if .Params.syllabus }}
+        <a href="{{ .Params.syllabus }}" class="btn btn-primary" target="_blank">
+            <i class="fas fa-file-pdf"></i>
+            <span>Download Syllabus</span>
         </a>
         {{ end }}
         
-        {{ with .NextInSection }}
-        <a class="next-link" href="{{ .RelPermalink }}">
-            <span class="nav-label">Next Course</span>
-            <span class="nav-title">{{ .Title }}</span>
+        {{ if .Params.course_website }}
+        <a href="{{ .Params.course_website }}" class="btn btn-outline" target="_blank">
+            <i class="fas fa-external-link-alt"></i>
+            <span>Course Website</span>
         </a>
         {{ end }}
+        
+        {{ if .Params.office_hours }}
+        <div class="office-hours-info">
+            <i class="fas fa-clock"></i>
+            <span><strong>Office Hours:</strong> {{ .Params.office_hours }}</span>
+        </div>
+        {{ end }}
+    </div>
+
+    <!-- Tags -->
+    {{ if .Params.tags }}
+    <div class="course-tags">
+        <h3>Course Topics</h3>
+        <div class="tags-container">
+            {{ range .Params.tags }}
+            <span class="tag">{{ . }}</span>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+
+    <!-- Main Course Content -->
+    <div class="course-content">
+        {{ .Content }}
+    </div>
+
+    <!-- Tools and Software -->
+    {{ if .Params.tools_software }}
+    <div class="tools-section">
+        <h2><i class="fas fa-tools"></i>Tools & Software</h2>
+        <div class="tools-grid">
+            {{ range .Params.tools_software }}
+            <div class="tool-item">
+                <i class="fas fa-code"></i>
+                <span>{{ . }}</span>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+
+    <!-- Course Navigation -->
+    <div class="course-navigation">
+        <a href="/teaching/" class="back-to-teaching">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to All Courses</span>
+        </a>
+        
+        <div class="nav-links">
+            {{ with .PrevInSection }}
+            <a class="nav-link prev-link" href="{{ .RelPermalink }}">
+                <div class="nav-direction">
+                    <i class="fas fa-chevron-left"></i>
+                    <span>Previous</span>
+                </div>
+                <div class="nav-title">{{ .Title }}</div>
+            </a>
+            {{ end }}
+            
+            {{ with .NextInSection }}
+            <a class="nav-link next-link" href="{{ .RelPermalink }}">
+                <div class="nav-direction">
+                    <span>Next</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="nav-title">{{ .Title }}</div>
+            </a>
+            {{ end }}
+        </div>
     </div>
 </div>
 {{ end }}

@@ -1,0 +1,13 @@
+<figure class="mermaid-figure{{ with .Get "class" }} {{ . }}{{ end }}">
+  <div class="mermaid" id="mermaid-{{ .Ordinal }}">
+    {{ .Inner }}
+  </div>
+  {{ with .Get "caption" }}
+  <figcaption class="mermaid-caption">
+    {{ if $.Get "numbered" }}
+    <strong>Figure {{ $.Get "number" | default "1" }}:</strong> 
+    {{ end }}
+    {{ . | markdownify }}
+  </figcaption>
+  {{ end }}
+</figure>

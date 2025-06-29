@@ -1,0 +1,88 @@
+/* ================================
+   ACADEMIC METRICS & CITATIONS
+   ================================ */
+
+.academic-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.metric {
+  flex: 1;
+  min-width: 120px;
+  padding: 1rem;
+  text-align: center;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.metric-count {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
+
+.citation,
+.citation-box {
+  background-color: var(--bg-light);
+  padding: 15px;
+  border-radius: var(--border-radius-sm);
+  position: relative;
+  margin-bottom: 30px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.citation {
+  font-family: monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.citation-box pre {
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.bibliography {
+  padding-left: 1.5rem;
+}
+
+.bib-item {
+  margin-bottom: 0.75rem;
+}

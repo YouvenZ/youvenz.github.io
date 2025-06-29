@@ -1,0 +1,67 @@
+<!-- Mermaid.js -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize Mermaid
+  mermaid.initialize({
+    startOnLoad: false, // We'll manually start it
+    theme: 'default',
+    themeVariables: {
+      primaryColor: '#2a5885',
+      primaryTextColor: '#2a5885',
+      primaryBorderColor: '#4a90e2',
+      lineColor: '#2a5885',
+      secondaryColor: '#f39c12',
+      tertiaryColor: '#f8f9fa',
+      background: '#ffffff',
+      mainBkg: '#ffffff',
+      secondBkg: '#f8f9fa'
+    },
+    flowchart: {
+      htmlLabels: true,
+      useMaxWidth: true
+    },
+    sequence: {
+      useMaxWidth: true
+    },
+    gantt: {
+      useMaxWidth: true
+    }
+  });
+
+  // Convert code blocks to mermaid diagrams
+  function renderMermaidDiagrams() {
+    // Find all code blocks with language 'mermaid'
+    const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid, code.language-mermaid');
+    
+    mermaidBlocks.forEach(function(block, index) {
+      // Get the mermaid code
+      const mermaidCode = block.textContent || block.innerText;
+      
+      // Create a new div for the mermaid diagram
+      const mermaidDiv = document.createElement('div');
+      mermaidDiv.className = 'mermaid';
+      mermaidDiv.textContent = mermaidCode;
+      mermaidDiv.id = 'mermaid-' + index;
+      
+      // Replace the code block with the mermaid div
+      const preElement = block.closest('pre') || block;
+      preElement.parentNode.replaceChild(mermaidDiv, preElement);
+    });
+
+    // Also handle existing .mermaid divs
+    const existingMermaidDivs = document.querySelectorAll('.mermaid:not([data-processed])');
+    
+    // Render all mermaid diagrams
+    if (mermaidBlocks.length > 0 || existingMermaidDivs.length > 0) {
+      mermaid.run();
+    }
+  }
+
+  // Run the conversion
+  renderMermaidDiagrams();
+  
+  // Also try after a short delay in case content is loaded dynamically
+  setTimeout(renderMermaidDiagrams, 500);
+});
+</script>
