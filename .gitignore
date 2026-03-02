@@ -1,0 +1,17 @@
+# Hugo build output
+public/
+resources/
+.hugo_build.lock
+
+# Python
+__pycache__/
+*.py[cod]
+.env
+*.egg-info/
+dist/
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db

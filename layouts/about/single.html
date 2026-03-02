@@ -1,0 +1,66 @@
+{{ define "main" }}
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>{{ .Site.Params.name }}</h1>
+        <p class="hero-role">{{ .Site.Params.role }} · {{ .Site.Params.institution }}</p>
+        <p class="hero-bio">{{ .Site.Params.bio }}</p>
+
+        <div class="social-links">
+          {{ with .Site.Params.social.googleScholar }}<a href="{{ . }}" class="social-link" target="_blank" rel="noopener">Scholar</a>{{ end }}
+          {{ with .Site.Params.social.github }}<a href="{{ . }}" class="social-link" target="_blank" rel="noopener">GitHub</a>{{ end }}
+          {{ with .Site.Params.social.linkedin }}<a href="{{ . }}" class="social-link" target="_blank" rel="noopener">LinkedIn</a>{{ end }}
+          {{ with .Site.Params.social.twitter }}<a href="{{ . }}" class="social-link" target="_blank" rel="noopener">X / Twitter</a>{{ end }}
+          {{ with .Site.Params.email }}<a href="mailto:{{ . }}" class="social-link">Email</a>{{ end }}
+          {{ with .Site.Params.social.cv }}<a href="{{ . }}" class="social-link btn-primary" download>Download CV</a>{{ end }}
+        </div>
+
+        {{ with .Site.Params.interests }}
+        <div class="interests-list">
+          {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+
+        {{ with .Site.Params.githubActionsOwner }}
+        <div class="pipeline-badges mt-8">
+          <img src="https://github.com/{{ . }}/{{ $.Site.Params.githubActionsRepo }}/actions/workflows/video_to_blog.yml/badge.svg" alt="Blog pipeline status" loading="lazy">
+          <img src="https://github.com/{{ . }}/{{ $.Site.Params.githubActionsRepo }}/actions/workflows/update_publications.yml/badge.svg" alt="Publications pipeline status" loading="lazy">
+          <img src="https://github.com/{{ . }}/{{ $.Site.Params.githubActionsRepo }}/actions/workflows/update_videos.yml/badge.svg" alt="Videos pipeline status" loading="lazy">
+        </div>
+        {{ end }}
+      </div>
+      <div>
+        {{ $avatar := resources.Get "img/avatar.jpg" }}
+        {{ if $avatar }}
+        {{ $avatar = $avatar.Resize "400x400 webp" }}
+        <img src="{{ $avatar.RelPermalink }}" alt="Photo of {{ .Site.Params.name }}" class="hero-avatar" width="200" height="200">
+        {{ else }}
+        <div class="hero-avatar" style="background:var(--bg-muted);display:flex;align-items:center;justify-content:center;font-size:4rem;">👤</div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-wrapper">
+  <div class="container">
+    {{ .Content }}
+
+    {{/* Education Timeline from data */}}
+    {{ with .Site.Data.education }}
+    <h2 style="margin-bottom:2rem;">Education</h2>
+    <div class="timeline">
+      {{ range . }}
+      <div class="timeline-item">
+        <span class="timeline-date">{{ .year }}</span>
+        <p class="timeline-title">{{ .degree }}</p>
+        <p class="timeline-subtitle">{{ .institution }}</p>
+        {{ with .note }}<p class="timeline-subtitle">{{ . }}</p>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

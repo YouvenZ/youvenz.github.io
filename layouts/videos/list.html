@@ -1,0 +1,49 @@
+{{ define "main" }}
+<div class="page-wrapper">
+  <div class="container">
+    {{ partial "breadcrumbs.html" . }}
+    <div class="section-header">
+      <h1 class="section-title">Videos</h1>
+      <p class="section-desc">Tutorials, talks, and explainer videos.</p>
+    </div>
+
+    <div style="margin-bottom:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <div class="filter-bar" data-target="videos" style="margin-bottom:0;">
+        <button class="filter-btn active" data-filter="all">All</button>
+        {{ $playlists := slice }}
+        {{ range .Site.Data.videos }}{{ $playlists = $playlists | append .playlist }}{{ end }}
+        {{ range ($playlists | uniq) }}
+        {{ if . }}<button class="filter-btn" data-filter="{{ . | urlize }}">{{ . }}</button>{{ end }}
+        {{ end }}
+      </div>
+      {{ with .Site.Params.youtubeChannelUrl }}
+      <a href="{{ . }}" class="btn btn-primary" target="_blank" rel="noopener">Subscribe on YouTube</a>
+      {{ end }}
+    </div>
+
+    <div class="videos-grid" data-filter-group="videos">
+      {{ range .Site.Data.videos }}
+      {{ $tags := slice (.playlist | default "general") }}
+      <article class="card video-card" data-tags="{{ $tags | jsonify }}">
+        <a href="https://youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener">
+          <div class="video-thumb-wrap">
+            <img src="{{ .thumbnail }}" alt="{{ .title }}" class="video-thumb" loading="lazy" width="480" height="270">
+            {{ with .duration }}<span class="video-duration-badge">{{ . }}</span>{{ end }}
+          </div>
+        </a>
+        <div class="video-body">
+          <h3 class="video-title"><a href="https://youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener">{{ .title }}</a></h3>
+          <p class="video-meta">
+            {{ with .publishedAt }}{{ dateFormat "Jan 2, 2006" . }}{{ end }}
+            {{ with .viewCount }} · {{ . | humanize }} views{{ end }}
+          </p>
+          {{ with .playlist }}<span class="tag" style="margin-top:0.5rem;">{{ . }}</span>{{ end }}
+        </div>
+      </article>
+      {{ else }}
+      <p class="text-muted">No videos yet. Run the update pipeline or add entries to <code>data/videos.yaml</code>.</p>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

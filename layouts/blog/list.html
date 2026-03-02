@@ -1,0 +1,53 @@
+{{ define "main" }}
+<div class="page-wrapper">
+  <div class="container">
+    {{ partial "breadcrumbs.html" . }}
+    <div class="section-header">
+      <h1 class="section-title">Blog</h1>
+      <p class="section-desc">Essays, tutorials, and research notes.</p>
+    </div>
+
+    {{/* Tag cloud */}}
+    {{ $tags := .Site.Taxonomies.tags }}
+    {{ if $tags }}
+    <div class="filter-bar" style="margin-bottom:2.5rem;">
+      <a href="{{ "/blog/" | relURL }}" class="filter-btn{{ if not .Params.tag }} active{{ end }}">All</a>
+      {{ range $name, $pages := $tags }}
+      <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}/" class="filter-btn">{{ $name }} ({{ len $pages }})</a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="blog-list">
+      {{ range .Pages }}
+      <article class="blog-card">
+        {{ with .Params.image }}
+        <div class="blog-thumb">
+          {{ $img := resources.Get . }}{{ if $img }}{{ $img = $img.Resize "400x250 webp" }}
+          <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" loading="lazy" width="400" height="250">
+          {{ end }}
+        </div>
+        {{ end }}
+        <div class="blog-body">
+          <div>
+            <div class="blog-meta" style="margin-bottom:.5rem;">
+              <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+              <span>{{ math.Round (div (float (len (split .Plain " "))) 200.0) }} min read</span>
+            </div>
+            <h2 class="blog-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p class="blog-excerpt">{{ .Summary | truncate 160 }}</p>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:.25rem;">
+            {{ range .Params.tags }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag" style="font-size:.7rem;">{{ . }}</a>{{ end }}
+          </div>
+        </div>
+      </article>
+      {{ else }}
+      <p class="text-muted">No posts yet. Add Markdown files to <code>content/blog/</code>.</p>
+      {{ end }}
+    </div>
+
+    {{ template "_internal/pagination.html" . }}
+  </div>
+</div>
+{{ end }}

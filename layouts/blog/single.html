@@ -1,0 +1,77 @@
+{{ define "main" }}
+<div class="page-wrapper">
+  <div class="container">
+    {{ partial "breadcrumbs.html" . }}
+    <div class="article-layout">
+      <article class="article-content">
+        <header style="margin-bottom:2.5rem;">
+          <div class="blog-meta" style="margin-bottom:1rem;">
+            <span>{{ .Date.Format "January 2, 2006" }}</span>
+            <span>{{ math.Round (div (float (len (split .Plain " "))) 200.0) }} min read</span>
+          </div>
+          <h1>{{ .Title }}</h1>
+          {{ with .Params.description }}<p style="font-size:1.1rem;color:var(--text-muted);">{{ . }}</p>{{ end }}
+          <div style="display:flex;flex-wrap:wrap;gap:.25rem;margin-top:1rem;">
+            {{ range .Params.tags }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
+          </div>
+          {{ with .Params.youtube_id }}
+          <div style="margin-top:1.5rem;">
+            {{ partial "shortcodes/youtube-embed.html" (dict "id" . "title" $.Title) }}
+          </div>
+          {{ end }}
+        </header>
+
+        <div class="prose">
+          {{ .Content }}
+        </div>
+
+        {{/* Related posts */}}
+        {{ $related := .Site.RegularPages.Related . | first 3 }}
+        {{ with $related }}
+        <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);">
+          <h3 style="margin-bottom:1.5rem;">Related Posts</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;">
+            {{ range . }}
+            <a href="{{ .RelPermalink }}" style="display:block;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);">
+              <p style="font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:.25rem;">{{ .Title }}</p>
+              <p style="font-size:.75rem;color:var(--text-muted);">{{ .Date.Format "Jan 2, 2006" }}</p>
+            </a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+        {{/* Giscus Comments */}}
+        {{ if .Site.Params.giscusRepo }}
+        <div class="comments-section">
+          <h3 style="margin-bottom:1rem;">Comments</h3>
+          <script src="https://giscus.app/client.js"
+            data-repo="{{ .Site.Params.giscusRepo }}"
+            data-repo-id="{{ .Site.Params.giscusRepoId }}"
+            data-category="{{ .Site.Params.giscusCategory }}"
+            data-category-id="{{ .Site.Params.giscusCategoryId }}"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="preferred_color_scheme"
+            data-lang="en"
+            crossorigin="anonymous"
+            async>
+          </script>
+        </div>
+        {{ end }}
+      </article>
+
+      {{/* Table of Contents */}}
+      {{ if .TableOfContents }}
+      <aside class="toc">
+        <h4>Contents</h4>
+        {{ .TableOfContents }}
+      </aside>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

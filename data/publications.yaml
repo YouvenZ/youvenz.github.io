@@ -1,0 +1,269 @@
+# Publications data — auto-updated by scripts/update_publications.py
+# Manual entries can also be added here.
+
+# ── Journal Articles ────────────────────────────────────────────────
+
+- title: "L-MAE: Longitudinal Masked Auto-Encoder for Diabetic Retinopathy Progression Prediction"
+  authors:
+    - name: "Rachid Youven Zeghlache"
+      self: true
+    - name: "Pierre-Henri Conze"
+    - name: "Gwenolé Quellec"
+    - name: "Mathieu Lamard"
+    - name: "Béatrice Cochener"
+    - name: "Gouenou Coatrieux"
+  venue: "Computers in Biology and Medicine (CBM)"
+  year: 2025
+  type: journal
+  doi: ""
+  pdf: ""
+  arxiv: ""
+  code: ""
+  citations: 0
+  abstract: >
+    We propose L-MAE, a longitudinal masked auto-encoder that learns temporal representations
+    from sequential retinal image pairs to predict diabetic retinopathy progression.
+  tags: ["longitudinal", "masked-autoencoder", "diabetic-retinopathy", "deep-learning"]
+  bibtex: |
+    @article{zeghlache2025lmae,
+      title   = {L-MAE: Longitudinal Masked Auto-Encoder for Diabetic Retinopathy Progression Prediction},
+      author  = {Zeghlache, Rachid Youven and Conze, Pierre-Henri and Quellec, Gwenolé and Lamard, Mathieu and Cochener, Béatrice and Coatrieux, Gouenou},
+      journal = {Computers in Biology and Medicine},
+      year    = {2025}
+    }
+
+- title: "DISCOVER: Development and Validation of a Deep Learning-Based Algorithm for Diabetic Retinopathy Progression Prediction"
+  authors:
+    - name: "Rachid Youven Zeghlache"
+      self: true
+    - name: "Pierre-Henri Conze"
+    - name: "Gwenolé Quellec"
+    - name: "Mathieu Lamard"
+    - name: "Sophie Bonnin"
+    - name: "Béatrice Cochener"
+    - name: "Gouenou Coatrieux"
+  venue: "AIM — Artificial Intelligence in Medicine"
+  year: 2024
+  type: journal
+  doi: ""
+  pdf: ""
+  arxiv: ""
+  code: ""
+  citations: 0
+  abstract: >
+    Development and external validation of a deep learning algorithm for predicting diabetic
+    retinopathy progression from baseline fundus photographs.
+  tags: ["diabetic-retinopathy", "progression-prediction", "deep-learning", "validation"]
+  bibtex: |
+    @article{zeghlache2024discover,
+      title   = {DISCOVER: Development and Validation of a Deep Learning-Based Algorithm for Diabetic Retinopathy Progression Prediction},
+      author  = {Zeghlache, Rachid Youven and Conze, Pierre-Henri and Quellec, Gwenolé and Lamard, Mathieu and Bonnin, Sophie and Cochener, Béatrice and Coatrieux, Gouenou},
+      journal = {Artificial Intelligence in Medicine},
+      year    = {2024}
+    }
+
+- title: "Deep Learning for Diabetic Retinopathy Screening — A Comprehensive Review"
+  authors:
+    - name: "Rachid Youven Zeghlache"
+      self: true
+    - name: "Pierre-Henri Conze"
+    - name: "Gwenolé Quellec"
+    - name: "Mathieu Lamard"
+    - name: "Béatrice Cochener"
+    - name: "Gouenou Coatrieux"
+  venue: "Computers in Biology and Medicine (CBM)"
+  year: 2024
+  type: journal
+  doi: ""
+  pdf: ""
+  arxiv: ""
+  code: ""
+  citations: 0
+  abstract: >
+    A comprehensive review of deep learning methods applied to diabetic retinopathy screening,
+    covering datasets, architectures, and evaluation protocols.
+  tags: ["review", "diabetic-retinopathy", "deep-learning", "screening"]
+  bibtex: |
+    @article{zeghlache2024review,
+      title   = {Deep Learning for Diabetic Retinopathy Screening—A Comprehensive Review},
+      author  = {Zeghlache, Rachid Youven and Conze, Pierre-Henri and Quellec, Gwenolé and Lamard, Mathieu and Cochener, Béatrice and Coatrieux, Gouenou},
+      journal = {Computers in Biology and Medicine},
+      year    = {2024}
+    }
+
+- title: "Multi-modal Deep Learning for Age-related Macular Degeneration Progression Prediction"
+  authors:
+    - name: "Rachid Youven Zeghlache"
+      self: true
+    - name: "Pierre-Henri Conze"
+    - name: "Gwenolé Quellec"
+    - name: "Mathieu Lamard"
+    - name: "Béatrice Cochener"
+    - name: "Gouenou Coatrieux"
+  venue: "arXiv preprint"
+  year: 2025
+  type: journal
+  doi: ""
+  pdf: ""
+  arxiv: ""
+  code: ""
+  citations: 0
+  abstract: >
+    A multi-modal deep learning framework combining OCT and fundus imaging for AMD progression
+    prediction, evaluated on the MARIO MICCAI 2024 challenge dataset.
+  tags: ["amd", "multi-modal", "oct", "progression-prediction"]
+  bibtex: |
+    @article{zeghlache2025amd,
+      title   = {Multi-modal Deep Learning for Age-related Macular Degeneration Progression Prediction},
+      author  = {Zeghlache, Rachid Youven and Conze, Pierre-Henri and Quellec, Gwenolé and Lamard, Mathieu and Cochener, Béatrice and Coatrieux, Gouenou},
+      year    = {2025}
+    }
+
+# ── Conference Proceedings ───────────────────────────────────────────
+
+- title: "LatiM: Longitudinal Representation Learning in Continuous-Time Models for Medical Image Analysis"
+  authors:
+    - name: "Rachid Youven Zeghlache"
+      self: true
+    - name: "Pierre-Henri Conze"
+    - name: "Gwenolé Quellec"
+    - name: "Mathieu Lamard"
+    - name: "Béatrice Cochener"
+    - name: "Gouenou Coatrieux"
+  venue: "MICCAI 2024"
+  year: 2024
+  type: conference
+  doi: ""
+  pdf: ""
+  arxiv: ""
+  code: ""
+  citations: 0
+  abstract: >
+    LatiM is a continuous-time longitudinal model for learning representations from sequential
+    medical images, enabling disease progression prediction from irregular time-series.
+  tags: ["longitudinal", "continuous-time", "miccai", "medical-imaging"]
+  bibtex: |
+    @inproceedings{zeghlache2024latim,
+      title     = {LatiM: Longitudinal Representation Learning in Continuous-Time Models for Medical Image Analysis},
+      author    = {Zeghlache, Rachid Youven and Conze, Pierre-Henri and Quellec, Gwenolé and Lamard, Mathieu and Cochener, Béatrice and Coatrieux, Gouenou},
+      booktitle = {MICCAI},
+      year      = {2024}
+    }
+
+- title: "Longitudinal Self-Supervised Learning using Neural Ordinary Differential Equation"
+  authors:
+    - name: "Rachid Youven Zeghlache"
+      self: true
+    - name: "Pierre-Henri Conze"
+    - name: "Gwenolé Quellec"
+    - name: "Mathieu Lamard"
+    - name: "Béatrice Cochener"
+    - name: "Gouenou Coatrieux"
+  venue: "PRIME Workshop, MICCAI 2023"
+  year: 2023
+  type: conference
+  doi: ""
+  pdf: ""
+  arxiv: ""
+  code: ""
+  citations: 0
+  abstract: >
+    Self-supervised longitudinal learning via Neural ODEs for retinal image sequences applied
+    to diabetic retinopathy follow-up and progression prediction.
+  tags: ["self-supervised", "neural-ode", "longitudinal", "miccai"]
+  bibtex: |
+    @inproceedings{zeghlache2023ode,
+      title     = {Longitudinal Self-Supervised Learning using Neural Ordinary Differential Equation},
+      author    = {Zeghlache, Rachid Youven and Conze, Pierre-Henri and Quellec, Gwenolé and Lamard, Mathieu and Cochener, Béatrice and Coatrieux, Gouenou},
+      booktitle = {PRIME Workshop, MICCAI},
+      year      = {2023}
+    }
+
+- title: "LMT: Longitudinal Mixing Training for Disease Progression Prediction using Multi-Source Data"
+  authors:
+    - name: "Rachid Youven Zeghlache"
+      self: true
+    - name: "Pierre-Henri Conze"
+    - name: "Gwenolé Quellec"
+    - name: "Mathieu Lamard"
+    - name: "Béatrice Cochener"
+    - name: "Gouenou Coatrieux"
+  venue: "MLMI Workshop, MICCAI 2023"
+  year: 2023
+  type: conference
+  doi: ""
+  pdf: ""
+  arxiv: ""
+  code: ""
+  citations: 0
+  abstract: >
+    LMT enables predicting disease progression from a single image at inference time by
+    leveraging longitudinal data mixing during training.
+  tags: ["longitudinal", "data-augmentation", "progression", "miccai"]
+  bibtex: |
+    @inproceedings{zeghlache2023lmt,
+      title     = {LMT: Longitudinal Mixing Training for Disease Progression Prediction using Multi-Source Data},
+      author    = {Zeghlache, Rachid Youven and Conze, Pierre-Henri and Quellec, Gwenolé and Lamard, Mathieu and Cochener, Béatrice and Coatrieux, Gouenou},
+      booktitle = {MLMI Workshop, MICCAI},
+      year      = {2023}
+    }
+
+- title: "Detection of Diabetic Retinopathy using Longitudinal Self-Supervised Learning"
+  authors:
+    - name: "Rachid Youven Zeghlache"
+      self: true
+    - name: "Pierre-Henri Conze"
+    - name: "Gwenolé Quellec"
+    - name: "Mathieu Lamard"
+    - name: "Béatrice Cochener"
+    - name: "Gouenou Coatrieux"
+  venue: "OMIA Workshop, MICCAI 2022 — 🏆 Best Paper"
+  year: 2022
+  type: conference
+  doi: ""
+  pdf: ""
+  arxiv: ""
+  code: ""
+  citations: 0
+  abstract: >
+    Best Paper Award. Longitudinal self-supervised learning applied to retinal fundus image sequences
+    for automated diabetic retinopathy detection.
+  tags: ["best-paper", "diabetic-retinopathy", "self-supervised", "omia", "miccai"]
+  bibtex: |
+    @inproceedings{zeghlache2022omia,
+      title     = {Detection of Diabetic Retinopathy using Longitudinal Self-Supervised Learning},
+      author    = {Zeghlache, Rachid Youven and Conze, Pierre-Henri and Quellec, Gwenolé and Lamard, Mathieu and Cochener, Béatrice and Coatrieux, Gouenou},
+      booktitle = {OMIA Workshop, MICCAI},
+      year      = {2022}
+    }
+
+# ── Patent ────────────────────────────────────────────────────────────
+
+- title: "Method and System for Longitudinal Medical Image Analysis using Deep Learning"
+  authors:
+    - name: "Rachid Youven Zeghlache"
+      self: true
+    - name: "Pierre-Henri Conze"
+    - name: "Gwenolé Quellec"
+    - name: "Mathieu Lamard"
+    - name: "Béatrice Cochener"
+    - name: "Gouenou Coatrieux"
+  venue: "European Patent Office — EP23306730.5"
+  year: 2023
+  type: patent
+  doi: ""
+  pdf: ""
+  arxiv: ""
+  code: ""
+  citations: 0
+  abstract: >
+    Patent covering a deep learning method for longitudinal analysis of medical images,
+    enabling progression monitoring and prediction for degenerative diseases.
+  tags: ["patent", "longitudinal", "medical-imaging", "deep-learning"]
+  bibtex: |
+    @patent{zeghlache2023patent,
+      title  = {Method and System for Longitudinal Medical Image Analysis using Deep Learning},
+      author = {Zeghlache, Rachid Youven and Conze, Pierre-Henri and Quellec, Gwenolé and Lamard, Mathieu and Cochener, Béatrice and Coatrieux, Gouenou},
+      number = {EP23306730.5},
+      year   = {2023}
+    }

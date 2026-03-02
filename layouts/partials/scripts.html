@@ -1,0 +1,15 @@
+{{ if .Site.Params.search }}
+{{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ $searchIdx := resources.Get "search-index.json" }}
+<script>
+  window.searchIndexURL = '{{ "/index.json" | absURL }}';
+</script>
+{{ end }}
+{{ if .Site.Params.googleAnalytics }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','{{ .Site.Params.googleAnalytics }}');</script>
+{{ end }}
+{{ if .Site.Params.plausibleDomain }}
+<script defer data-domain="{{ .Site.Params.plausibleDomain }}" src="https://plausible.io/js/script.js"></script>
+{{ end }}

@@ -1,0 +1,14 @@
+# Used by layouts/about/single.html
+
+- degree: "Ph.D. in Medical Image Analysis"
+  institution: "University of Western Brittany (UBO) — LATIM, France"
+  year: "2021–2024"
+  note: "Thesis: Longitudinal follow-up and multi-modal analysis for prediction of diabetic retinopathy progression using deep learning"
+
+- degree: "M.Sc. in Images and Signals for Medicine (SIM)"
+  institution: "UPEC, France"
+  year: "2020–2021"
+
+- degree: "Engineering Degree, Computer Science for Health"
+  institution: "EPISEN, France"
+  year: "2017–2020"

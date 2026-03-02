@@ -1,0 +1,45 @@
+{{ define "main" }}
+<div class="page-wrapper">
+  <div class="container">
+    {{ partial "breadcrumbs.html" . }}
+    <div class="section-header">
+      <h1 class="section-title">Talks</h1>
+      <p class="section-desc">Invited talks, keynotes, and conference presentations.</p>
+    </div>
+
+    <div class="filter-bar" data-target="talks">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="invited">Invited</button>
+      <button class="filter-btn" data-filter="conference">Conference</button>
+      <button class="filter-btn" data-filter="workshop">Workshop</button>
+    </div>
+
+    <div class="talks-list" data-filter-group="talks">
+      {{ range .Site.Data.talks }}
+      {{ $tags := slice .type }}
+      <article class="talk-card" data-tags="{{ $tags | jsonify }}">
+        <div class="talk-date-col">
+          <div class="talk-month">{{ dateFormat "Jan" .date }}</div>
+          <div class="talk-year">{{ dateFormat "2006" .date }}</div>
+        </div>
+        <div>
+          <h3 class="talk-title">{{ .title }}</h3>
+          <p class="talk-event">{{ .event }}{{ with .location }} · {{ . }}{{ end }}</p>
+          {{ with .abstract }}
+          <button class="pub-abstract-toggle" aria-expanded="false">▼ Show abstract</button>
+          <div class="pub-abstract">{{ . }}</div>
+          {{ end }}
+          <div class="pub-links" style="margin-top:0.75rem;">
+            {{ with .slides }}<a href="{{ . }}" class="pub-link" target="_blank">Slides</a>{{ end }}
+            {{ with .video }}<a href="{{ . }}" class="pub-link" target="_blank">Video</a>{{ end }}
+          </div>
+          <span class="tag" style="margin-top:0.5rem;">{{ .type }}</span>
+        </div>
+      </article>
+      {{ else }}
+      <p class="text-muted">No talks yet. Add entries to <code>data/talks.yaml</code>.</p>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

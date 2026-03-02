@@ -1,0 +1,11 @@
+{{/* BibTeX block shortcode */}}
+{{/* Usage: {{< bibtex >}}@article{...}{{< /bibtex >}} */}}
+<div style="position:relative;margin:1.5rem 0;">
+  <pre style="padding-right:4rem;"><code>{{ .Inner }}</code></pre>
+  <button
+    class="bibtex-copy-btn btn btn-sm btn-ghost"
+    data-bibtex="{{ .Inner }}"
+    style="position:absolute;top:.5rem;right:.5rem;">
+    Copy
+  </button>
+</div>

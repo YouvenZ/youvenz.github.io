@@ -1,0 +1,18 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-copy">&copy; {{ now.Year }} {{ .Site.Params.name }}. Built with <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.</p>
+    <div class="footer-social">
+      {{ with .Site.Params.social.github }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>{{ end }}
+      {{ with .Site.Params.social.twitter }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="Twitter/X">X</a>{{ end }}
+      {{ with .Site.Params.social.linkedin }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>{{ end }}
+      {{ with .Site.Params.social.googleScholar }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="Google Scholar">Scholar</a>{{ end }}
+    </div>
+    {{ with .Site.Params.githubActionsOwner }}
+    <div class="pipeline-badges">
+      <img src="https://github.com/{{ . }}/{{ $.Site.Params.githubActionsRepo }}/actions/workflows/video_to_blog.yml/badge.svg" alt="Blog Pipeline" loading="lazy">
+      <img src="https://github.com/{{ . }}/{{ $.Site.Params.githubActionsRepo }}/actions/workflows/update_publications.yml/badge.svg" alt="Publications Pipeline" loading="lazy">
+      <img src="https://github.com/{{ . }}/{{ $.Site.Params.githubActionsRepo }}/actions/workflows/update_videos.yml/badge.svg" alt="Videos Pipeline" loading="lazy">
+    </div>
+    {{ end }}
+  </div>
+</footer>

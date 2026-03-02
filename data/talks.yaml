@@ -1,0 +1,56 @@
+# Talks data — manually curated
+
+- title: "MARIO: Monitoring Age-related Macular Degeneration Progression in OCT — Challenge Results"
+  event: "MICCAI 2024"
+  location: "Marrakesh, Morocco"
+  date: "2024-10-06"
+  type: invited
+  abstract: >
+    Presentation of the MARIO challenge results — an AMD progression monitoring benchmark in
+    multi-modal OCT imaging, organised as a MICCAI 2024 satellite event.
+  slides: ""
+  video: ""
+
+- title: "LatiM: Longitudinal Representation Learning in Continuous-Time Models for Medical Image Analysis"
+  event: "MICCAI 2024"
+  location: "Marrakesh, Morocco"
+  date: "2024-10-06"
+  type: conference
+  abstract: >
+    We introduce LatiM, a continuous-time longitudinal representation learning model for
+    predicting disease progression from irregular sequential medical images.
+  slides: ""
+  video: ""
+
+- title: "Longitudinal Self-Supervised Learning using Neural Ordinary Differential Equation"
+  event: "PRIME Workshop, MICCAI 2023"
+  location: "Vancouver, Canada"
+  date: "2023-10-08"
+  type: workshop
+  abstract: >
+    Self-supervised longitudinal learning via Neural ODEs applied to retinal image sequences
+    for diabetic retinopathy follow-up and progression prediction.
+  slides: ""
+  video: ""
+
+- title: "LMT: Longitudinal Mixing Training for Disease Progression Prediction"
+  event: "MLMI Workshop, MICCAI 2023"
+  location: "Vancouver, Canada"
+  date: "2023-10-08"
+  type: workshop
+  abstract: >
+    LMT enables predicting disease progression from a single image at inference time by
+    leveraging longitudinal data mixing during training across multiple sources.
+  slides: ""
+  video: ""
+
+- title: "Detection of Diabetic Retinopathy using Longitudinal Self-Supervised Learning"
+  event: "OMIA Workshop, MICCAI 2022 — Best Paper Award"
+  location: "Singapore"
+  date: "2022-09-18"
+  type: workshop
+  abstract: >
+    Longitudinal self-supervised learning approach applied to retinal fundus image sequences
+    for automated diabetic retinopathy detection. Awarded Best Paper.
+  slides: ""
+  video: ""

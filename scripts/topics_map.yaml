@@ -1,0 +1,68 @@
+# topics_map.yaml — keyword → tag mapping for auto-tagging publications
+# Add or remove entries to customise which topics are detected.
+
+deep-learning:
+  - deep learning
+  - neural network
+  - transformer
+  - attention mechanism
+  - convolutional
+
+machine-learning:
+  - machine learning
+  - supervised
+  - unsupervised
+  - classification
+  - regression
+  - random forest
+  - gradient boosting
+
+genomics:
+  - genomic
+  - genome
+  - variant
+  - SNP
+  - non-coding
+  - regulatory
+
+single-cell:
+  - single-cell
+  - single cell
+  - scRNA
+  - scATAC
+  - cell type
+
+nlp:
+  - natural language
+  - language model
+  - text
+  - NLP
+  - token
+
+interpretability:
+  - interpretab
+  - explainab
+  - saliency
+  - attribution
+  - SHAP
+  - LIME
+
+benchmarking:
+  - benchmark
+  - evaluation
+  - comparison
+  - survey
+
+drug-discovery:
+  - drug discovery
+  - molecular
+  - protein
+  - docking
+  - binding
+
+precision-medicine:
+  - precision medicine
+  - clinical
+  - patient
+  - diagnosis
+  - prognosis

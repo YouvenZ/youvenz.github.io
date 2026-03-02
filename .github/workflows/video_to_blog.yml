@@ -1,0 +1,40 @@
+name: "Pipeline 1 — Blog Post from Latest Video"
+
+on:
+  schedule:
+    - cron: "0 8 * * *"   # daily at 08:00 UTC
+  workflow_dispatch:
+
+jobs:
+  video-to-blog:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run pipeline
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          YOUTUBE_CHANNEL_ID: ${{ vars.YOUTUBE_CHANNEL_ID }}
+        run: python scripts/video_to_blog.py
+
+      - name: Deploy (Netlify trigger)
+        if: success()
+        run: echo "Hugo rebuild triggered by git push in pipeline script."

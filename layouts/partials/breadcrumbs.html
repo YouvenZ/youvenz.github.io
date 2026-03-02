@@ -1,0 +1,13 @@
+{{ if and .Site.Params.breadcrumbs (not .IsHome) }}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="{{ "/" | relURL }}">Home</a></li>
+    {{ if .Parent }}
+      {{ if not .Parent.IsHome }}
+      <li><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></li>
+      {{ end }}
+    {{ end }}
+    <li aria-current="page">{{ .Title }}</li>
+  </ol>
+</nav>
+{{ end }}

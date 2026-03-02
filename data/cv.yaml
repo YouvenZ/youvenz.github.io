@@ -1,0 +1,88 @@
+# CV data — used by layouts/cv/single.html
+
+education:
+  - degree: "Ph.D. in Medical Image Analysis"
+    institution: "University of Western Brittany (UBO), LATIM — France"
+    year: "2021–2024"
+    note: "Thesis: Longitudinal follow-up and multi-modal analysis for prediction of diabetic retinopathy progression using deep learning"
+  - degree: "M.Sc. in Images and Signals for Medicine (SIM)"
+    institution: "UPEC, France"
+    year: "2020–2021"
+  - degree: "Engineering Degree, Computer Science for Health"
+    institution: "EPISEN, France"
+    year: "2017–2020"
+
+positions:
+  - title: "Research Engineer — Image Falsification Detection & Classification (XAI)"
+    institution: "IMT Atlantique, France"
+    period: "2025–2026"
+  - title: "Ph.D. Researcher — Longitudinal Deep Learning for Diabetic Retinopathy"
+    institution: "LATIM, University of Western Brittany, France"
+    period: "2021–2024"
+  - title: "Research Intern — Driver Attention Level Classification (Multimodality & DL)"
+    institution: "Lissi-UPEC, France"
+    period: "Oct 2020 – Feb 2021"
+  - title: "Research Intern — Cancerous Anomaly Segmentation on FDG-PET Scans"
+    institution: "CHU Henri Mondor, France"
+    period: "Mar 2020 – Sep 2020"
+  - title: "Research Intern — Deep Learning for Head & Neck Bone Segmentation in CT"
+    institution: "DKFZ, Germany"
+    period: "Apr 2019 – Sep 2019"
+
+teaching:
+  - role: "Lecturer — Introduction to AI/ML & Predictive AI for Maintenance"
+    institution: "OPEN Campus"
+    year: "2024–2025"
+  - role: "Lecturer — Introduction to Agentic AI and RAG for Enterprise"
+    institution: "OPEN Campus"
+    year: "2024–2025"
+  - role: "Lecturer — Introduction to Programming & Computer Science"
+    institution: "Computer Science Dept., University of Western Brittany"
+    year: "2023–2024"
+  - role: "Lecturer — Virtual Patient Deep Learning for Healthcare"
+    institution: "School of Engineering, IMT Atlantique"
+    year: "2023–2024"
+  - role: "Lecturer — Computer Vision for Tracking using Deep Learning"
+    institution: "School of Engineering, IMT Atlantique"
+    year: "2023–2024"
+  - role: "Lecturer — Introduction to ML, CS and Technologies for Health"
+    institution: "EPISEN"
+    year: "2020–2021"
+
+service:
+  - role: "Reviewer"
+    venues: "MICCAI 2024, 2025 · CLINICAI 2024 · IEEE TMI · Medical Image Analysis · Biomedical Signal Processing and Control · Computers in Biology and Medicine · Scientific Reports"
+  - role: "Challenge Organiser (PI)"
+    venues: "MICCAI-MARIO 2024 (AMD Progression in OCT) · MICCAI-DIAMOND 2024 (Diabetic Macular Edema Onset Prediction)"
+
+awards:
+  - name: "Best Paper Award"
+    year: "2022"
+    institution: "OMIA Workshop, MICCAI"
+  - name: "Third Place — DRAC Data Challenge"
+    year: "2022"
+    institution: "DRAC Grand Challenge"
+  - name: "Winning Team — Hackathon E-Med"
+    year: "2019"
+    institution: "ANSM"
+  - name: "Winning Team — Datathon Janssen Défi Oncologie"
+    year: "2019"
+    institution: "Janssen Johnson"
+
+skills:
+  - Python
+  - PyTorch
+  - R
+  - Java
+  - C/C++
+  - MATLAB
+  - LangChain
+  - LangGraph
+  - AutoGen
+  - CrewAI
+  - Medical Imaging
+  - Signal Processing
+  - Computer Vision
+  - Hugo
+  - LaTeX
+  - Markdown

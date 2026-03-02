@@ -1,0 +1,65 @@
+{{ define "main" }}
+<div class="page-wrapper">
+  <div class="container">
+    {{ partial "breadcrumbs.html" . }}
+    <div class="section-header">
+      <h1 class="section-title">Publications</h1>
+      <p class="section-desc">Peer-reviewed articles, conference papers, preprints, and book chapters.</p>
+    </div>
+
+    {{/* Filter by type */}}
+    <div class="filter-bar" data-target="publications">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="journal">Journal</button>
+      <button class="filter-btn" data-filter="conference">Conference</button>
+      <button class="filter-btn" data-filter="preprint">Preprint</button>
+      <button class="filter-btn" data-filter="book-chapter">Book Chapter</button>
+    </div>
+
+    <div class="publication-list" data-filter-group="publications">
+      {{ range .Site.Data.publications }}
+      {{ $tags := .tags | default slice }}
+      {{ $typeTags := slice .type }}
+      {{ $allTags := union $tags $typeTags }}
+      <article class="publication-card" data-tags="{{ $allTags | jsonify }}">
+        <div class="pub-title">
+          {{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
+        </div>
+        <p class="pub-authors">
+          {{- range $i, $a := .authors -}}
+            {{- if gt $i 0 }}, {{ end -}}
+            {{- if .self }}<span class="self">{{ .name }}</span>{{- else }}{{ .name }}{{- end -}}
+          {{- end -}}
+        </p>
+        <p class="pub-venue">
+          <span class="venue-name">{{ .venue }}</span>{{ with .year }}, {{ . }}{{ end }}
+          {{ with .citations }}<span class="cite-badge" title="Citations">{{ . }} citations</span>{{ end }}
+        </p>
+        <div class="pub-links">
+          {{ with .pdf }}<a href="{{ . }}" class="pub-link" target="_blank">PDF</a>{{ end }}
+          {{ with .doi }}<a href="https://doi.org/{{ . }}" class="pub-link" target="_blank">DOI</a>{{ end }}
+          {{ with .arxiv }}<a href="{{ . }}" class="pub-link" target="_blank">arXiv</a>{{ end }}
+          {{ with .code }}<a href="{{ . }}" class="pub-link" target="_blank">Code</a>{{ end }}
+          {{ with .slides }}<a href="{{ . }}" class="pub-link" target="_blank">Slides</a>{{ end }}
+          {{ with .poster }}<a href="{{ . }}" class="pub-link" target="_blank">Poster</a>{{ end }}
+          {{ with .bibtex }}<button class="pub-link bibtex-copy-btn" data-bibtex="{{ . }}">Cite</button>{{ end }}
+        </div>
+        {{ with .abstract }}
+        <button class="pub-abstract-toggle" aria-expanded="false">▼ Show abstract</button>
+        <div class="pub-abstract">{{ . }}</div>
+        {{ end }}
+        <div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:0.25rem;">
+          {{ range .tags }}<span class="tag" style="font-size:0.7rem;">{{ . }}</span>{{ end }}
+        </div>
+      </article>
+      {{ else }}
+      <p class="text-muted">No publications yet. Run the update pipeline or add entries to <code>data/publications.yaml</code>.</p>
+      {{ end }}
+    </div>
+
+    <div style="margin-top:2rem;">
+      <a href="/publications.bib" class="btn btn-outline" download>Download .bib</a>
+    </div>
+  </div>
+</div>
+{{ end }}

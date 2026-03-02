@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div class="page-wrapper">
+  <div class="container">
+    {{ partial "breadcrumbs.html" . }}
+    <div class="section-header">
+      <h1 class="section-title">Projects</h1>
+      <p class="section-desc">Research and software projects.</p>
+    </div>
+
+    <div class="filter-bar" data-target="projects">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+    </div>
+
+    <div class="projects-grid" data-filter-group="projects">
+      {{ range .Pages }}
+      {{ $tags := .Params.tags | default slice }}
+      {{ $statusTags := slice (.Params.status | default "active") }}
+      {{ $allTags := union $tags $statusTags }}
+      <article class="card project-card" data-tags="{{ $allTags | jsonify }}">
+        {{ with .Params.thumbnail }}
+        <div class="project-thumb">
+          {{ $img := resources.Get . }}{{ if $img }}{{ $img = $img.Resize "600x338 webp" }}
+          <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" loading="lazy" width="600" height="338">
+          {{ end }}
+        </div>
+        {{ end }}
+        <div class="project-body">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.5rem;">
+            <h3 class="project-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <span class="status-badge status-{{ .Params.status | default "active" }}">{{ .Params.status | default "active" }}</span>
+          </div>
+          <p class="project-desc">{{ .Summary | truncate 120 }}</p>
+          <div class="interests-list" style="margin-bottom:0.75rem;">
+            {{ range .Params.tags }}<span class="tag" style="font-size:0.7rem;">{{ . }}</span>{{ end }}
+          </div>
+          <div class="pub-links">
+            {{ with .Params.github }}<a href="{{ . }}" class="pub-link" target="_blank">GitHub</a>{{ end }}
+            {{ with .Params.demo }}<a href="{{ . }}" class="pub-link" target="_blank">Demo</a>{{ end }}
+            {{ with .Params.paper }}<a href="{{ . }}" class="pub-link" target="_blank">Paper</a>{{ end }}
+          </div>
+        </div>
+      </article>
+      {{ else }}
+      <p class="text-muted">No projects yet. Add content to <code>content/projects/</code>.</p>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

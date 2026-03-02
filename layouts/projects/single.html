@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="page-wrapper">
+  <div class="container" style="max-width:800px;">
+    {{ partial "breadcrumbs.html" . }}
+    <header style="margin-bottom:2.5rem;">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.75rem;">
+        <h1 style="margin-bottom:0;">{{ .Title }}</h1>
+        <span class="status-badge status-{{ .Params.status | default "active" }}">{{ .Params.status | default "active" }}</span>
+      </div>
+      {{ with .Params.description }}<p style="font-size:1.05rem;color:var(--text-muted);">{{ . }}</p>{{ end }}
+      <div style="display:flex;flex-wrap:wrap;gap:.25rem;margin:.75rem 0;">
+        {{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+      </div>
+      <div class="pub-links">
+        {{ with .Params.github }}<a href="{{ . }}" class="pub-link" target="_blank">GitHub</a>{{ end }}
+        {{ with .Params.demo }}<a href="{{ . }}" class="pub-link" target="_blank">Demo</a>{{ end }}
+        {{ with .Params.paper }}<a href="{{ . }}" class="pub-link" target="_blank">Paper</a>{{ end }}
+      </div>
+    </header>
+    <div class="article-content">{{ .Content }}</div>
+  </div>
+</div>
+{{ end }}

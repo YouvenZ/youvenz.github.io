@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="page-wrapper">
+  <div class="container">
+    {{ partial "breadcrumbs.html" . }}
+    <div class="section-header">
+      <h1 class="section-title">Research</h1>
+      <p class="section-desc">Research areas, themes, and current/past funding.</p>
+    </div>
+
+    {{ with .Site.Data.research_areas }}
+    <div class="research-grid">
+      {{ range . }}
+      <div class="research-card">
+        {{ with .icon }}<div class="research-icon">{{ . }}</div>{{ end }}
+        <h3 class="research-title">{{ .title }}</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;">{{ .description }}</p>
+        {{ with .tags }}<div class="interests-list" style="margin-top:0.75rem;">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{ .Content }}
+
+    {{ with .Site.Data.grants }}
+    <h2 style="margin:3rem 0 1.5rem;">Funding &amp; Grants</h2>
+    <div class="publication-list">
+      {{ range . }}
+      <div class="publication-card">
+        <p class="pub-title">{{ .title }}</p>
+        <p class="pub-venue">{{ .agency }}{{ with .amount }} · {{ . }}{{ end }}{{ with .year }} ({{ . }}){{ end }}</p>
+        {{ with .description }}<p style="color:var(--text-muted);font-size:0.875rem;margin-top:0.5rem;">{{ . }}</p>{{ end }}
+        <span class="tag" style="margin-top:0.5rem;">{{ .status }}</span>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

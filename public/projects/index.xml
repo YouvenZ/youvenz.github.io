@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on Rachid Youven Zeghlache</title><link>https://youvenzful.github.io/projects/</link><description>Recent content in Projects on Rachid Youven Zeghlache</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://youvenzful.github.io/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>GenomeInterp</title><link>https://youvenzful.github.io/projects/genomeinterp/</link><pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate><guid>https://youvenzful.github.io/projects/genomeinterp/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>&lt;strong>GenomeInterp&lt;/strong> is a PyTorch framework for training and interpreting neural networks that predict the regulatory effects of genomic variants.&lt;/p>
+&lt;h2 id="features">Features&lt;/h2>
+&lt;ul>
+&lt;li>Attention-based model architecture for sequence-to-function mapping&lt;/li>
+&lt;li>Built-in saliency map and SHAP-based explanation tools&lt;/li>
+&lt;li>Benchmarked on the ENCODE and GTEx datasets&lt;/li>
+&lt;/ul>
+&lt;h2 id="installation">Installation&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pip install genomeinterp
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="citation">Citation&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bibtex" data-lang="bibtex">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#1f2328">@software&lt;/span>&lt;span style="color:#1f2328">{&lt;/span>&lt;span style="color:#900;font-weight:bold">genomeinterp2024&lt;/span>&lt;span style="color:#1f2328">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#1f2328">author&lt;/span> &lt;span style="color:#1f2328">=&lt;/span> &lt;span style="color:#0a3069">{Researcher, Alex}&lt;/span>&lt;span style="color:#1f2328">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#1f2328">title&lt;/span> &lt;span style="color:#1f2328">=&lt;/span> &lt;span style="color:#0a3069">{GenomeInterp}&lt;/span>&lt;span style="color:#1f2328">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#1f2328">year&lt;/span> &lt;span style="color:#1f2328">=&lt;/span> &lt;span style="color:#0a3069">{2024}&lt;/span>&lt;span style="color:#1f2328">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#1f2328">url&lt;/span> &lt;span style="color:#1f2328">=&lt;/span> &lt;span style="color:#0a3069">{https://github.com/yourname/genomeinterp}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#1f2328">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

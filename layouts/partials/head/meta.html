@@ -1,0 +1,9 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.bio }}{{ end }}{{ end }}">
+<meta name="author" content="{{ .Site.Params.name }}">
+{{ if .Params.noindex }}<meta name="robots" content="noindex">{{ end }}
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="alternate" type="application/rss+xml" href="{{ "/index.xml" | absURL }}" title="{{ .Site.Title }}">

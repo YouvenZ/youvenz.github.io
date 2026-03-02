@@ -1,0 +1,37 @@
+name: "Pipeline 2 — Update Publications"
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # weekly on Monday at 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update-publications:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run pipeline
+        env:
+          SEMANTIC_SCHOLAR_AUTHOR_ID: ${{ vars.SEMANTIC_SCHOLAR_AUTHOR_ID }}
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+          UNPAYWALL_EMAIL: ${{ vars.UNPAYWALL_EMAIL }}
+          ARXIV_AUTHOR_NAME: ${{ vars.ARXIV_AUTHOR_NAME }}
+        run: python scripts/update_publications.py

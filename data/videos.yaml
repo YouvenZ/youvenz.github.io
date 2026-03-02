@@ -1,0 +1,35 @@
+# Videos data — auto-updated by scripts/update_videos.py
+# Sorted by publishedAt descending.
+
+- id: "dQw4w9WgXcQ"
+  title: "Introduction to Transformer Models for Genomics"
+  description: "A beginner-friendly walkthrough of how transformer architectures can be applied to DNA sequence data."
+  publishedAt: "2025-12-01"
+  duration: "18:42"
+  viewCount: 4823
+  likeCount: 312
+  thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
+  playlist: "Tutorials"
+  tags: ["transformers", "genomics", "deep-learning"]
+
+- id: "xvFZjo5PgG0"
+  title: "Keynote: Interpretable AI in Precision Medicine"
+  description: "My keynote talk at the 2025 Computational Biology Symposium on the role of interpretability in clinical AI."
+  publishedAt: "2025-09-15"
+  duration: "42:10"
+  viewCount: 9201
+  likeCount: 674
+  thumbnail: "https://img.youtube.com/vi/xvFZjo5PgG0/maxresdefault.jpg"
+  playlist: "Talks"
+  tags: ["keynote", "interpretability", "precision-medicine"]
+
+- id: "oHg5SJYRHA0"
+  title: "Building a Self-Maintaining Academic Website with Hugo"
+  description: "Full tutorial: Hugo + GitHub Actions + Claude API to automate blog posts from YouTube videos."
+  publishedAt: "2025-07-20"
+  duration: "35:05"
+  viewCount: 6744
+  likeCount: 501
+  thumbnail: "https://img.youtube.com/vi/oHg5SJYRHA0/maxresdefault.jpg"
+  playlist: "Tutorials"
+  tags: ["hugo", "automation", "python"]

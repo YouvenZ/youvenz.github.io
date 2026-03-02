@@ -1,0 +1,23 @@
+{{/* Publication shortcode — renders a single pub from data/publications.yaml by title or index */}}
+{{/* Usage: {{< publication title="Your Paper Title" >}} */}}
+{{ $title := .Get "title" }}
+{{ $pub := dict }}
+{{ range .Site.Data.publications }}
+  {{ if eq .title $title }}{{ $pub = . }}{{ end }}
+{{ end }}
+{{ with $pub }}
+<article class="publication-card" style="margin:1.5rem 0;">
+  <div class="pub-title">{{ .title }}</div>
+  <p class="pub-authors">
+    {{- range $i, $a := .authors -}}
+      {{- if gt $i 0 }}, {{ end -}}
+      {{- if .self }}<span class="self">{{ .name }}</span>{{- else }}{{ .name }}{{- end -}}
+    {{- end -}}
+  </p>
+  <p class="pub-venue"><em>{{ .venue }}</em>{{ with .year }}, {{ . }}{{ end }}</p>
+  <div class="pub-links">
+    {{ with .pdf }}<a href="{{ . }}" class="pub-link" target="_blank">PDF</a>{{ end }}
+    {{ with .doi }}<a href="https://doi.org/{{ . }}" class="pub-link" target="_blank">DOI</a>{{ end }}
+  </div>
+</article>
+{{ end }}

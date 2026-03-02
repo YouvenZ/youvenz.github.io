@@ -1,0 +1,42 @@
+{{ define "main" }}
+<div class="page-wrapper">
+  <div class="container">
+    {{ partial "breadcrumbs.html" . }}
+    <div class="section-header">
+      <h1 class="section-title">Contact</h1>
+      <p class="section-desc">Get in touch for collaborations, speaking invitations, or general inquiries.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <h2 style="margin-bottom:1.5rem;">Send a Message</h2>
+        <form class="contact-form" action="{{ .Site.Params.contactFormAction }}" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+      <div>
+        <h2 style="margin-bottom:1.5rem;">Contact Information</h2>
+        {{ with .Site.Params.email }}<p><strong>Email:</strong> <a href="mailto:{{ . }}">{{ . }}</a></p>{{ end }}
+        {{ with .Site.Params.officeLocation }}<p><strong>Office:</strong> {{ . }}</p>{{ end }}
+        {{ with .Site.Params.social.twitter }}<p><strong>X/Twitter:</strong> <a href="{{ . }}" target="_blank" rel="noopener">{{ . }}</a></p>{{ end }}
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
