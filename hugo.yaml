@@ -1,4 +1,4 @@
-baseURL: "https://youvenzful.github.io/"
+baseURL: "https://youvenz.github.io/"
 languageCode: "en-us"
 title: "Rachid Youven Zeghlache"
 
@@ -50,7 +50,7 @@ params:
   # Social
   social:
     googleScholar: "https://scholar.google.com/citations?user=iWgYuY0AAAAJ&hl=en"
-    github: "https://github.com/youvenzful"
+    github: "https://github.com/YouvenZ"
     linkedin: "https://www.linkedin.com/in/rachid-youven-zeghlache/"
     twitter: ""
     cv: "/cv.pdf"
@@ -80,7 +80,7 @@ params:
   plausibleDomain: ""
 
   # Comments via Giscus
-  giscusRepo: "yourname/yourname.github.io"
+  giscusRepo: "YouvenZ/youvenz.github.io"
   giscusRepoId: ""
   giscusCategory: "Comments"
   giscusCategoryId: ""
@@ -96,8 +96,8 @@ params:
     - "/img/og-default.png"
 
   # Pipeline status (GitHub Actions badge)
-  githubActionsOwner: "youvenzful"
-  githubActionsRepo: "youvenzful.github.io"
+  githubActionsOwner: "YouvenZ"
+  githubActionsRepo: "youvenz.github.io"
 
 # Menus
 menus:
