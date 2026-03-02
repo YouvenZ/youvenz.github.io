@@ -1,7 +1,6 @@
 baseURL: "https://youvenzful.github.io/"
 languageCode: "en-us"
 title: "Rachid Youven Zeghlache"
-theme: ""
 
 # Output formats
 outputs:
