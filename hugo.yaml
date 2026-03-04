@@ -45,7 +45,7 @@ params:
     I am an AI researcher specialising in medical image analysis, multi-modal
     learning, and longitudinal deep learning for predictive medicine. My PhD
     focused on diabetic retinopathy progression prediction. I am also the creator
-    of the Augmented Scholars newsletter and YouTube channel on AI for health.
+    of the Augmented Scholars newsletter and YouTube channel on using AI for making augmnented researcher.
 
   # Social
   social:
@@ -64,8 +64,8 @@ params:
     - Agentic AI for Health
 
   # YouTube
-  youtubeChannelId: "UCxxxxxxxxxxxxxxxx"
-  youtubeChannelUrl: "https://www.youtube.com/@youvenzful"
+  youtubeChannelId: "UCpT8vuVv62-VWoy8wTsABsw"
+  youtubeChannelUrl: "https://www.youtube.com/@youvenzful?sub_confirmation=1"
 
   # Substack
   substackUrl: "https://augmentedscholars.substack.com"
