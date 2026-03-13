@@ -15,14 +15,24 @@
 
     <div class="projects-grid" data-filter-group="projects">
       {{ range .Pages }}
+      {{ $title := .Title }}
       {{ $tags := .Params.tags | default slice }}
       {{ $statusTags := slice (.Params.status | default "active") }}
       {{ $allTags := union $tags $statusTags }}
       <article class="card project-card" data-tags="{{ $allTags | jsonify }}">
         {{ with .Params.thumbnail }}
         <div class="project-thumb">
-          {{ $img := resources.Get . }}{{ if $img }}{{ $img = $img.Resize "600x338 webp" }}
-          <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" loading="lazy" width="600" height="338">
+          {{ $thumb := . }}
+          {{ $isGif := strings.HasSuffix $thumb ".gif" }}
+          {{ $isExternal := strings.HasPrefix $thumb "http" }}
+          {{ if or $isGif $isExternal }}
+            <img src="{{ $thumb }}" alt="{{ $title }}" loading="lazy">
+          {{ else }}
+            {{ $img := resources.Get $thumb }}
+            {{ if $img }}
+              {{ if hugo.IsExtended }}{{ $img = $img.Resize "600x338 webp" }}{{ end }}
+              <img src="{{ $img.RelPermalink }}" alt="{{ $title }}" loading="lazy" width="600" height="338">
+            {{ end }}
           {{ end }}
         </div>
         {{ end }}

@@ -1,0 +1,51 @@
+{{- /* Inline SVG thumbnail generated from article title — used as image fallback */}}
+{{- $title := .Title -}}
+{{- $uid := .File.UniqueID -}}
+
+{{- /* Split title into lines of ≤28 chars */}}
+{{- $scratch := newScratch -}}
+{{- $scratch.Set "l1" "" -}}
+{{- $scratch.Set "l2" "" -}}
+{{- $scratch.Set "l1done" false -}}
+{{- range (split $title " ") -}}
+  {{- if not ($scratch.Get "l1done") -}}
+    {{- $candidate := printf "%s %s" ($scratch.Get "l1") . | strings.TrimLeft " " -}}
+    {{- if le (len $candidate) 28 -}}
+      {{- $scratch.Set "l1" $candidate -}}
+    {{- else -}}
+      {{- $scratch.Set "l1done" true -}}
+      {{- $scratch.Set "l2" (printf "%s %s" ($scratch.Get "l2") . | strings.TrimLeft " ") -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $l2cand := printf "%s %s" ($scratch.Get "l2") . | strings.TrimLeft " " -}}
+    {{- if le (len $l2cand) 28 -}}
+      {{- $scratch.Set "l2" $l2cand -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $l1 := $scratch.Get "l1" -}}
+{{- $l2 := $scratch.Get "l2" -}}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" role="img" aria-label="{{ $title }}">
+  <defs>
+    <linearGradient id="tbg{{ $uid }}" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f0c29"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="340" fill="url(#tbg{{ $uid }})"/>
+  <circle cx="530" cy="50"  r="120" fill="#6366f1" opacity="0.08"/>
+  <circle cx="530" cy="50"  r="70"  fill="#6366f1" opacity="0.07"/>
+  <circle cx="60"  cy="300" r="80"  fill="#818cf8" opacity="0.05"/>
+  <rect x="0" y="0" width="5" height="340" fill="#6366f1"/>
+  <text x="40" y="{{ if $l2 }}148{{ else }}178{{ end }}"
+        font-family="system-ui,-apple-system,sans-serif"
+        font-size="28" font-weight="700" fill="#ffffff" letter-spacing="-0.3">{{ $l1 }}</text>
+  {{ if $l2 }}<text x="40" y="186"
+        font-family="system-ui,-apple-system,sans-serif"
+        font-size="28" font-weight="700" fill="#ffffff" letter-spacing="-0.3">{{ $l2 }}</text>{{ end }}
+  <rect x="0" y="296" width="600" height="44" fill="#6366f1" opacity="0.12"/>
+  <rect x="0" y="296" width="600" height="2"  fill="#6366f1" opacity="0.5"/>
+  <text x="40" y="323"
+        font-family="system-ui,-apple-system,sans-serif"
+        font-size="13" fill="#a5b4fc" font-weight="500">Augmented Scholars</text>
+</svg>

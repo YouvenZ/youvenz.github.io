@@ -30,8 +30,9 @@ markup:
     renderer:
       unsafe: true
   highlight:
-    style: github
+    style: monokai
     lineNos: false
+    guessSyntax: true
 
 # Site params
 params:

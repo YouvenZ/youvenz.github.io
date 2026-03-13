@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^python scripts/import_articles\\.py --dry-run$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

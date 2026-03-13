@@ -7,13 +7,26 @@
       <p class="section-desc">Tutorials, talks, and explainer videos.</p>
     </div>
 
+    {{/* Build playlist → count map */}}
+    {{ $counts := dict }}
+    {{ range .Site.Data.videos }}
+      {{ $pl := .playlist | default "general" }}
+      {{ $counts = merge $counts (dict $pl (add (index $counts $pl | default 0) 1)) }}
+    {{ end }}
+
     <div style="margin-bottom:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
       <div class="filter-bar" data-target="videos" style="margin-bottom:0;">
-        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn active" data-filter="all">
+          All <span class="filter-count">{{ len .Site.Data.videos }}</span>
+        </button>
         {{ $playlists := slice }}
         {{ range .Site.Data.videos }}{{ $playlists = $playlists | append .playlist }}{{ end }}
         {{ range ($playlists | uniq) }}
-        {{ if . }}<button class="filter-btn" data-filter="{{ . | urlize }}">{{ . }}</button>{{ end }}
+        {{ if . }}
+        <button class="filter-btn" data-filter="{{ . | urlize }}">
+          {{ . }} <span class="filter-count">{{ index $counts . }}</span>
+        </button>
+        {{ end }}
         {{ end }}
       </div>
       {{ with .Site.Params.youtubeChannelUrl }}
@@ -25,19 +38,25 @@
       {{ range .Site.Data.videos }}
       {{ $tags := slice (.playlist | default "general" | urlize) }}
       <article class="card video-card" data-tags="{{ $tags | jsonify }}">
-        <a href="https://youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener">
+        <a href="https://youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener" class="video-thumb-link">
           <div class="video-thumb-wrap">
             <img src="{{ .thumbnail }}" alt="{{ .title }}" class="video-thumb" loading="lazy" width="480" height="270">
+            <div class="video-play-overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                <circle cx="12" cy="12" r="12" fill="rgba(0,0,0,0.55)"></circle>
+                <polygon points="10 8 16 12 10 16 10 8" fill="white"></polygon>
+              </svg>
+            </div>
             {{ with .duration }}<span class="video-duration-badge">{{ . }}</span>{{ end }}
           </div>
         </a>
         <div class="video-body">
+          <div class="video-category-row">
+            {{ with .playlist }}<span class="video-category-tag">{{ . }}</span>{{ end }}
+            {{ with .viewCount }}<span class="video-views">{{ . }} views</span>{{ end }}
+          </div>
           <h3 class="video-title"><a href="https://youtube.com/watch?v={{ .id }}" target="_blank" rel="noopener">{{ .title }}</a></h3>
-          <p class="video-meta">
-            {{ with .publishedAt }}{{ dateFormat "Jan 2, 2006" . }}{{ end }}
-            {{ with .viewCount }} · {{ . | humanize }} views{{ end }}
-          </p>
-          {{ with .playlist }}<span class="tag" style="margin-top:0.5rem;">{{ . }}</span>{{ end }}
+          <p class="video-meta">{{ with .publishedAt }}{{ dateFormat "Jan 2, 2006" . }}{{ end }}</p>
         </div>
       </article>
       {{ else }}

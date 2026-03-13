@@ -1,53 +1,67 @@
 {{ define "main" }}
 <div class="page-wrapper">
-  <div class="container">
+  <div class="container container-blog">
     {{ partial "breadcrumbs.html" . }}
     <div class="section-header">
       <h1 class="section-title">Blog</h1>
       <p class="section-desc">Essays, tutorials, and research notes.</p>
     </div>
 
-    {{/* Tag cloud */}}
-    {{ $tags := .Site.Taxonomies.tags }}
-    {{ if $tags }}
-    <div class="filter-bar" style="margin-bottom:2.5rem;">
-      <a href="{{ "/blog/" | relURL }}" class="filter-btn{{ if not .Params.tag }} active{{ end }}">All</a>
-      {{ range $name, $pages := $tags }}
-      <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}/" class="filter-btn">{{ $name }} ({{ len $pages }})</a>
-      {{ end }}
-    </div>
-    {{ end }}
+    <div class="blog-page-layout">
 
-    <div class="blog-list">
-      {{ range .Pages }}
-      <article class="blog-card">
-        {{ with .Params.image }}
-        <div class="blog-thumb">
-          {{ $img := resources.Get . }}{{ if $img }}{{ $img = $img.Resize "400x250 webp" }}
-          <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" loading="lazy" width="400" height="250">
+      {{/* ── Main blog grid ── */}}
+      <div class="blog-main">
+        <div class="blog-grid">
+          {{ range .Pages }}
+          <article class="blog-card">
+            {{/* Thumbnail */}}
+            {{ $page := . }}
+            <div class="blog-thumb">
+              {{ with .Params.image }}
+                <img src="{{ . }}" alt="{{ $page.Title }}" loading="lazy">
+              {{ else }}
+                {{ partial "blog-thumbnail.html" $page }}
+              {{ end }}
+            </div>
+
+            <div class="blog-body">
+              <div class="blog-meta">
+                <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+                <span>{{ math.Round (div (float (len (split .Plain " "))) 200.0) }} min read</span>
+              </div>
+              <h2 class="blog-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              <p class="blog-excerpt">{{ with .Params.description }}{{ . | truncate 130 }}{{ else }}{{ .Summary | plainify | truncate 130 }}{{ end }}</p>
+              <div class="blog-card-tags">
+                {{ range first 3 .Params.tags }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
+              </div>
+            </div>
+          </article>
+          {{ else }}
+          <p class="text-muted">No posts yet. Add Markdown files to <code>content/blog/</code>.</p>
           {{ end }}
         </div>
-        {{ end }}
-        <div class="blog-body">
-          <div>
-            <div class="blog-meta" style="margin-bottom:.5rem;">
-              <span>{{ .Date.Format "Jan 2, 2006" }}</span>
-              <span>{{ math.Round (div (float (len (split .Plain " "))) 200.0) }} min read</span>
-            </div>
-            <h2 class="blog-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            <p class="blog-excerpt">{{ .Summary | truncate 160 }}</p>
-          </div>
-          <div style="display:flex;flex-wrap:wrap;gap:.25rem;">
-            {{ range .Params.tags }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag" style="font-size:.7rem;">{{ . }}</a>{{ end }}
-          </div>
-        </div>
-      </article>
-      {{ else }}
-      <p class="text-muted">No posts yet. Add Markdown files to <code>content/blog/</code>.</p>
-      {{ end }}
-    </div>
+        {{ template "_internal/pagination.html" . }}
+      </div>
 
-    {{ template "_internal/pagination.html" . }}
+      {{/* ── Tags sidebar ── */}}
+      {{ $tags := .Site.Taxonomies.tags }}
+      {{ if $tags }}
+      <aside class="blog-sidebar">
+        <p class="sidebar-heading">Topics</p>
+        <a href="{{ "/blog/" | relURL }}" class="tag-sidebar-item{{ if not .Params.tag }} active{{ end }}">
+          <span>All posts</span>
+          <span class="tag-sidebar-count">{{ len .Site.RegularPages }}</span>
+        </a>
+        {{ range $name, $pages := $tags }}
+        <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}/" class="tag-sidebar-item">
+          <span>{{ $name }}</span>
+          <span class="tag-sidebar-count">{{ len $pages }}</span>
+        </a>
+        {{ end }}
+      </aside>
+      {{ end }}
+
+    </div>
   </div>
 </div>
 {{ end }}

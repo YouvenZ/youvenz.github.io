@@ -1,24 +1,39 @@
 - title: "Multi-modal Learning"
-  icon: "🔀"
+  icon: "layers"
   description: "Developing models that fuse heterogeneous data sources — retinal images, OCT, angiography — to improve diagnostic and predictive accuracy in ophthalmology and beyond."
   tags: ["multi-modal", "fusion", "medical-imaging"]
 
 - title: "Longitudinal Deep Learning"
-  icon: "📈"
+  icon: "trending-up"
   description: "Designing temporal and continuous-time neural architectures (LatiM, LMT, L-MAE, Neural ODEs) for disease progression modelling from sequential patient data."
   tags: ["longitudinal", "neural-ode", "progression"]
 
 - title: "Predictive Medicine"
-  icon: "🔮"
+  icon: "activity"
   description: "Building end-to-end deep learning pipelines for early prediction of diabetic retinopathy progression and age-related macular degeneration."
   tags: ["diabetic-retinopathy", "amd", "prediction"]
 
 - title: "Explainable AI for Health"
-  icon: "🔍"
+  icon: "eye"
   description: "Applying saliency maps, attention visualisation, and XAI frameworks to make clinical deep learning models transparent and trustworthy."
   tags: ["xai", "interpretability", "deep-learning"]
 
 - title: "Agentic AI for Health"
-  icon: "🤖"
+  icon: "bot"
   description: "Exploring LLM-based autonomous agents (LangGraph, AutoGen, CrewAI) orchestrated for clinical decision support and biomedical research automation."
   tags: ["agentic-ai", "llm", "rag", "healthcare"]
+
+- title: "Self-Supervised Learning"
+  icon: "zap"
+  description: "Designing pre-training strategies (masked autoencoders, contrastive learning) that learn rich representations from unlabelled medical imaging data, enabling efficient fine-tuning for downstream clinical tasks."
+  tags: ["self-supervised", "masked-autoencoder", "representation-learning"]
+
+- title: "Medical Image Analysis"
+  icon: "image"
+  description: "Processing and analysing ophthalmology images — fundus photographs, OCT volumes, fluorescein angiography — to extract clinically relevant biomarkers for disease monitoring and grading."
+  tags: ["medical-imaging", "oct", "ophthalmology", "fundus"]
+
+- title: "Benchmark & Challenges"
+  icon: "award"
+  description: "Organising and contributing to competitive international challenges (MARIO AMD Progression Challenge, MICCAI) to drive reproducible progress in automated retinal disease assessment."
+  tags: ["benchmark", "challenge", "dataset", "retinal"]

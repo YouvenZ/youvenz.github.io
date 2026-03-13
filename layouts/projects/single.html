@@ -17,6 +17,22 @@
         {{ with .Params.paper }}<a href="{{ . }}" class="pub-link" target="_blank">Paper</a>{{ end }}
       </div>
     </header>
+    {{ with .Params.thumbnail }}
+    <div class="project-single-thumb" style="margin-bottom:2rem;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);">
+      {{ $thumb := . }}
+      {{ $isGif := strings.HasSuffix $thumb ".gif" }}
+      {{ $isExternal := strings.HasPrefix $thumb "http" }}
+      {{ if or $isGif $isExternal }}
+        <img src="{{ $thumb }}" alt="{{ $.Title }}" style="width:100%;display:block;" loading="lazy">
+      {{ else }}
+        {{ $img := resources.Get $thumb }}
+        {{ if $img }}
+          {{ if hugo.IsExtended }}{{ $img = $img.Resize "800x450 webp" }}{{ end }}
+          <img src="{{ $img.RelPermalink }}" alt="{{ $.Title }}" style="width:100%;display:block;" loading="lazy">
+        {{ end }}
+      {{ end }}
+    </div>
+    {{ end }}
     <div class="article-content">{{ .Content }}</div>
   </div>
 </div>

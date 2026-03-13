@@ -11,7 +11,7 @@
     <div class="research-grid">
       {{ range . }}
       <div class="research-card">
-        {{ with .icon }}<div class="research-icon">{{ . }}</div>{{ end }}
+        {{ with .icon }}<div class="research-icon">{{ partial "icon.html" (dict "name" . "size" "32" "class" "research-svg-icon") }}</div>{{ end }}
         <h3 class="research-title">{{ .title }}</h3>
         <p style="color:var(--text-muted);font-size:0.9rem;">{{ .description }}</p>
         {{ with .tags }}<div class="interests-list" style="margin-top:0.75rem;">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}
