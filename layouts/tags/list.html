@@ -1,0 +1,53 @@
+{{ define "main" }}
+<div class="page-wrapper">
+  <div class="container">
+    {{ partial "breadcrumbs.html" . }}
+    {{ if eq .Kind "term" }}
+    {{/* Single tag term page — list articles with this tag */}}
+    <div class="section-header">
+      <h1 class="section-title">#{{ .Title }}</h1>
+      <p class="section-desc">{{ len .Pages }} post{{ if ne (len .Pages) 1 }}s{{ end }} tagged with this topic.</p>
+    </div>
+    <div class="blog-grid" style="margin-bottom:var(--space-12);">
+      {{ range .Pages }}
+      <article class="blog-card">
+        <div class="blog-thumb">
+          {{ if .Params.image }}
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+          {{ else if .File }}
+            {{ partial "blog-thumbnail.html" . }}
+          {{ end }}
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+            <span>{{ math.Round (div (float (len (split .Plain " "))) 200.0) }} min read</span>
+          </div>
+          <h2 class="blog-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <p class="blog-excerpt">{{ with .Params.description }}{{ . | truncate 130 }}{{ else }}{{ .Summary | plainify | truncate 130 }}{{ end }}</p>
+          <div class="blog-card-tags">
+            {{ range first 3 .Params.tags }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+    {{ template "_internal/pagination.html" . }}
+    {{ else }}
+    {{/* Tag list/index page — all tags */}}
+    <div class="section-header">
+      <h1 class="section-title">Topics</h1>
+      <p class="section-desc">Browse all {{ len .Site.Taxonomies.tags }} tags across {{ len .Site.RegularPages }} posts.</p>
+    </div>
+    <div class="tags-grid">
+      {{ range .Data.Terms.ByCount }}
+      <a href="{{ .Page.RelPermalink }}" class="tag-card">
+        <span>{{ .Page.Title }}</span>
+        <span class="tag-card-count">{{ .Count }}</span>
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

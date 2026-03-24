@@ -52,10 +52,10 @@
           <span>All posts</span>
           <span class="tag-sidebar-count">{{ len .Site.RegularPages }}</span>
         </a>
-        {{ range $name, $pages := $tags }}
-        <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}/" class="tag-sidebar-item">
-          <span>{{ $name }}</span>
-          <span class="tag-sidebar-count">{{ len $pages }}</span>
+        {{ range $tags.ByCount }}
+        <a href="{{ "/tags/" | relURL }}{{ .Name | urlize }}/" class="tag-sidebar-item">
+          <span>{{ .Name }}</span>
+          <span class="tag-sidebar-count">{{ .Count }}</span>
         </a>
         {{ end }}
       </aside>

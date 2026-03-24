@@ -1,3 +1,77 @@
 {{ define "main" }}
 {{ partial "sections/hero.html" . }}
+
+{{/* ── Recent Blog Posts ── */}}
+{{ $posts := where .Site.RegularPages "Section" "blog" | first 3 }}
+{{ with $posts }}
+<section class="home-section">
+  <div class="container">
+    <div class="home-section-header">
+      <h2>Recent Posts</h2>
+      <a href="{{ "/blog/" | relURL }}">View all →</a>
+    </div>
+    <div class="blog-grid">
+      {{ range . }}
+      <article class="blog-card">
+        <div class="blog-thumb">
+          {{ with .Params.image }}
+            <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+          {{ else }}
+            {{ partial "blog-thumbnail.html" . }}
+          {{ end }}
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+            <span>{{ math.Round (div (float (len (split .Plain " "))) 200.0) }} min read</span>
+          </div>
+          <h3 class="blog-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="blog-excerpt">{{ with .Params.description }}{{ . | truncate 120 }}{{ else }}{{ .Summary | plainify | truncate 120 }}{{ end }}</p>
+          <div class="blog-card-tags">
+            {{ range first 2 .Params.tags }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* ── Featured Publications ── */}}
+{{ $pubs := first 3 .Site.Data.publications }}
+{{ with $pubs }}
+<section class="home-section">
+  <div class="container">
+    <div class="home-section-header">
+      <h2>Selected Publications</h2>
+      <a href="{{ "/publications/" | relURL }}">View all →</a>
+    </div>
+    <div class="publication-list">
+      {{ range . }}
+      {{ $pub := . }}
+      <div class="publication-card">
+        <p class="pub-title">
+          {{ if .doi }}<a href="https://doi.org/{{ .doi }}" target="_blank" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
+        </p>
+        <p class="pub-authors">
+          {{- range $i, $a := $pub.authors -}}
+            {{- if gt $i 0 }}, {{ end -}}
+            {{- if .self }}<span class="self">{{ .name }}</span>{{- else }}{{ .name }}{{- end -}}
+          {{- end -}}
+        </p>
+        <p class="pub-venue"><span class="venue-name">{{ .venue }}</span>{{ with .year }}, {{ . }}{{ end }}</p>
+        <div class="pub-links">
+          {{ with .doi }}<a href="https://doi.org/{{ . }}" class="pub-link" target="_blank" rel="noopener">DOI</a>{{ end }}
+          {{ with .pdf }}<a href="{{ . }}" class="pub-link" target="_blank" rel="noopener">PDF</a>{{ end }}
+          {{ with .arxiv }}<a href="{{ . }}" class="pub-link" target="_blank" rel="noopener">arXiv</a>{{ end }}
+          {{ with .code }}<a href="{{ . }}" class="pub-link" target="_blank" rel="noopener">Code</a>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
 {{ end }}

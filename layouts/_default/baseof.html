@@ -6,12 +6,17 @@
   {{ partial "head/styles.html" . }}
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div id="reading-progress" class="reading-progress" aria-hidden="true"></div>
   {{ partial "cookie-consent.html" . }}
   {{ partial "header.html" . }}
   <main id="main-content">
     {{- block "main" . }}{{- end }}
   </main>
   {{ partial "footer.html" . }}
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
   {{ partial "scripts.html" . }}
 </body>
 </html>

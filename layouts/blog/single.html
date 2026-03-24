@@ -7,6 +7,9 @@
         <header style="margin-bottom:2.5rem;">
           <div class="blog-meta" style="margin-bottom:1rem;">
             <span>{{ .Date.Format "January 2, 2006" }}</span>
+            {{ if and .Lastmod (gt .Lastmod .Date) }}
+            <span>Updated {{ .Lastmod.Format "Jan 2, 2006" }}</span>
+            {{ end }}
             <span>{{ math.Round (div (float (len (split .Plain " "))) 200.0) }} min read</span>
           </div>
           <h1>{{ .Title }}</h1>
@@ -21,8 +24,33 @@
           {{ end }}
         </header>
 
+        {{/* Mobile TOC accordion — shown only on small screens */}}
+        {{ if .TableOfContents }}
+        <details class="toc-mobile">
+          <summary>Table of Contents</summary>
+          <div class="toc-inner">{{ .TableOfContents }}</div>
+        </details>
+        {{ end }}
+
         <div class="prose">
           {{ .Content }}
+        </div>
+
+        {{/* Social Share */}}
+        <div class="social-share">
+          <span>Share</span>
+          <button class="share-btn" data-share="twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X / Twitter
+          </button>
+          <button class="share-btn" data-share="linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </button>
+          <button class="share-btn" data-share="copy">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy Link
+          </button>
         </div>
 
         {{/* Related posts */}}
@@ -64,7 +92,7 @@
         {{ end }}
       </article>
 
-      {{/* Table of Contents */}}
+      {{/* Table of Contents — desktop sidebar */}}
       {{ if .TableOfContents }}
       <aside class="toc">
         <h4>Contents</h4>
