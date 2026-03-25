@@ -1,7 +1,6 @@
 baseURL: "https://youvenz.github.io/"
 languageCode: "en-us"
 title: "Rachid Youven Zeghlache"
-
 # Output formats
 outputs:
   home:
@@ -11,19 +10,15 @@ outputs:
   section:
     - HTML
     - RSS
-
 # Pagination
 pagination:
   pagerSize: 10
-
 # Enable Git info for lastmod (set to true after git init)
 enableGitInfo: false
-
 # Taxonomies
 taxonomies:
   tag: tags
   category: categories
-
 # Markup
 markup:
   goldmark:
@@ -33,7 +28,6 @@ markup:
     style: monokai
     lineNos: false
     guessSyntax: true
-
 # Site params
 params:
   # Identity
@@ -47,7 +41,6 @@ params:
     learning, and longitudinal deep learning for predictive medicine. My PhD
     focused on diabetic retinopathy progression prediction. I am also the creator
     of the Augmented Scholars newsletter and YouTube channel on using AI for making augmnented researcher.
-
   # Social
   social:
     googleScholar: "https://scholar.google.com/citations?user=iWgYuY0AAAAJ&hl=en"
@@ -55,7 +48,6 @@ params:
     linkedin: "https://www.linkedin.com/in/rachid-youven-zeghlache/"
     twitter: ""
     cv: "/cv.pdf"
-
   # Research interests (tags)
   interests:
     - Multi-modal Learning
@@ -63,43 +55,34 @@ params:
     - Predictive Medicine
     - Medical Imaging
     - Agentic AI for Health
-
   # YouTube
   youtubeChannelId: "UCpT8vuVv62-VWoy8wTsABsw"
   youtubeChannelUrl: "https://www.youtube.com/@youvenzful?sub_confirmation=1"
-
   # Substack
   substackUrl: "https://augmentedscholars.substack.com"
   substackEmbedUrl: "https://augmentedscholars.substack.com/embed"
-
   # Contact
   contactFormAction: "https://formspree.io/f/yourformid"
   officeLocation: "IMT Atlantique, France"
-
-  # Analytics (leave empty to disable)
-  googleAnalytics: ""
+  # Analytics
+  googleAnalytics: "G-LTD575VZ7G"
   plausibleDomain: ""
-
   # Comments via Giscus
   giscusRepo: "YouvenZ/youvenz.github.io"
-  giscusRepoId: ""
+  giscusRepoId: "R_kgDORcs-9A"
   giscusCategory: "Comments"
-  giscusCategoryId: ""
-
+  giscusCategoryId: ""   # ← paste DIC_kwDO... from giscus.app once you create the Comments category
   # Features
   darkMode: true
   search: true
   cookieConsent: true
   breadcrumbs: true
-
   # Open Graph
   images:
     - "/img/og-default.png"
-
   # Pipeline status (GitHub Actions badge)
   githubActionsOwner: "YouvenZ"
   githubActionsRepo: "youvenz.github.io"
-
 # Menus
 menus:
   main:
