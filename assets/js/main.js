@@ -21,6 +21,13 @@
     }
   }
 
+  // Sync Giscus theme on initial load (fires when the iframe sends its first message)
+  window.addEventListener('message', function onGiscusReady(e) {
+    if (e.origin !== 'https://giscus.app') return;
+    setGiscusTheme(theme);
+    window.removeEventListener('message', onGiscusReady);
+  });
+
   btn?.addEventListener('click', () => {
     const current = root.getAttribute('data-theme');
     const next = current === 'dark' ? 'light' : 'dark';

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" width="120" height="80">
+  <rect width="120" height="80" rx="8" fill="#313244"/>
+  <!-- Cross + AI nodes icon -->
+  <g transform="translate(60, 28)">
+    <!-- medical cross -->
+    <rect x="-4" y="-12" width="8" height="24" rx="2" fill="#89dceb" opacity="0.85"/>
+    <rect x="-12" y="-4" width="24" height="8" rx="2" fill="#89dceb" opacity="0.85"/>
+    <!-- AI orbit dots -->
+    <circle cx="-16" cy="-4" r="2.5" fill="#89dceb"/>
+    <circle cx="16" cy="4" r="2.5" fill="#89dceb"/>
+    <circle cx="0" cy="-18" r="2" fill="#89dceb" opacity="0.6"/>
+  </g>
+  <text x="60" y="57" font-family="sans-serif" font-size="8" fill="#89dceb" text-anchor="middle" font-weight="bold">MedFlowAssist</text>
+  <text x="60" y="69" font-family="sans-serif" font-size="6.5" fill="#9399b2" text-anchor="middle">Multi-Agent Medical AI</text>
+</svg>

@@ -7,7 +7,7 @@ tags: ["agentic-ai", "medgemma", "healthcare", "llm", "python", "flask", "multi-
 github: "https://github.com/YouvenZ/MedFlowAssit"
 demo: ""
 paper: ""
-thumbnail: ""
+thumbnail: "/img/projects/medflowassist.svg"
 ---
 
 ## Overview

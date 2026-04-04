@@ -45,3 +45,10 @@
 }
 </script>
 {{ end }}
+
+{{/* Per-section RSS autodiscovery */}}
+{{ if .IsHome }}
+<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ `/index.xml` | absURL }}">
+{{ else }}{{ with .OutputFormats.Get "RSS" }}
+<link rel="alternate" type="application/rss+xml" title="{{ $.Title }} — {{ $.Site.Title }}" href="{{ .Permalink }}">
+{{ end }}{{ end }}

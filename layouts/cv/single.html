@@ -40,6 +40,35 @@
     </section>
     {{ end }}
 
+    {{ with .teaching }}
+    <section class="cv-section">
+      <h2>Teaching</h2>
+      {{ range . }}
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <span class="cv-entry-title">{{ .role }}</span>
+          <span class="cv-entry-date">{{ .year }}</span>
+        </div>
+        <p class="cv-entry-sub">{{ .institution }}</p>
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+
+    {{ with .service }}
+    <section class="cv-section">
+      <h2>Service</h2>
+      {{ range . }}
+      <div class="cv-entry">
+        <div class="cv-entry-header">
+          <span class="cv-entry-title">{{ .role }}</span>
+        </div>
+        <p class="cv-entry-sub">{{ .venues }}</p>
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+
     {{ with .awards }}
     <section class="cv-section">
       <h2>Awards &amp; Honors</h2>

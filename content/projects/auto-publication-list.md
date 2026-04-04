@@ -7,7 +7,7 @@ tags: ["python", "github-actions", "google-scholar", "bibtex", "latex", "automat
 github: "https://github.com/YouvenZ/Auto-Publication-List"
 demo: ""
 paper: ""
-thumbnail: ""
+thumbnail: "/img/projects/auto-publication-list.svg"
 ---
 
 ## Overview

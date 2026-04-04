@@ -7,7 +7,7 @@ tags: ["challenge", "benchmark", "amd", "medical-imaging", "deep-learning", "mic
 github: "https://github.com/YouvenZ/MARIO-Challenge-MICCAI-2024"
 paper: ""
 demo: ""
-thumbnail: ""
+thumbnail: "/img/projects/mario-challenge.svg"
 ---
 
 ## Overview
