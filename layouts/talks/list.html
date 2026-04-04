@@ -48,7 +48,7 @@
           {{ end }}
           {{ end }}
           {{ end }}
-          <h3 class="talk-title">{{ .title }}</h3>
+          <h3 class="talk-title">{{ if .slug }}<a href="{{ "/talks/" | relURL }}{{ .slug }}/">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</h3>
           <p class="talk-event">{{ .event }}{{ with .location }} · {{ . }}{{ end }}</p>
           {{ with .abstract }}
           <button class="pub-abstract-toggle" aria-expanded="false">▼ Show abstract</button>

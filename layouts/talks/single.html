@@ -1,0 +1,85 @@
+{{ define "main" }}
+{{ $slug := .File.ContentBaseName }}
+{{ $talk := dict }}
+{{ range .Site.Data.talks }}
+  {{ if eq .slug $slug }}{{ $talk = . }}{{ end }}
+{{ end }}
+
+<div class="page-wrapper">
+  <div class="container" style="max-width:860px;">
+    {{ partial "breadcrumbs.html" . }}
+
+    {{ if $talk }}
+    <article class="talk-single">
+
+      {{/* Media — video iframe or image */}}
+      {{ with $talk.video }}
+      {{ $videoUrl := . }}
+      {{ if or (strings.Contains $videoUrl "youtube.com") (strings.Contains $videoUrl "youtu.be") }}
+      {{ $videoId := "" }}
+      {{ if strings.Contains $videoUrl "youtu.be/" }}
+        {{ $videoId = index (last 1 (split $videoUrl "youtu.be/")) 0 }}
+      {{ else if strings.Contains $videoUrl "v=" }}
+        {{ $videoId = index (split (index (last 1 (split $videoUrl "v=")) 0) "&") 0 }}
+      {{ end }}
+      {{ if $videoId }}
+      <div class="talk-media talk-media-embed talk-single-media">
+        <iframe src="https://www.youtube.com/embed/{{ $videoId }}" title="{{ $talk.title }}" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
+      </div>
+      {{ end }}
+      {{ end }}
+      {{ end }}
+
+      {{ if not $talk.video }}{{ with $talk.image }}
+      <div class="talk-single-media">
+        {{ if (strings.HasSuffix . ".gif") }}
+        <video autoplay loop muted playsinline style="width:100%;border-radius:var(--radius-lg);"><source src="{{ . }}" type="image/gif"></video>
+        {{ else }}
+        <img src="{{ . }}" alt="{{ $talk.title }}" loading="lazy" style="width:100%;border-radius:var(--radius-lg);">
+        {{ end }}
+      </div>
+      {{ end }}{{ end }}
+
+      <header class="talk-single-header">
+        <div style="display:flex;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap;">
+          <span class="tag">{{ $talk.type }}</span>
+          {{ with $talk.date }}<span class="talk-event" style="font-size:.875rem;">{{ dateFormat "January 2, 2006" . }}</span>{{ end }}
+        </div>
+        <h1 class="section-title">{{ $talk.title }}</h1>
+        <p class="talk-event" style="font-size:1rem;margin-top:.5rem;">
+          {{ $talk.event }}{{ with $talk.location }} &middot; {{ . }}{{ end }}
+        </p>
+      </header>
+
+      {{ with $talk.abstract }}
+      <section class="talk-single-abstract">
+        <h2>Abstract</h2>
+        <p>{{ . }}</p>
+      </section>
+      {{ end }}
+
+      {{ .Content }}
+
+      <div class="pub-links" style="margin-top:2rem;">
+        {{ with $talk.slides }}<a href="{{ . }}" class="btn btn-primary" target="_blank" rel="noopener">Download Slides</a>{{ end }}
+        {{ with $talk.video }}
+        {{ if not (or (strings.Contains . "youtube.com") (strings.Contains . "youtu.be")) }}
+        <a href="{{ . }}" class="btn btn-secondary" target="_blank" rel="noopener">Watch Recording</a>
+        {{ end }}
+        {{ end }}
+      </div>
+
+    </article>
+    {{ else }}
+    {{/* Fallback: render .Content if no matching data entry */}}
+    <div class="content-body prose">{{ .Content }}</div>
+    {{ end }}
+
+    <div style="margin-top:2.5rem;">
+      <a href="{{ "/talks/" | relURL }}" class="pub-link">&larr; Back to Talks</a>
+    </div>
+  </div>
+</div>
+{{ end }}

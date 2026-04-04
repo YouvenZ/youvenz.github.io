@@ -295,19 +295,57 @@ Known extensions (from blog posts and existing project file):
 
 ---
 
-## Still Not Done
+> Session 3 completed: 2026-04-05
 
-### 🟡 Lower Priority / Optional
+### ✅ CV Teaching + Service Sections
+- Added `teaching` and `service` rendering blocks to `layouts/cv/single.html`
+- Both sections driven by existing `data/cv.yaml` entries
 
-- [ ] **TASK 5.4** — Consider removing/redirecting monolithic `inkscape-extensions.md` (kept as suite overview for now)
-- [ ] **TASK 5.5** — Add real logos for MARIO, MedFlowAssist, Auto-Publication-List projects
-- [ ] **TASK 6.4** — Create `layouts/talks/single.html` for richer individual talk pages
-- [ ] Fix `hugo.yaml` `contactFormAction` (Formspree ID placeholder)
-- [ ] Fix `hugo.yaml` `giscusCategoryId` (comments disabled)
-- [ ] Add `teaching` section rendering to `layouts/cv/single.html`
-- [ ] Populate `data/newsletter_issues.yaml` with real entries
-- [ ] Replace placeholder resume.pdf with real CV PDF
+### ✅ Giscus Initial Dark Mode Sync
+- `assets/js/main.js`: added `window.addEventListener('message', onGiscusReady)` to sync theme on iframe load
+- Theme now applied both on first load and on toggle
+
+### ✅ Per-Section RSS Autodiscovery
+- `layouts/partials/head/seo.html`: per-section `<link rel="alternate">` tags via `OutputFormats.Get "RSS"`
+- Site-wide feed retained on homepage
+
+### ✅ TASK 5.5 — Project Thumbnails (MARIO / MedFlowAssist / Auto-Publication-List)
+- Created `static/img/projects/mario-challenge.svg`
+- Created `static/img/projects/medflowassist.svg`
+- Created `static/img/projects/auto-publication-list.svg`
+- Wired up `thumbnail` fields in respective `content/projects/*.md`
 
 ---
 
-_Last updated: 2026-04-04 | Session 2 — All high-priority and design tasks completed_
+> Session 4 completed: 2026-04-05
+
+### ✅ Newsletter Issues Populated
+- Fetched live Substack RSS feed (`augmentedscholars.substack.com/feed`)
+- Replaced all commented-out placeholders in `data/newsletter_issues.yaml` with 10 real issues (Dec 2025 → Jul 2025)
+
+### ✅ TASK 6.4 — Talks Individual Pages (`layouts/talks/single.html`)
+- Added `slug` field to all 5 entries in `data/talks.yaml`
+- Created `layouts/talks/single.html` (data lookup by `slug == File.ContentBaseName`)
+- Created 5 content stubs: `mario-amd-2024.md`, `latim-miccai-2024.md`, `ssl-neural-ode-2023.md`, `lmt-miccai-2023.md`, `dr-ssl-omia-2022.md`
+- Updated `layouts/talks/list.html`: talk titles now link to `/talks/<slug>/`
+- Added `.talk-single*` CSS classes to `assets/css/main.css`
+- Build: 767 pages (+ 5 vs Session 3)
+
+---
+
+## Still Not Done
+
+### 🟡 Requires User Action
+
+- [ ] Fix `hugo.yaml` `contactFormAction` — needs real Formspree ID from formspree.io
+- [ ] Fix `hugo.yaml` `giscusCategoryId` — needs setup at giscus.app
+- [ ] Replace `static/resume.pdf` placeholder with real CV PDF
+
+### 🟡 Nice-to-Have
+
+- [ ] **TASK 5.4** — Consider removing/redirecting monolithic `inkscape-extensions.md` (kept as suite overview for now)
+- [ ] Add video/slides URLs to `data/talks.yaml` entries once available
+
+---
+
+_Last updated: 2026-04-05 | Session 4 — Newsletter, talks single pages, CV sections, Giscus sync, RSS feeds_

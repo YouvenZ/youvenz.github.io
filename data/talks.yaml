@@ -1,6 +1,7 @@
 # Talks data — manually curated
 
 - title: "MARIO: Monitoring Age-related Macular Degeneration Progression in OCT — Challenge Results"
+  slug: "mario-amd-2024"
   event: "MICCAI 2024"
   location: "Marrakesh, Morocco"
   date: "2024-10-06"
@@ -13,6 +14,7 @@
   image: ""
 
 - title: "LatiM: Longitudinal Representation Learning in Continuous-Time Models for Medical Image Analysis"
+  slug: "latim-miccai-2024"
   event: "MICCAI 2024"
   location: "Marrakesh, Morocco"
   date: "2024-10-06"
@@ -25,6 +27,7 @@
   image: ""
 
 - title: "Longitudinal Self-Supervised Learning using Neural Ordinary Differential Equation"
+  slug: "ssl-neural-ode-2023"
   event: "PRIME Workshop, MICCAI 2023"
   location: "Vancouver, Canada"
   date: "2023-10-08"
@@ -37,6 +40,7 @@
   image: ""
 
 - title: "LMT: Longitudinal Mixing Training for Disease Progression Prediction"
+  slug: "lmt-miccai-2023"
   event: "MLMI Workshop, MICCAI 2023"
   location: "Vancouver, Canada"
   date: "2023-10-08"
@@ -49,6 +53,7 @@
   image: ""
 
 - title: "Detection of Diabetic Retinopathy using Longitudinal Self-Supervised Learning"
+  slug: "dr-ssl-omia-2022"
   event: "OMIA Workshop, MICCAI 2022 — Best Paper Award"
   location: "Singapore"
   date: "2022-09-18"

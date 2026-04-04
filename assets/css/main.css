@@ -726,6 +726,15 @@ blockquote {
 .talk-media-embed { position: relative; padding-bottom: 56.25%; height: 0; }
 .talk-media-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: var(--radius); }
 
+/* Talk single page */
+.talk-single { padding: var(--space-8) 0; }
+.talk-single-media { border-radius: var(--radius-lg); overflow: hidden; margin-bottom: var(--space-8); }
+.talk-single-media.talk-media-embed { position: relative; padding-bottom: 56.25%; height: 0; margin-bottom: var(--space-8); }
+.talk-single-media.talk-media-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: var(--radius-lg); }
+.talk-single-header { margin-bottom: var(--space-6); }
+.talk-single-abstract { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius); padding: var(--space-6); margin-bottom: var(--space-6); }
+.talk-single-abstract h2 { font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: var(--space-3); }
+
 /* ---------- Research Areas ---------- */
 .research-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-6); margin-bottom: var(--space-12); }
 .research-card { display: block; padding: var(--space-6); background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); transition: box-shadow var(--transition), transform var(--transition); color: var(--text); text-decoration: none; }
