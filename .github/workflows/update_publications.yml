@@ -30,8 +30,7 @@ jobs:
 
       - name: Run pipeline
         env:
-          SEMANTIC_SCHOLAR_AUTHOR_ID: ${{ vars.SEMANTIC_SCHOLAR_AUTHOR_ID }}
-          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+          GOOGLE_SCHOLAR_ID: "iWgYuY0AAAAJ"
           UNPAYWALL_EMAIL: ${{ vars.UNPAYWALL_EMAIL }}
           ARXIV_AUTHOR_NAME: ${{ vars.ARXIV_AUTHOR_NAME }}
         run: python scripts/update_publications.py

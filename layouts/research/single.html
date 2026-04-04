@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="page-wrapper">
+  <div class="container" style="max-width:860px;">
+    {{ partial "breadcrumbs.html" . }}
+
+    <article class="research-single">
+      {{ with .Params.image }}
+      <div class="research-single-img">
+        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+      </div>
+      {{ end }}
+
+      <header class="research-single-header">
+        <div class="research-single-icon">
+          {{ with .Params.icon }}{{ partial "icon.html" (dict "name" . "size" "40" "class" "research-svg-icon") }}{{ end }}
+        </div>
+        <h1 class="section-title">{{ .Title }}</h1>
+        {{ with .Params.tags }}
+        <div class="interests-list" style="margin-top:0.75rem;">
+          {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+      </header>
+
+      <div class="content-body prose">
+        {{ .Content }}
+      </div>
+    </article>
+
+    <div style="margin-top:3rem;">
+      <a href="/research/" class="pub-link">← Back to Research</a>
+    </div>
+  </div>
+</div>
+{{ end }}

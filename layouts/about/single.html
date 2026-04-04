@@ -23,11 +23,6 @@
         {{ end }}
 
         {{ with .Site.Params.githubActionsOwner }}
-        <div class="pipeline-badges mt-8">
-          <img src="https://github.com/{{ . }}/{{ $.Site.Params.githubActionsRepo }}/actions/workflows/video_to_blog.yml/badge.svg" alt="Blog pipeline status" loading="lazy">
-          <img src="https://github.com/{{ . }}/{{ $.Site.Params.githubActionsRepo }}/actions/workflows/update_publications.yml/badge.svg" alt="Publications pipeline status" loading="lazy">
-          <img src="https://github.com/{{ . }}/{{ $.Site.Params.githubActionsRepo }}/actions/workflows/update_videos.yml/badge.svg" alt="Videos pipeline status" loading="lazy">
-        </div>
         {{ end }}
       </div>
       <div>

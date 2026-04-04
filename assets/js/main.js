@@ -7,8 +7,8 @@
   const root = document.documentElement;
   const btn = document.getElementById('theme-toggle');
   const stored = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const theme = stored || (prefersDark ? 'dark' : 'light');
+  // Default to dark mode on first visit
+  const theme = stored || 'dark';
   root.setAttribute('data-theme', theme);
 
   function setGiscusTheme(theme) {

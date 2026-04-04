@@ -47,7 +47,7 @@ params:
     github: "https://github.com/YouvenZ"
     linkedin: "https://www.linkedin.com/in/rachid-youven-zeghlache/"
     twitter: ""
-    cv: "/cv.pdf"
+    cv: "/resume.pdf"
   # Research interests (tags)
   interests:
     - Multi-modal Learning

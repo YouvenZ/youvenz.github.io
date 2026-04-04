@@ -4,7 +4,7 @@
     {{ partial "breadcrumbs.html" . }}
     <div class="cv-download-bar">
       <p>Download a PDF version of my full CV.</p>
-      <a href="/cv.pdf" class="btn btn-primary" download>Download PDF</a>
+      <a href="{{ .Site.Params.social.cv }}" class="btn btn-primary" download>Download PDF</a>
     </div>
 
     {{ with .Site.Data.cv }}

@@ -22,7 +22,32 @@
           <div class="talk-month">{{ dateFormat "Jan" .date }}</div>
           <div class="talk-year">{{ dateFormat "2006" .date }}</div>
         </div>
-        <div>
+        <div class="talk-body">
+          {{ with .image }}
+          <div class="talk-media talk-media-img">
+            {{ if (strings.HasSuffix . ".gif") }}
+            <video autoplay loop muted playsinline><source src="{{ . }}" type="image/gif"></video>
+            {{ else }}
+            <img src="{{ . }}" alt="Talk image" loading="lazy">
+            {{ end }}
+          </div>
+          {{ end }}
+          {{ with .video }}
+          {{ $videoUrl := . }}
+          {{ if or (strings.Contains $videoUrl "youtube.com") (strings.Contains $videoUrl "youtu.be") }}
+          {{ $videoId := "" }}
+          {{ if strings.Contains $videoUrl "youtu.be/" }}
+            {{ $videoId = index (last 1 (split $videoUrl "youtu.be/")) 0 }}
+          {{ else if strings.Contains $videoUrl "v=" }}
+            {{ $videoId = index (split (index (last 1 (split $videoUrl "v=")) 0) "&") 0 }}
+          {{ end }}
+          {{ if $videoId }}
+          <div class="talk-media talk-media-embed">
+            <iframe src="https://www.youtube.com/embed/{{ $videoId }}" title="Talk video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          {{ end }}
+          {{ end }}
+          {{ end }}
           <h3 class="talk-title">{{ .title }}</h3>
           <p class="talk-event">{{ .event }}{{ with .location }} · {{ . }}{{ end }}</p>
           {{ with .abstract }}
@@ -31,7 +56,11 @@
           {{ end }}
           <div class="pub-links" style="margin-top:0.75rem;">
             {{ with .slides }}<a href="{{ . }}" class="pub-link" target="_blank">Slides</a>{{ end }}
-            {{ with .video }}<a href="{{ . }}" class="pub-link" target="_blank">Video</a>{{ end }}
+            {{ with .video }}
+            {{ if not (or (strings.Contains . "youtube.com") (strings.Contains . "youtu.be")) }}
+            <a href="{{ . }}" class="pub-link" target="_blank">Video</a>
+            {{ end }}
+            {{ end }}
           </div>
           <span class="tag" style="margin-top:0.5rem;">{{ .type }}</span>
         </div>

@@ -1,39 +1,55 @@
 - title: "Multi-modal Learning"
+  slug: "multi-modal-learning"
   icon: "layers"
+  image: "/img/research/multi-modal-learning.svg"
   description: "Developing models that fuse heterogeneous data sources — retinal images, OCT, angiography — to improve diagnostic and predictive accuracy in ophthalmology and beyond."
   tags: ["multi-modal", "fusion", "medical-imaging"]
 
 - title: "Longitudinal Deep Learning"
+  slug: "longitudinal-deep-learning"
   icon: "trending-up"
+  image: "/img/research/longitudinal-deep-learning.svg"
   description: "Designing temporal and continuous-time neural architectures (LatiM, LMT, L-MAE, Neural ODEs) for disease progression modelling from sequential patient data."
   tags: ["longitudinal", "neural-ode", "progression"]
 
 - title: "Predictive Medicine"
+  slug: "predictive-medicine"
   icon: "activity"
+  image: "/img/research/predictive-medicine.svg"
   description: "Building end-to-end deep learning pipelines for early prediction of diabetic retinopathy progression and age-related macular degeneration."
   tags: ["diabetic-retinopathy", "amd", "prediction"]
 
 - title: "Explainable AI for Health"
+  slug: "explainable-ai-for-health"
   icon: "eye"
+  image: "/img/research/explainable-ai-for-health.svg"
   description: "Applying saliency maps, attention visualisation, and XAI frameworks to make clinical deep learning models transparent and trustworthy."
   tags: ["xai", "interpretability", "deep-learning"]
 
 - title: "Agentic AI for Health"
+  slug: "agentic-ai-for-health"
   icon: "bot"
+  image: "/img/research/agentic-ai-for-health.svg"
   description: "Exploring LLM-based autonomous agents (LangGraph, AutoGen, CrewAI) orchestrated for clinical decision support and biomedical research automation."
   tags: ["agentic-ai", "llm", "rag", "healthcare"]
 
 - title: "Self-Supervised Learning"
+  slug: "self-supervised-learning"
   icon: "zap"
+  image: "/img/research/self-supervised-learning.svg"
   description: "Designing pre-training strategies (masked autoencoders, contrastive learning) that learn rich representations from unlabelled medical imaging data, enabling efficient fine-tuning for downstream clinical tasks."
   tags: ["self-supervised", "masked-autoencoder", "representation-learning"]
 
 - title: "Medical Image Analysis"
+  slug: "medical-image-analysis"
   icon: "image"
+  image: "/img/research/medical-image-analysis.svg"
   description: "Processing and analysing ophthalmology images — fundus photographs, OCT volumes, fluorescein angiography — to extract clinically relevant biomarkers for disease monitoring and grading."
   tags: ["medical-imaging", "oct", "ophthalmology", "fundus"]
 
 - title: "Benchmark & Challenges"
+  slug: "benchmark-and-challenges"
   icon: "award"
+  image: "/img/research/benchmark-and-challenges.svg"
   description: "Organising and contributing to competitive international challenges (MARIO AMD Progression Challenge, MICCAI) to drive reproducible progress in automated retinal disease assessment."
   tags: ["benchmark", "challenge", "dataset", "retinal"]

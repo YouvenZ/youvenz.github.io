@@ -10,6 +10,7 @@
     multi-modal OCT imaging, organised as a MICCAI 2024 satellite event.
   slides: ""
   video: ""
+  image: ""
 
 - title: "LatiM: Longitudinal Representation Learning in Continuous-Time Models for Medical Image Analysis"
   event: "MICCAI 2024"
@@ -21,6 +22,7 @@
     predicting disease progression from irregular sequential medical images.
   slides: ""
   video: ""
+  image: ""
 
 - title: "Longitudinal Self-Supervised Learning using Neural Ordinary Differential Equation"
   event: "PRIME Workshop, MICCAI 2023"
@@ -32,6 +34,7 @@
     for diabetic retinopathy follow-up and progression prediction.
   slides: ""
   video: ""
+  image: ""
 
 - title: "LMT: Longitudinal Mixing Training for Disease Progression Prediction"
   event: "MLMI Workshop, MICCAI 2023"
@@ -43,6 +46,7 @@
     leveraging longitudinal data mixing during training across multiple sources.
   slides: ""
   video: ""
+  image: ""
 
 - title: "Detection of Diabetic Retinopathy using Longitudinal Self-Supervised Learning"
   event: "OMIA Workshop, MICCAI 2022 — Best Paper Award"
@@ -54,3 +58,4 @@
     for automated diabetic retinopathy detection. Awarded Best Paper.
   slides: ""
   video: ""
+  image: ""

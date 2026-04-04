@@ -28,8 +28,10 @@ jobs:
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
 
-      - name: Run pipeline
+      - name: Fetch channel metadata (yt-dlp)
         env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-          YOUTUBE_CHANNEL_ID: ${{ vars.YOUTUBE_CHANNEL_ID }}
-        run: python scripts/update_videos.py
+          YOUTUBE_CHANNEL_ID: "UCpT8vuVv62-VWoy8wTsABsw"
+        run: python scripts/youtube_channel_metadata_pipeline.py
+
+      - name: Convert CSV to videos.yaml
+        run: python scripts/csv_to_videos_yaml.py scripts/youtube_metadata.csv

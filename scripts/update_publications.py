@@ -1,22 +1,17 @@
 """
 scripts/update_publications.py
-Pipeline 2 — Fetch and update publications from academic sources.
+Pipeline 2 — Fetch and update publications from Google Scholar.
 
-Sources (priority order):
-  1. Semantic Scholar API
-  2. Google Scholar via `scholarly` (fallback)
-  3. arXiv API
+Primary source: Google Scholar via `scholarly` library (Scholar ID: iWgYuY0AAAAJ)
+Fallback: arXiv API (when Scholar is blocked or returns no results)
 
 Usage:
     python scripts/update_publications.py
 
-Required env vars:
-    SEMANTIC_SCHOLAR_AUTHOR_ID  — Semantic Scholar numeric author ID
-    UNPAYWALL_EMAIL              — Email for Unpaywall API (OA PDF lookup)
-
 Optional env vars:
-    SEMANTIC_SCHOLAR_API_KEY     — Increases rate limits
-    ARXIV_AUTHOR_NAME            — e.g. "Alex Researcher"
+    GOOGLE_SCHOLAR_ID   — Override the hardcoded Scholar ID
+    UNPAYWALL_EMAIL     — Email for Unpaywall API (OA PDF lookup)
+    ARXIV_AUTHOR_NAME   — e.g. "Rachid Zeghlache" (arXiv fallback)
     GH_PAT
 """
 
@@ -41,44 +36,83 @@ PUBS_YAML = REPO_ROOT / "data" / "publications.yaml"
 BIB_FILE = REPO_ROOT / "static" / "publications.bib"
 TOPICS_MAP_FILE = Path(__file__).parent / "topics_map.yaml"
 
+GOOGLE_SCHOLAR_ID = "iWgYuY0AAAAJ"  # Rachid Youven Zeghlache
+
 # ---------------------------------------------------------------------------
-# Semantic Scholar
+# Google Scholar via scholarly
 # ---------------------------------------------------------------------------
 
-def fetch_semantic_scholar(author_id: str, api_key: str = "") -> list[dict[str, Any]]:
-    headers = {}
-    if api_key:
-        headers["x-api-key"] = api_key
+def fetch_google_scholar(scholar_id: str) -> list[dict[str, Any]]:
+    """Fetch all publications for a Google Scholar author ID using scholarly."""
+    try:
+        from scholarly import scholarly as _scholarly
+    except ImportError:
+        raise ImportError("Install scholarly: pip install scholarly")
 
-    url = f"https://api.semanticscholar.org/graph/v1/author/{author_id}/papers"
-    params = {
-        "fields": "title,authors,year,venue,externalIds,abstract,citationCount,openAccessPdf,tldr",
-        "limit": 200,
-    }
-    resp = requests.get(url, params=params, headers=headers, timeout=30)
-    resp.raise_for_status()
-    data = resp.json()
+    logger.info("Fetching Google Scholar profile for ID: %s", scholar_id)
+    author = _scholarly.search_author_id(scholar_id)
+    author = _scholarly.fill(author, sections=["basics", "publications"])
 
     results = []
-    for paper in data.get("data", []):
-        doi = paper.get("externalIds", {}).get("DOI")
-        arxiv_id = paper.get("externalIds", {}).get("ArXiv")
+    pubs = author.get("publications", [])
+    logger.info("Found %d publications listed on Scholar", len(pubs))
+
+    for i, pub_stub in enumerate(pubs):
+        try:
+            pub = _scholarly.fill(pub_stub)
+        except Exception as exc:
+            logger.warning("Could not fill pub %d: %s", i, exc)
+            pub = pub_stub
+
+        bib = pub.get("bib", {})
+        title = bib.get("title", "").strip()
+        if not title:
+            continue
+
+        authors_raw = bib.get("author", "")
+        if isinstance(authors_raw, list):
+            authors = [{"name": a, "self": False} for a in authors_raw]
+        else:
+            authors = [{"name": a.strip(), "self": False} for a in authors_raw.split(" and ") if a.strip()]
+
+        year_raw = bib.get("pub_year") or bib.get("year") or ""
+        try:
+            year = int(str(year_raw)[:4])
+        except (ValueError, TypeError):
+            year = None
+
+        venue = (bib.get("journal") or bib.get("booktitle") or bib.get("venue") or "").strip()
+        abstract = bib.get("abstract", "").strip()
+        doi = pub.get("pub_url", "")
+        # Extract DOI from URL if it contains doi.org
+        if "doi.org/" in doi:
+            doi = doi.split("doi.org/")[-1].strip()
+        else:
+            doi = ""
+
+        eprint = pub.get("eprint_url", "")
+        arxiv_url = ""
+        if eprint and "arxiv.org" in eprint:
+            arxiv_url = eprint
+
+        pdf_url = pub.get("eprint_url", "") if pub.get("eprint_url") else ""
+
         results.append({
-            "title": paper.get("title", ""),
-            "authors": [
-                {"name": a["name"], "self": False}
-                for a in paper.get("authors", [])
-            ],
-            "year": paper.get("year"),
-            "venue": paper.get("venue", ""),
-            "type": _infer_type(paper.get("venue", "")),
+            "title": title,
+            "authors": authors,
+            "year": year,
+            "venue": venue,
+            "type": _infer_type(venue),
             "doi": doi,
-            "arxiv": f"https://arxiv.org/abs/{arxiv_id}" if arxiv_id else "",
-            "abstract": paper.get("abstract", ""),
-            "citations": paper.get("citationCount", 0),
-            "pdf": (paper.get("openAccessPdf") or {}).get("url", ""),
+            "arxiv": arxiv_url,
+            "abstract": abstract,
+            "citations": pub.get("num_citations", 0),
+            "pdf": pdf_url,
             "tags": [],
         })
+
+        time.sleep(0.5)  # be polite to Scholar
+
     return results
 
 
@@ -205,20 +239,18 @@ def _infer_type(venue: str) -> str:
 # ---------------------------------------------------------------------------
 
 def main() -> None:
-    author_id = os.environ.get("SEMANTIC_SCHOLAR_AUTHOR_ID", "")
-    api_key = os.environ.get("SEMANTIC_SCHOLAR_API_KEY", "")
+    scholar_id = os.environ.get("GOOGLE_SCHOLAR_ID", GOOGLE_SCHOLAR_ID)
     unpaywall_email = os.environ.get("UNPAYWALL_EMAIL", "")
     arxiv_author = os.environ.get("ARXIV_AUTHOR_NAME", "")
 
     new_pubs: list[dict] = []
 
-    if author_id:
-        logger.info("Fetching from Semantic Scholar (author %s)", author_id)
-        try:
-            new_pubs = fetch_semantic_scholar(author_id, api_key)
-            logger.info("Semantic Scholar returned %d papers", len(new_pubs))
-        except Exception as e:
-            logger.warning("Semantic Scholar failed: %s", e)
+    logger.info("Fetching from Google Scholar (ID: %s)", scholar_id)
+    try:
+        new_pubs = fetch_google_scholar(scholar_id)
+        logger.info("Google Scholar returned %d papers", len(new_pubs))
+    except Exception as e:
+        logger.warning("Google Scholar fetch failed: %s", e)
 
     if not new_pubs and arxiv_author:
         logger.info("Falling back to arXiv for author '%s'", arxiv_author)

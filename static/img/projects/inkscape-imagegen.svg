@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" width="120" height="80">
+  <rect width="120" height="80" rx="8" fill="#313244"/>
+  <g transform="translate(48, 8)">
+    <path d="M2,4 H22 V18 H2 Z M2,14 L7,9 L11,13 L15,10 L22,14" fill="none" stroke="#fab387" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="60" y="68" font-family="sans-serif" font-size="9" fill="#bac2de" text-anchor="middle">ImageGen Ink</text>
+</svg>
