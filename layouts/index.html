@@ -1,8 +1,10 @@
 {{ define "main" }}
 {{ partial "sections/hero.html" . }}
 
-{{/* ── Recent Blog Posts ── */}}
-{{ $posts := where .Site.RegularPages "Section" "blog" | first 3 }}
+{{/* ── Recent Blog Posts (newsletter-published only) ── */}}
+{{ $allBlog := where .Site.RegularPages "Section" "blog" }}
+{{ $newsletterPosts := where $allBlog ".Params.newsletter" true | first 3 }}
+{{ $posts := cond (gt (len $newsletterPosts) 0) $newsletterPosts ($allBlog | first 3) }}
 {{ with $posts }}
 <section class="home-section">
   <div class="container">

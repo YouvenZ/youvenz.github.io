@@ -56,13 +56,13 @@
         {{/* Related posts */}}
         {{ $related := .Site.RegularPages.Related . | first 3 }}
         {{ with $related }}
-        <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);">
-          <h3 style="margin-bottom:1.5rem;">Related Posts</h3>
-          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;">
+        <div class="related-posts">
+          <h3 class="related-posts-title">Related Posts</h3>
+          <div class="related-posts-grid">
             {{ range . }}
-            <a href="{{ .RelPermalink }}" style="display:block;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);">
-              <p style="font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:.25rem;">{{ .Title }}</p>
-              <p style="font-size:.75rem;color:var(--text-muted);">{{ .Date.Format "Jan 2, 2006" }}</p>
+            <a href="{{ .RelPermalink }}" class="related-post-card">
+              <p class="related-post-title">{{ .Title }}</p>
+              <p class="related-post-date">{{ .Date.Format "Jan 2, 2006" }}</p>
             </a>
             {{ end }}
           </div>
@@ -72,7 +72,7 @@
         {{/* Giscus Comments */}}
         {{ if .Site.Params.giscusRepo }}
         <div class="comments-section">
-          <h3 style="margin-bottom:1rem;">Comments</h3>
+          <h3 class="comments-title">Comments</h3>
           <script src="https://giscus.app/client.js"
             data-repo="{{ .Site.Params.giscusRepo }}"
             data-repo-id="{{ .Site.Params.giscusRepoId }}"

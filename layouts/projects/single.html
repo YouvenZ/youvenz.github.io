@@ -22,7 +22,8 @@
       {{ $thumb := . }}
       {{ $isGif := strings.HasSuffix $thumb ".gif" }}
       {{ $isExternal := strings.HasPrefix $thumb "http" }}
-      {{ if or $isGif $isExternal }}
+      {{ $isStatic := strings.HasPrefix $thumb "/" }}
+      {{ if or $isGif $isExternal $isStatic }}
         <img src="{{ $thumb }}" alt="{{ $.Title }}" style="width:100%;display:block;" loading="lazy">
       {{ else }}
         {{ $img := resources.Get $thumb }}

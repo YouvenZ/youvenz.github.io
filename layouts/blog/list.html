@@ -49,12 +49,13 @@
 
       {{/* ── Tags sidebar ── */}}
       {{ $tags := .Site.Taxonomies.tags }}
+      {{ $newsletterCount := len (where .Site.RegularPages ".Params.newsletter" true) }}
       {{ if $tags }}
       <aside class="blog-sidebar">
         <p class="sidebar-heading">Topics</p>
         <a href="{{ "/blog/" | relURL }}" class="tag-sidebar-item{{ if not .Params.tag }} active{{ end }}">
           <span>All posts</span>
-          <span class="tag-sidebar-count">{{ len .Site.RegularPages }}</span>
+          <span class="tag-sidebar-count">{{ $newsletterCount }}</span>
         </a>
         {{ range $tags.ByCount }}
         <a href="{{ "/tags/" | relURL }}{{ .Name | urlize }}/" class="tag-sidebar-item">
