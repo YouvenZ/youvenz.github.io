@@ -1,7 +1,7 @@
 {{ if .Site.Params.search }}
 {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
-{{ $searchIdx := resources.Get "search-index.json" }}
+<link rel="prefetch" href="{{ "/index.json" | absURL }}" as="fetch" crossorigin>
 <script>
   window.searchIndexURL = '{{ "/index.json" | absURL }}';
 </script>

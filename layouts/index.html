@@ -73,5 +73,34 @@
   </div>
 </section>
 {{ end }}
-
+{{/* ── Active Projects ── */}}
+{{ $activeProjects := where (where .Site.RegularPages "Section" "projects") ".Params.status" "active" | first 3 }}
+{{ with $activeProjects }}
+<section class="home-section">
+  <div class="container">
+    <div class="home-section-header">
+      <h2>Active Projects</h2>
+      <a href="{{ "/projects/" | relURL }}">View all →</a>
+    </div>
+    <div class="project-grid-home">
+      {{ range . }}
+      <a href="{{ .RelPermalink }}" class="project-card home-project-card">
+        {{ with .Params.thumbnail }}
+        <div class="project-thumb">
+          <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" width="300" height="180">
+        </div>
+        {{ end }}
+        <div class="project-body">
+          <h3 class="project-title">{{ .Title }}</h3>
+          <p class="project-desc">{{ with .Params.description }}{{ . | truncate 100 }}{{ else }}{{ .Summary | plainify | truncate 100 }}{{ end }}</p>
+          <div class="blog-card-tags">
+            {{ range first 2 .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}
+          </div>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
 {{ end }}

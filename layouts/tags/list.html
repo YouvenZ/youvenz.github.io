@@ -32,7 +32,7 @@
       </article>
       {{ end }}
     </div>
-    {{ template "_internal/pagination.html" . }}
+    {{ partial "pagination.html" .Paginator }}
     {{ else }}
     {{/* Tag list/index page — all tags */}}
     <div class="section-header">

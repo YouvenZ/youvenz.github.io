@@ -333,6 +333,32 @@ Known extensions (from blog posts and existing project file):
 
 ---
 
+> Session 5 completed: 2026-04-05
+
+### ✅ Homepage Enrichment — Active Projects Section
+- Added "Active Projects" section to `layouts/index.html` (after publications)
+- Queries `where .Section "projects"` filtered by `status == "active"`, shows first 3
+- Added `.project-grid-home` and `.home-project-card` CSS classes to `assets/css/main.css`
+
+### ✅ 404 Page — Search Button
+- `layouts/404.html`: added "Search the site" button alongside "Go Home"
+- Button triggers `#search-toggle` click to open the search overlay
+- Only rendered when `site.Params.search: true`
+- Added `.error-actions` CSS for button row layout
+
+### ✅ Pagination — Page Count Display
+- Created `layouts/partials/pagination.html`: custom partial showing "Page X of Y" + numbered links
+- Replaced `{{ template "_internal/pagination.html" . }}` in `layouts/blog/list.html`, `layouts/tags/list.html`, and `layouts/_default/list.html`
+- Added `.pagination-nav`, `.pagination-info`, `.pagination-btn` CSS classes
+- Build: 767 pages, 10 paginator pages ✅
+
+### ✅ Search Index Prefetch
+- `layouts/partials/scripts.html`: added `<link rel="prefetch" href="/index.json" as="fetch" crossorigin>`
+- Browser now pre-fetches the search index in the background after page load
+- Removed dead `resources.Get "search-index.json"` line
+
+---
+
 ## Still Not Done
 
 ### 🟡 Requires User Action
@@ -348,4 +374,4 @@ Known extensions (from blog posts and existing project file):
 
 ---
 
-_Last updated: 2026-04-05 | Session 4 — Newsletter, talks single pages, CV sections, Giscus sync, RSS feeds_
+_Last updated: 2026-04-05 | Session 5 — Homepage projects, 404 search, pagination count, search prefetch_

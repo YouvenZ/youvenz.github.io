@@ -1,0 +1,20 @@
+{{/* Custom pagination with page count display.
+     Usage: {{ partial "pagination.html" .Paginator }}
+*/}}
+{{ $pag := . }}
+{{ if gt $pag.TotalPages 1 }}
+<nav class="pagination-nav" aria-label="Pagination">
+  <span class="pagination-info">Page {{ $pag.PageNumber }} of {{ $pag.TotalPages }}</span>
+  <div class="pagination-links">
+    {{ if $pag.HasPrev }}
+    <a href="{{ $pag.Prev.URL }}" class="pagination-btn" aria-label="Previous page" rel="prev">←</a>
+    {{ end }}
+    {{ range $pag.Pagers }}
+    <a href="{{ .URL }}" class="pagination-btn{{ if eq .PageNumber $pag.PageNumber }} active{{ end }}" aria-label="Page {{ .PageNumber }}">{{ .PageNumber }}</a>
+    {{ end }}
+    {{ if $pag.HasNext }}
+    <a href="{{ $pag.Next.URL }}" class="pagination-btn" aria-label="Next page" rel="next">→</a>
+    {{ end }}
+  </div>
+</nav>
+{{ end }}

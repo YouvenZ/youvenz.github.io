@@ -17,7 +17,7 @@
       </article>
       {{ end }}
     </div>
-    {{ template "_internal/pagination.html" . }}
+    {{ partial "pagination.html" .Paginator }}
     {{ end }}
   </div>
 </div>
