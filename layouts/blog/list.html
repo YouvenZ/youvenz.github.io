@@ -12,7 +12,11 @@
       {{/* ── Main blog grid ── */}}
       <div class="blog-main">
         <div class="blog-grid">
-          {{ range .Pages }}
+          {{ $allPages := .Pages }}
+          {{ $newsletterPages := where $allPages ".Params.newsletter" true }}
+          {{ $filteredPages := cond (gt (len $newsletterPages) 0) $newsletterPages $allPages }}
+          {{ $paginator := .Paginate $filteredPages 10 }}
+          {{ range $paginator.Pages }}
           <article class="blog-card">
             {{/* Thumbnail */}}
             {{ $page := . }}
@@ -40,7 +44,7 @@
           <p class="text-muted">No posts yet. Add Markdown files to <code>content/blog/</code>.</p>
           {{ end }}
         </div>
-        {{ partial "pagination.html" .Paginator }}
+        {{ partial "pagination.html" $paginator }}
       </div>
 
       {{/* ── Tags sidebar ── */}}

@@ -1,4 +1,5 @@
 ---
+newsletter: true
 title: 'LaTeX in Inkscape: The Correct Way (Tutorial)'
 date: '2026-03-05'
 draft: false

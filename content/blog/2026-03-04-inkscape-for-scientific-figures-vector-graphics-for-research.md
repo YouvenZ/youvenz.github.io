@@ -1,4 +1,5 @@
 ---
+newsletter: true
 title: 'Inkscape for Scientific Figures: Vector Graphics for Researchers'
 date: '2026-03-04'
 draft: false

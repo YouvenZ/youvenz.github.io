@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1e1e2e"/><stop offset="100%" stop-color="#313244"/></linearGradient></defs>
+  <rect width="64" height="64" rx="8" fill="url(#g)"/>
+  <!-- Journal icon: stack of pages with J -->
+  <rect x="14" y="14" width="36" height="42" rx="3" fill="none" stroke="#94e2d5" stroke-width="2"/>
+  <rect x="18" y="10" width="36" height="42" rx="3" fill="#1e1e2e" stroke="#45475a" stroke-width="1.5"/>
+  <text x="36" y="38" font-family="Inter,sans-serif" font-size="18" font-weight="700" fill="#94e2d5" text-anchor="middle">J</text>
+  <line x1="22" y1="44" x2="50" y2="44" stroke="#45475a" stroke-width="1.5"/>
+  <line x1="22" y1="49" x2="44" y2="49" stroke="#45475a" stroke-width="1.5"/>
+</svg>

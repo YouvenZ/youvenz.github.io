@@ -1,4 +1,5 @@
 ---
+newsletter: true
 title: Write Research Papers in Markdown + Pandoc
 date: '2026-03-04'
 draft: false
@@ -109,6 +110,7 @@ At the top of `paper.md`:
 
 ```yaml
 ---
+newsletter: true
 title: "Your Paper Title Here"
 author: 
   - Jane Doe
@@ -202,6 +204,7 @@ Create `ml-paper.md`:
 
 ```markdown
 ---
+newsletter: true
 title: "Neural Network Optimization via Gradient Descent"
 author: "A. Researcher"
 bibliography: refs.bib

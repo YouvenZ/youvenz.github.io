@@ -22,6 +22,12 @@
       {{ $typeTags := slice .type }}
       {{ $allTags := union $tags $typeTags }}
       <article class="publication-card" data-tags="{{ $allTags | jsonify }}">
+        {{ $typeIconMap := dict "journal" "/img/publications/type-journal.svg" "conference" "/img/publications/type-conference.svg" "preprint" "/img/publications/type-preprint.svg" "book-chapter" "/img/publications/type-book-chapter.svg" }}
+        {{ $icon := index $typeIconMap (.type | default "conference") | default "/img/publications/type-conference.svg" }}
+        <div class="pub-icon-col">
+          <img src="{{ $icon }}" alt="{{ .type }}" width="48" height="48" loading="lazy">
+        </div>
+        <div class="pub-content-col">
         <div class="pub-title">
           {{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
         </div>
@@ -51,6 +57,7 @@
         <div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:0.25rem;">
           {{ range .tags }}<span class="tag" style="font-size:0.7rem;">{{ . }}</span>{{ end }}
         </div>
+        </div>{{/* end pub-content-col */}}
       </article>
       {{ else }}
       <p class="text-muted">No publications yet. Run the update pipeline or add entries to <code>data/publications.yaml</code>.</p>

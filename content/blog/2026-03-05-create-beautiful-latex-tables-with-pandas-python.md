@@ -1,4 +1,5 @@
 ---
+newsletter: true
 title: Create Beautiful LaTeX Tables with Pandas & Python
 date: '2026-03-05'
 draft: false

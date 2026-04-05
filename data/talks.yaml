@@ -11,7 +11,7 @@
     multi-modal OCT imaging, organised as a MICCAI 2024 satellite event.
   slides: ""
   video: ""
-  image: ""
+  image: "/img/talks/mario-amd-2024.svg"
 
 - title: "LatiM: Longitudinal Representation Learning in Continuous-Time Models for Medical Image Analysis"
   slug: "latim-miccai-2024"
@@ -24,7 +24,7 @@
     predicting disease progression from irregular sequential medical images.
   slides: ""
   video: ""
-  image: ""
+  image: "/img/talks/latim-miccai-2024.svg"
 
 - title: "Longitudinal Self-Supervised Learning using Neural Ordinary Differential Equation"
   slug: "ssl-neural-ode-2023"
@@ -37,7 +37,7 @@
     for diabetic retinopathy follow-up and progression prediction.
   slides: ""
   video: ""
-  image: ""
+  image: "/img/talks/ssl-neural-ode-2023.svg"
 
 - title: "LMT: Longitudinal Mixing Training for Disease Progression Prediction"
   slug: "lmt-miccai-2023"
@@ -50,17 +50,12 @@
     leveraging longitudinal data mixing during training across multiple sources.
   slides: ""
   video: ""
-  image: ""
+  image: "/img/talks/lmt-miccai-2023.svg"
 
 - title: "Detection of Diabetic Retinopathy using Longitudinal Self-Supervised Learning"
   slug: "dr-ssl-omia-2022"
   event: "OMIA Workshop, MICCAI 2022 — Best Paper Award"
   location: "Singapore"
-  date: "2022-09-18"
-  type: workshop
-  abstract: >
-    Longitudinal self-supervised learning approach applied to retinal fundus image sequences
-    for automated diabetic retinopathy detection. Awarded Best Paper.
   slides: ""
   video: ""
-  image: ""
+  image: "/img/talks/dr-ssl-omia-2022.svg"

@@ -1,4 +1,5 @@
 ---
+newsletter: true
 title: Make Matplotlib Figures Publication Quality
 date: '2026-03-04'
 draft: false

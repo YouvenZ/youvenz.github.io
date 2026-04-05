@@ -1,4 +1,5 @@
 ---
+newsletter: true
 title: 'OpenAI API Structured Outputs: Extract Paper Metadata Fast'
 date: '2026-03-05'
 draft: false

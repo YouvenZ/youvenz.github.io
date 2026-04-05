@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Three sequenced medical image frames -->
+  <rect x="155" y="155" width="110" height="110" rx="8" fill="#1e1e2e" stroke="#45475a" stroke-width="2"/>
+  <rect x="345" y="148" width="110" height="110" rx="8" fill="#1e1e2e" stroke="#45475a" stroke-width="2"/>
+  <rect x="535" y="140" width="110" height="110" rx="8" fill="#1e1e2e" stroke="#45475a" stroke-width="2"/>
+  <!-- Retina-like circles inside frames -->
+  <circle cx="210" cy="210" r="35" fill="none" stroke="#89b4fa" stroke-width="2" opacity="0.7"/>
+  <circle cx="210" cy="210" r="15" fill="#89b4fa" opacity="0.3"/>
+  <circle cx="400" cy="203" r="35" fill="none" stroke="#94e2d5" stroke-width="2" opacity="0.8"/>
+  <circle cx="400" cy="203" r="18" fill="#94e2d5" opacity="0.3"/>
+  <circle cx="590" cy="195" r="35" fill="none" stroke="#a6e3a1" stroke-width="2" opacity="0.9"/>
+  <circle cx="590" cy="195" r="22" fill="#a6e3a1" opacity="0.3"/>
+  <!-- Arrows between frames -->
+  <path d="M265,210 L345,204" stroke="#7f849c" stroke-width="1.5" marker-end="url(#arr)"/>
+  <path d="M455,200 L535,196" stroke="#7f849c" stroke-width="1.5" marker-end="url(#arr)"/>
+  <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#7f849c"/></marker></defs>
+  <!-- MICCAI LMT badge -->
+  <rect x="230" y="368" width="340" height="36" rx="8" fill="#89b4fa" opacity="0.12" stroke="#89b4fa" stroke-width="1"/>
+  <text x="400" y="391" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#89b4fa" text-anchor="middle">LMT @ MICCAI 2023 · Vancouver</text>
+  <!-- Title -->
+  <text x="400" y="52" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#cdd6f4" text-anchor="middle">Longitudinal Medical Image Modelling</text>
+  <text x="400" y="74" font-family="Inter,sans-serif" font-size="12" fill="#7f849c" text-anchor="middle">Disease Progression · Sequential Representation</text>
+</svg>

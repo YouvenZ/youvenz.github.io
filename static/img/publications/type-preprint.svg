@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1e1e2e"/><stop offset="100%" stop-color="#313244"/></linearGradient></defs>
+  <rect width="64" height="64" rx="8" fill="url(#g)"/>
+  <!-- Preprint arXiv-style icon -->
+  <text x="32" y="36" font-family="Georgia,serif" font-size="22" font-weight="700" fill="#f38ba8" text-anchor="middle">arXiv</text>
+  <rect x="12" y="42" width="40" height="2" rx="1" fill="#f38ba8" opacity="0.5"/>
+</svg>

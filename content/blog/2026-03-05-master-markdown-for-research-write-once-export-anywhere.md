@@ -1,4 +1,5 @@
 ---
+newsletter: true
 title: Master Markdown for Research — Write Once, Export Anywhere
 date: '2026-03-05'
 draft: false

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1e1e2e"/><stop offset="100%" stop-color="#313244"/></linearGradient></defs>
+  <rect width="64" height="64" rx="8" fill="url(#g)"/>
+  <!-- Book icon -->
+  <path d="M14 14 L14 50 Q14 52 16 52 L48 52 Q50 52 50 50 L50 18 Q50 16 48 16 L20 16 L20 14 Z" fill="none" stroke="#a6e3a1" stroke-width="2"/>
+  <line x1="20" y1="14" x2="20" y2="52" stroke="#a6e3a1" stroke-width="2"/>
+  <text x="36" y="36" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#a6e3a1" text-anchor="middle">Bk</text>
+</svg>

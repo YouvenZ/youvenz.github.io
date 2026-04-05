@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <!-- Eye / retina icon -->
+  <ellipse cx="400" cy="200" rx="120" ry="70" fill="none" stroke="#94e2d5" stroke-width="3" opacity="0.8"/>
+  <circle cx="400" cy="200" r="35" fill="none" stroke="#89b4fa" stroke-width="3"/>
+  <circle cx="400" cy="200" r="15" fill="#94e2d5" opacity="0.6"/>
+  <!-- AMD progression arrows -->
+  <path d="M280 310 Q400 350 520 310" fill="none" stroke="#94e2d5" stroke-width="2" stroke-dasharray="8,4" opacity="0.7"/>
+  <polygon points="520,310 510,303 514,318" fill="#94e2d5" opacity="0.7"/>
+  <!-- MICCAI badge -->
+  <rect x="260" y="365" width="280" height="36" rx="8" fill="#94e2d5" opacity="0.15" stroke="#94e2d5" stroke-width="1"/>
+  <text x="400" y="388" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#94e2d5" text-anchor="middle">MICCAI 2024 · Marrakesh</text>
+  <!-- Title -->
+  <text x="400" y="52" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#cdd6f4" text-anchor="middle">MARIO Challenge</text>
+  <text x="400" y="74" font-family="Inter,sans-serif" font-size="12" fill="#7f849c" text-anchor="middle">AMD Progression Monitoring in OCT</text>
+</svg>

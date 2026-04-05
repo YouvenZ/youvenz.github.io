@@ -359,6 +359,40 @@ Known extensions (from blog posts and existing project file):
 
 ---
 
+> Session 6 completed: 2026-04-05
+
+### ✅ Blog: Newsletter-Only Filter
+- Added `newsletter: true` frontmatter to 10 blog posts matching newsletter issues topics
+- `layouts/blog/list.html`: filters display to only `newsletter: true` posts via `.Paginate`
+- Falls back to all posts if none are marked (safe default)
+- Paginator pages: 10 → 6 (49 posts filtered to 10)
+
+### ✅ Dark Mode Accent: Violet → Teal
+- Replaced `#cba6f7` (Catppuccin lavender) with `#94e2d5` (Catppuccin Teal) throughout `assets/css/main.css`
+- Updated: `--accent`, `--accent-hover`, `--accent-light`, `--tag-bg`, `--tag-text`, `--glow`
+- Updated card hover border/glow, tag colors, hero gradient start color
+- Light mode accent (`#2563eb`) unchanged
+
+### ✅ Contact Page Hidden from Nav
+- Removed Contact entry from `menus.main` in `hugo.yaml`
+- Page still builds at `/contact/` (accessible via direct URL) but not linked in nav
+
+### ✅ Project Thumbnails Rendering Fixed
+- `layouts/projects/list.html`: added `$isStatic` check for paths starting with `/`
+- SVGs in `static/img/projects/` are now rendered directly without `resources.Get`
+
+### ✅ Talks: Placeholder Images Added
+- Created 5 SVG placeholder images in `static/img/talks/`:
+  `mario-amd-2024.svg`, `latim-miccai-2024.svg`, `ssl-neural-ode-2023.svg`, `lmt-miccai-2023.svg`, `dr-ssl-omia-2022.svg`
+- Updated all 5 `data/talks.yaml` entries with `image` field
+
+### ✅ Publications: Type Icons Added
+- Created 4 type icons in `static/img/publications/`: `type-journal.svg`, `type-conference.svg`, `type-preprint.svg`, `type-book-chapter.svg`
+- `layouts/publications/list.html`: each card now shows a type icon in a `.pub-icon-col` sidebar
+- Added `.pub-icon-col`, `.pub-content-col` CSS for flex layout
+
+---
+
 ## Still Not Done
 
 ### 🟡 Requires User Action
@@ -374,4 +408,4 @@ Known extensions (from blog posts and existing project file):
 
 ---
 
-_Last updated: 2026-04-05 | Session 5 — Homepage projects, 404 search, pagination count, search prefetch_
+_Last updated: 2026-04-05 | Session 6 — Blog filter, teal accent, no contact nav, project thumbnails, talk/pub images_

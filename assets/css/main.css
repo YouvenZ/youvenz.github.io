@@ -64,17 +64,17 @@
   --text: #cdd6f4;
   --text-muted: #bac2de;
   --text-light: #7f849c;
-  --accent: #cba6f7;
-  --accent-hover: #d4b4f9;
-  --accent-light: #2a1f4a;
-  --tag-bg: #2a1f4a;
-  --tag-text: #cba6f7;
+  --accent: #94e2d5;
+  --accent-hover: #a6f3e7;
+  --accent-light: #0d2522;
+  --tag-bg: #0d2522;
+  --tag-text: #94e2d5;
   --link: #89b4fa;
   --link-hover: #b4d4ff;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
   --shadow-md: 0 4px 24px rgba(0,0,0,0.5);
   --shadow-lg: 0 8px 40px rgba(0,0,0,0.6);
-  --glow: 0 0 24px rgba(203,166,247,0.15);
+  --glow: 0 0 24px rgba(148,226,213,0.15);
 }
 [data-theme="dark"] a {
   color: var(--link, #89b4fa);
@@ -100,13 +100,13 @@
 [data-theme="dark"] .talk-card:hover,
 [data-theme="dark"] .research-card:hover,
 [data-theme="dark"] .video-card:hover {
-  border-color: #cba6f7;
-  box-shadow: 0 0 0 1px #cba6f7, var(--glow);
+  border-color: #94e2d5;
+  box-shadow: 0 0 0 1px #94e2d5, var(--glow);
 }
 [data-theme="dark"] .tag {
-  background: #2a1f4a;
-  color: #cba6f7;
-  border: 1px solid #3d2a6e;
+  background: #0d2522;
+  color: #94e2d5;
+  border: 1px solid #1a4a44;
 }
 [data-theme="dark"] .site-header {
   background: rgba(30,30,46,0.85);
@@ -115,7 +115,7 @@
   border-bottom-color: #45475a;
 }
 [data-theme="dark"] .hero-name-gradient {
-  background: linear-gradient(135deg, #cba6f7 0%, #89b4fa 50%, #a6e3a1 100%);
+  background: linear-gradient(135deg, #94e2d5 0%, #89b4fa 50%, #a6e3a1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -540,8 +540,14 @@ blockquote {
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   transition: box-shadow var(--transition);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
 }
 .publication-card:hover { box-shadow: var(--shadow-md); }
+.pub-icon-col { flex-shrink: 0; width: 48px; height: 48px; }
+.pub-icon-col img { display: block; border-radius: 6px; }
+.pub-content-col { flex: 1; min-width: 0; }
 .pub-title { font-family: var(--font-sans); font-size: 1rem; font-weight: 600; margin-bottom: var(--space-2); }
 .pub-title a { color: var(--text); }
 .pub-title a:hover { color: var(--accent); }

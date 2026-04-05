@@ -1,4 +1,5 @@
 ---
+newsletter: true
 title: 'LaTeX in VSCode 2026: LaTeX Workshop Complete Setup'
 date: '2026-03-05'
 draft: false

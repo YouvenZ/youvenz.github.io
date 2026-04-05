@@ -113,6 +113,3 @@ menus:
     - name: CV
       url: /cv/
       weight: 9
-    - name: Contact
-      url: /contact/
-      weight: 10
